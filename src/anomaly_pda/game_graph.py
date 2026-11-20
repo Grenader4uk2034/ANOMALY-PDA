@@ -125,7 +125,7 @@ class GameGraph:
         return cls(Path(path).read_bytes())
 
     def _read_cstring(self, pos: int) -> tuple[str, int]:
-        end = self.payload.find(b"\\0", pos)
+        end = self.payload.find(b"\0", pos)
         if end < 0:
             raise GameGraphFormatError(f"unterminated string at offset {pos}")
         try:
