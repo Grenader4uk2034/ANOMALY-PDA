@@ -1,14 +1,20 @@
 # Tests
 
-Тесты парсеров будут добавляться вместе с подтверждением форматов.
+Запуск:
 
-Минимальные обязательные проверки для Game Graph:
+```bash
+python -m unittest discover -s tests -v
+```
 
-- число вершин равно 5 345 на исследованном наборе Anomaly;
-- число рёбер равно 13 444;
-- число Level Points равно 764 226;
-- сумма счётчиков рёбер и точек совпадает с заголовком;
-- все диапазоны записей находятся внутри чанка;
-- все ссылки на целевые вершины допустимы.
+Текущие синтетические проверки покрывают:
+- Game Graph header, level table and vertex decoding;
+- Game Graph edge target validation;
+- embedded Cross Table header/cells and lookup;
+- Level Graph versions 10 and 13;
+- packed neighbor links and world-coordinate decoding;
+- truncated binary payload rejection;
+- local A* route on a small test graph.
 
-Игровые архивы и извлечённые игровые данные в репозиторий не добавлять.
+Эти тесты проверяют реализацию на искусственных бинарных примерах. Они не заменяют обязательную проверку на полном наборе Anomaly.
+
+Реальные игровые архивы и извлечённые данные не добавлять в репозиторий.
