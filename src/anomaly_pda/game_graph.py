@@ -240,6 +240,38 @@ class GameGraph:
             return None
         return table.cell_at(level_vertex_id)
 
+    def validate_level_graph(self, level_id: int, level_graph) -> dict:
+        """Verify that a parsed level.ai matches its embedded Cross Table and level descriptor."""
+        level = next((item for item in self.levels if item.level_id == level_id), None)
+        table = self.cross_table_for_level(level_id)
+        if level is None:
+            raise GameGraphFormatError(f"unknown level ID {level_id}")
+        if table is None:
+            raise GameGraphFormatError(f"Game Graph has no embedded Cross Table for level {level_id}")
+        if level_graph.vertex_count != table.header.level_vertex_count:
+            raise GameGraphFormatError(
+                f"level {level_id}: level.ai has {level_graph.vertex_count} vertices, "
+                f"Cross Table has {table.header.level_vertex_count} cells"
+            )
+        if table.header.game_vertex_count != self.header.vertex_count:
+            raise GameGraphFormatError(
+                f"level {level_id}: Cross Table declares {table.header.game_vertex_count} "
+                f"Game Graph vertices, expected {self.header.vertex_count}"
+            )
+        if table.header.level_guid != level.guid or level_graph.header.guid != level.guid:
+            raise GameGraphFormatError(f"level {level_id}: level GUID mismatch")
+        if table.header.game_guid != self.header.guid:
+            raise GameGraphFormatError(f"level {level_id}: Game Graph GUID mismatch")
+        return {
+            "level_id": level_id,
+            "level_name": level.name,
+            "level_vertices": level_graph.vertex_count,
+            "cross_table_cells": table.cell_count,
+            "game_vertices": self.header.vertex_count,
+            "level_guid_match": True,
+            "game_guid_match": True,
+        }
+
     def _validate_layout(self) -> None:
         h = self.header
         level_ids = {level.level_id for level in self.levels}
