@@ -5,7 +5,7 @@ from anomaly_pda.game_graph import (
     GameGraph, GameGraphFormatError, HEADER, VERTEX, EDGE, POINT, CROSS_HEADER,
 )
 from anomaly_pda.level_graph import LevelGraph, LevelGraphFormatError, HEADER as AI_HEADER
-from anomaly_pda.routing import find_level_path
+from anomaly_pda.routing import find_level_path, build_route
 
 
 def make_payload():
@@ -21,13 +21,14 @@ def make_payload():
     return header + level + vertex
 
 
-def make_level_ai(version=10):
+def make_level_ai(version=10, guid_bytes=None):
     # Two nodes linked 0 <-> 1, with a flat test world.
     count = 2
     buf = bytearray(AI_HEADER.pack(
         version, count, 1.0, 10.0,
         -2.0, 0.0, -2.0, 4.0, 10.0, 4.0,
-        0x1122334455667788, 0x8877665544332211,
+        int.from_bytes((guid_bytes or bytes.fromhex("8877665544332211 1122334455667788".replace(" ", "")))[:8], "little"),
+        int.from_bytes((guid_bytes or bytes.fromhex("8877665544332211 1122334455667788".replace(" ", "")))[8:], "little"),
     ))
     bits = 23 if version == 10 else 26
     invalid = (1 << bits) - 1
@@ -64,7 +65,9 @@ class GameGraphTests(unittest.TestCase):
         # Offsets are byte offsets relative to the start of the vertex array.
         vertex = VERTEX.pack(0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 42, 48, 1, 0)
         edge = EDGE.pack(0, 1.25)
-        ct_header = CROSS_HEADER.pack(9, 2, 1, 1, 2, 3, 4)
+        guid_a = int.from_bytes(level_guid[:8], "little")
+        guid_b = int.from_bytes(level_guid[8:], "little")
+        ct_header = CROSS_HEADER.pack(9, 2, 1, guid_a, guid_b, guid_a, guid_b)
         cells = EDGE.pack(0, 0.5) + EDGE.pack(0, 1.0)
         ct_payload = ct_header + cells
         ct_block = struct.pack("<I", 4 + len(ct_payload)) + ct_payload
@@ -72,6 +75,10 @@ class GameGraphTests(unittest.TestCase):
         self.assertEqual(graph.edges[0].target_vertex, 0)
         self.assertEqual(len(graph.cross_tables), 1)
         self.assertEqual(graph.resolve_game_vertex(0, 1).distance, 1.0)
+        local_graph = LevelGraph(make_level_ai(guid_bytes=level_guid))
+        self.assertTrue(graph.validate_level_graph(0, local_graph)["level_guid_match"])
+        route = build_route(graph, {0: local_graph}, 0, 0, 0, 1)
+        self.assertEqual(route["segments"][0]["vertex_ids"], (0, 1))
 
     def test_rejects_invalid_edge_target(self):
         level = b"test\0" + struct.pack("<fffB", 0.0, 0.0, 0.0, 0)
