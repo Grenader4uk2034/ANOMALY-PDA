@@ -5,6 +5,7 @@ from anomaly_pda.game_graph import (
     GameGraph, GameGraphFormatError, HEADER, VERTEX, EDGE, POINT, CROSS_HEADER,
 )
 from anomaly_pda.level_graph import LevelGraph, LevelGraphFormatError, HEADER as AI_HEADER
+from anomaly_pda.routing import find_level_path
 
 
 def make_payload():
@@ -98,6 +99,11 @@ class LevelGraphTests(unittest.TestCase):
     def test_rejects_truncated_level_ai(self):
         with self.assertRaises(LevelGraphFormatError):
             LevelGraph(make_level_ai()[:-1])
+
+    def test_local_astar_route(self):
+        graph = LevelGraph(make_level_ai())
+        self.assertEqual(find_level_path(graph, 0, 1), (0, 1))
+        self.assertEqual(find_level_path(graph, 1, 0), (1, 0))
 
 
 if __name__ == "__main__":
