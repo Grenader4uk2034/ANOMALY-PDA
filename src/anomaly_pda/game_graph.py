@@ -88,7 +88,13 @@ class CrossTableCell:
 class LevelCrossTable:
     level_id: int
     header: CrossTableHeader
-    cells: tuple[CrossTableCell, ...]
+    cell_data: memoryview
+    cell_count: int
+
+    def cell_at(self, level_vertex_id: int) -> CrossTableCell | None:
+        if not 0 <= level_vertex_id < self.cell_count:
+            return None
+        return CrossTableCell(*EDGE.unpack_from(self.cell_data, level_vertex_id * EDGE.size))
 
 
 class GameGraph:
@@ -111,7 +117,6 @@ class GameGraph:
         self.expected_end = expected_end
         self.vertices = tuple(self.iter_vertices())
         self.edges = tuple(self.iter_edges())
-        self.points = tuple(self.iter_points())
         self.cross_tables = self._read_embedded_cross_tables(expected_end)
         self._validate_layout()
 
@@ -199,14 +204,13 @@ class GameGraph:
                 raise GameGraphFormatError(
                     f"Cross Table level {level.level_id}: expected {expected} bytes, got {len(raw)}"
                 )
-            cells = tuple(
-                CrossTableCell(*EDGE.unpack_from(raw, CROSS_HEADER.size + i * EDGE.size))
-                for i in range(level_count)
-            )
-            if any(cell.game_vertex_id >= self.header.vertex_count for cell in cells):
-                raise GameGraphFormatError(
-                    f"Cross Table for level {level.level_id} references invalid Game Graph vertex"
-                )
+            cell_data = memoryview(raw)[CROSS_HEADER.size:]
+            for i in range(level_count):
+                game_vertex_id, _distance = EDGE.unpack_from(cell_data, i * EDGE.size)
+                if game_vertex_id >= self.header.vertex_count:
+                    raise GameGraphFormatError(
+                        f"Cross Table for level {level.level_id} references invalid Game Graph vertex"
+                    )
             tables.append(LevelCrossTable(
                 level.level_id,
                 CrossTableHeader(
@@ -214,7 +218,8 @@ class GameGraph:
                     guids[0].to_bytes(8, "little").hex() + guids[1].to_bytes(8, "little").hex(),
                     guids[2].to_bytes(8, "little").hex() + guids[3].to_bytes(8, "little").hex(),
                 ),
-                cells,
+                cell_data,
+                level_count,
             ))
             pos = block_end
 
@@ -229,9 +234,9 @@ class GameGraph:
 
     def resolve_game_vertex(self, level_id: int, level_vertex_id: int) -> CrossTableCell | None:
         table = self.cross_table_for_level(level_id)
-        if table is None or not 0 <= level_vertex_id < len(table.cells):
+        if table is None:
             return None
-        return table.cells[level_vertex_id]
+        return table.cell_at(level_vertex_id)
 
     def _validate_layout(self) -> None:
         h = self.header
@@ -288,9 +293,11 @@ class GameGraph:
             "actual_payload_size": len(self.payload),
             "vertices": len(self.vertices),
             "edges": len(self.edges),
-            "level_points": len(self.points),
+            "level_points": self.header.level_point_count,
             "embedded_cross_tables": len(self.cross_tables),
-            "cross_table_cells": sum(len(table.cells) for table in self.cross_tables),
+            "cross_table_cells": sum(table.cell_count for table in self.cross_tables),
+            "point_storage": "lazy iterator; no per-point Python objects retained",
+            "cross_table_storage": "memoryview; cells decoded on demand",
         }
 
 
