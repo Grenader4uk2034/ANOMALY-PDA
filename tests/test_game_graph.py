@@ -10,8 +10,8 @@ from anomaly_pda.routing import find_level_path
 
 def make_payload():
     # One level, one vertex, no edges, no points, no embedded cross tables.
-    level = b"test_level\\0" + struct.pack("<fffB", 1.0, 2.0, 3.0, 0)
-    level += b"level01\\0" + bytes(range(16))
+    level = b"test_level\0" + struct.pack("<fffB", 1.0, 2.0, 3.0, 0)
+    level += b"level01\0" + bytes(range(16))
     header = HEADER.pack(10, 1, 0, 0, bytes(range(16)), 1)
     vertex = VERTEX.pack(
         1.0, 2.0, 3.0, 4.0, 5.0, 6.0,
@@ -58,8 +58,8 @@ class GameGraphTests(unittest.TestCase):
             GameGraph(make_payload()[:-1])
 
     def test_reads_edge_point_and_embedded_cross_table(self):
-        level = b"test\\0" + struct.pack("<fffB", 0.0, 0.0, 0.0, 0)
-        level += b"level01\\0" + bytes(16)
+        level = b"test\0" + struct.pack("<fffB", 0.0, 0.0, 0.0, 0)
+        level += b"level01\0" + bytes(16)
         header = HEADER.pack(10, 1, 1, 0, bytes(16), 1)
         # Offsets are byte offsets relative to the start of the vertex array.
         vertex = VERTEX.pack(0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 42, 48, 1, 0)
@@ -74,8 +74,8 @@ class GameGraphTests(unittest.TestCase):
         self.assertEqual(graph.resolve_game_vertex(0, 1).distance, 1.0)
 
     def test_rejects_invalid_edge_target(self):
-        level = b"test\\0" + struct.pack("<fffB", 0.0, 0.0, 0.0, 0)
-        level += b"level01\\0" + bytes(16)
+        level = b"test\0" + struct.pack("<fffB", 0.0, 0.0, 0.0, 0)
+        level += b"level01\0" + bytes(16)
         header = HEADER.pack(10, 1, 1, 0, bytes(16), 1)
         vertex = VERTEX.pack(0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 42, 48, 1, 0)
         with self.assertRaises(GameGraphFormatError):
