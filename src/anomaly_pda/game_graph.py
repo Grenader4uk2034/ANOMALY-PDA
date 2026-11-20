@@ -197,14 +197,16 @@ class GameGraph:
                 raise GameGraphFormatError(
                     f"Cross Table for level {level.level_id} exceeds Game Graph payload"
                 )
-            raw = self.payload[pos + 4:block_end]
-            version, level_count, game_count, *guids = CROSS_HEADER.unpack_from(raw)
+            raw_start = pos + 4
+            version, level_count, game_count, *guids = CROSS_HEADER.unpack_from(self.payload, raw_start)
+            raw_size = block_size - 4
             expected = CROSS_HEADER.size + level_count * EDGE.size
-            if expected != len(raw):
+            if expected != raw_size:
                 raise GameGraphFormatError(
-                    f"Cross Table level {level.level_id}: expected {expected} bytes, got {len(raw)}"
+                    f"Cross Table level {level.level_id}: expected {expected} bytes, got {raw_size}"
                 )
-            cell_data = memoryview(raw)[CROSS_HEADER.size:]
+            cell_start = raw_start + CROSS_HEADER.size
+            cell_data = memoryview(self.payload)[cell_start:block_end]
             for i in range(level_count):
                 game_vertex_id, _distance = EDGE.unpack_from(cell_data, i * EDGE.size)
                 if game_vertex_id >= self.header.vertex_count:
