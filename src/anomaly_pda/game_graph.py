@@ -1,7 +1,7 @@
-"""Validated reader for the Game Graph payload used by S.T.A.L.K.E.R. Anomaly.
+"""Reader for Anomaly's Game Graph payload, including embedded per-level Cross Tables.
 
-This module parses the Game Graph chunk payload, not an X-Ray .db archive.
-All binary layouts use explicit little-endian standard sizes.
+Input is the decoded type-4 Game Graph chunk payload from all.spawn/spawns.db0,
+not the outer X-Ray DB archive or the outer all.spawn chunk envelope.
 """
 from __future__ import annotations
 
@@ -16,6 +16,7 @@ HEADER = struct.Struct("<BHII16sB")
 VERTEX = struct.Struct("<ffffffBBBBBBBBIIBB")
 EDGE = struct.Struct("<Hf")
 POINT = struct.Struct("<fffIf")
+CROSS_HEADER = struct.Struct("<IIIQQQQ")
 
 
 class GameGraphFormatError(ValueError):
@@ -68,8 +69,30 @@ class GraphPoint:
     distance: float
 
 
+@dataclass(frozen=True)
+class CrossTableHeader:
+    version: int
+    level_vertex_count: int
+    game_vertex_count: int
+    level_guid: str
+    game_guid: str
+
+
+@dataclass(frozen=True)
+class CrossTableCell:
+    game_vertex_id: int
+    distance: float
+
+
+@dataclass(frozen=True)
+class LevelCrossTable:
+    level_id: int
+    header: CrossTableHeader
+    cells: tuple[CrossTableCell, ...]
+
+
 class GameGraph:
-    """Read and validate a decoded Game Graph chunk."""
+    """Read and validate a decoded Game Graph chunk, including its embedded GCT blocks."""
 
     def __init__(self, payload: bytes):
         self.payload = payload
@@ -86,6 +109,10 @@ class GameGraph:
                 f"graph arrays exceed payload: need {expected_end} bytes, have {len(payload)}"
             )
         self.expected_end = expected_end
+        self.vertices = tuple(self.iter_vertices())
+        self.edges = tuple(self.iter_edges())
+        self.points = tuple(self.iter_points())
+        self.cross_tables = self._read_embedded_cross_tables(expected_end)
         self._validate_layout()
 
     @classmethod
@@ -147,23 +174,91 @@ class GameGraph:
             )
             yield GraphPoint((x, y, z), level_vertex_id, distance)
 
+    def _read_embedded_cross_tables(self, pos: int) -> tuple[LevelCrossTable, ...]:
+        tables = []
+        # Engine serializes embedded cross-table blocks in ascending level ID order.
+        for level in sorted(self.levels, key=lambda item: item.level_id):
+            if pos == len(self.payload):
+                break
+            if pos + 4 > len(self.payload):
+                raise GameGraphFormatError("truncated embedded Cross Table block-size field")
+            block_size = struct.unpack_from("<I", self.payload, pos)[0]
+            if block_size < 4 + CROSS_HEADER.size:
+                raise GameGraphFormatError(
+                    f"invalid Cross Table block size {block_size} for level {level.level_id}"
+                )
+            block_end = pos + block_size
+            if block_end > len(self.payload):
+                raise GameGraphFormatError(
+                    f"Cross Table for level {level.level_id} exceeds Game Graph payload"
+                )
+            raw = self.payload[pos + 4:block_end]
+            version, level_count, game_count, *guids = CROSS_HEADER.unpack_from(raw)
+            expected = CROSS_HEADER.size + level_count * EDGE.size
+            if expected != len(raw):
+                raise GameGraphFormatError(
+                    f"Cross Table level {level.level_id}: expected {expected} bytes, got {len(raw)}"
+                )
+            cells = tuple(
+                CrossTableCell(*EDGE.unpack_from(raw, CROSS_HEADER.size + i * EDGE.size))
+                for i in range(level_count)
+            )
+            if any(cell.game_vertex_id >= self.header.vertex_count for cell in cells):
+                raise GameGraphFormatError(
+                    f"Cross Table for level {level.level_id} references invalid Game Graph vertex"
+                )
+            tables.append(LevelCrossTable(
+                level.level_id,
+                CrossTableHeader(
+                    version, level_count, game_count,
+                    guids[0].to_bytes(8, "little").hex() + guids[1].to_bytes(8, "little").hex(),
+                    guids[2].to_bytes(8, "little").hex() + guids[3].to_bytes(8, "little").hex(),
+                ),
+                cells,
+            ))
+            pos = block_end
+
+        if pos != len(self.payload):
+            raise GameGraphFormatError(
+                f"{len(self.payload) - pos} unexpected trailing bytes after embedded Cross Tables"
+            )
+        return tuple(tables)
+
+    def cross_table_for_level(self, level_id: int) -> LevelCrossTable | None:
+        return next((table for table in self.cross_tables if table.level_id == level_id), None)
+
+    def resolve_game_vertex(self, level_id: int, level_vertex_id: int) -> CrossTableCell | None:
+        table = self.cross_table_for_level(level_id)
+        if table is None or not 0 <= level_vertex_id < len(table.cells):
+            return None
+        return table.cells[level_vertex_id]
+
     def _validate_layout(self) -> None:
         h = self.header
+        level_ids = {level.level_id for level in self.levels}
         if h.vertex_count and not self.levels:
             raise GameGraphFormatError("vertices exist but the level table is empty")
-        if len({level.level_id for level in self.levels}) != len(self.levels):
+        if len(level_ids) != len(self.levels):
             raise GameGraphFormatError("duplicate level IDs in level table")
 
         edge_total = point_total = 0
-        for vertex in self.iter_vertices():
-            if vertex.level_id not in {level.level_id for level in self.levels}:
+        edge_base_rel = h.vertex_count * VERTEX.size
+        point_base_rel = edge_base_rel + h.edge_count * EDGE.size
+        for vertex in self.vertices:
+            if vertex.level_id not in level_ids:
                 raise GameGraphFormatError(
                     f"vertex {vertex.index} references unknown level ID {vertex.level_id}"
                 )
-            if vertex.edge_offset + vertex.edge_count > h.edge_count:
-                raise GameGraphFormatError(f"vertex {vertex.index} edge range is out of bounds")
-            if vertex.point_offset + vertex.point_count > h.level_point_count:
-                raise GameGraphFormatError(f"vertex {vertex.index} point range is out of bounds")
+            # X-Ray stores these as byte offsets relative to the beginning of the vertex array,
+            # not as edge/point indices.
+            if vertex.edge_count:
+                delta = vertex.edge_offset - edge_base_rel
+                if delta < 0 or delta % EDGE.size or delta // EDGE.size + vertex.edge_count > h.edge_count:
+                    raise GameGraphFormatError(f"vertex {vertex.index} edge byte range is invalid")
+            if vertex.point_count:
+                delta = vertex.point_offset - point_base_rel
+                if delta < 0 or delta % POINT.size or delta // POINT.size + vertex.point_count > h.level_point_count:
+                    raise GameGraphFormatError(f"vertex {vertex.index} point byte range is invalid")
             edge_total += vertex.edge_count
             point_total += vertex.point_count
 
@@ -176,7 +271,7 @@ class GameGraph:
                 f"vertex point counts sum to {point_total}, header declares {h.level_point_count}"
             )
 
-        for index, edge in enumerate(self.iter_edges()):
+        for index, edge in enumerate(self.edges):
             if edge.target_vertex >= h.vertex_count:
                 raise GameGraphFormatError(
                     f"edge {index} targets invalid vertex {edge.target_vertex}"
@@ -189,11 +284,13 @@ class GameGraph:
             "vertex_offset": self.vertex_offset,
             "edges_offset": self.edges_offset,
             "points_offset": self.points_offset,
-            "expected_payload_size": self.expected_end,
+            "arrays_end_offset": self.expected_end,
             "actual_payload_size": len(self.payload),
-            "vertices": self.header.vertex_count,
-            "edges": self.header.edge_count,
-            "level_points": self.header.level_point_count,
+            "vertices": len(self.vertices),
+            "edges": len(self.edges),
+            "level_points": len(self.points),
+            "embedded_cross_tables": len(self.cross_tables),
+            "cross_table_cells": sum(len(table.cells) for table in self.cross_tables),
         }
 
 
