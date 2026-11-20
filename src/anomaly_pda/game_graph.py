@@ -234,6 +234,19 @@ class GameGraph:
     def cross_table_for_level(self, level_id: int) -> LevelCrossTable | None:
         return next((table for table in self.cross_tables if table.level_id == level_id), None)
 
+    def vertex_edges(self, vertex_id: int) -> tuple[GraphEdge, ...]:
+        if not 0 <= vertex_id < len(self.vertices):
+            raise IndexError(f"Game Graph vertex {vertex_id} is out of range")
+        vertex = self.vertices[vertex_id]
+        if vertex.edge_count == 0:
+            return ()
+        base = self.header.vertex_count * VERTEX.size
+        delta = vertex.edge_offset - base
+        if delta < 0 or delta % EDGE.size:
+            raise GameGraphFormatError(f"vertex {vertex_id} has invalid edge offset")
+        start = delta // EDGE.size
+        return self.edges[start:start + vertex.edge_count]
+
     def resolve_game_vertex(self, level_id: int, level_vertex_id: int) -> CrossTableCell | None:
         table = self.cross_table_for_level(level_id)
         if table is None:
