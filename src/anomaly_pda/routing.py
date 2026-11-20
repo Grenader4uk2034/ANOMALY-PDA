@@ -131,6 +131,10 @@ def build_route(
     goal_cell = game_graph.resolve_game_vertex(goal_level_id, goal_level_vertex)
     if start_cell is None or goal_cell is None:
         raise RouteNotFoundError("Cross Table does not contain the start or destination vertex")
+    if game_graph.vertices[start_cell.game_vertex_id].level_id != start_level_id:
+        raise RouteNotFoundError("start Cross Table maps to a Game Graph vertex on another level")
+    if game_graph.vertices[goal_cell.game_vertex_id].level_id != goal_level_id:
+        raise RouteNotFoundError("destination Cross Table maps to a Game Graph vertex on another level")
 
     global_path = find_game_path(game_graph, start_cell.game_vertex_id, goal_cell.game_vertex_id)
     if global_path is None:
