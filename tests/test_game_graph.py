@@ -85,15 +85,15 @@ class LevelGraphTests(unittest.TestCase):
     def test_parses_v10_and_decodes_links_and_positions(self):
         graph = LevelGraph(make_level_ai(10))
         self.assertEqual(graph.header.vertex_count, 2)
-        self.assertEqual(graph.vertices[0].links[0], 1)
-        self.assertIsNone(graph.vertices[0].links[1])
+        self.assertEqual(graph.vertex_at(0).links[0], 1)
+        self.assertIsNone(graph.vertex_at(0).links[1])
         self.assertAlmostEqual(graph.vertex_position(0)[0], -2.0)
         self.assertAlmostEqual(graph.vertex_position(1)[2], -1.0)
 
     def test_parses_v13(self):
         graph = LevelGraph(make_level_ai(13))
         self.assertEqual(graph.header.version, 13)
-        self.assertEqual(graph.vertices[1].links[0], 0)
+        self.assertEqual(graph.vertex_at(1).links[0], 0)
 
     def test_rejects_truncated_level_ai(self):
         with self.assertRaises(LevelGraphFormatError):
