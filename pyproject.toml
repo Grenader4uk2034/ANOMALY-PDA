@@ -4,13 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "anomaly-pda"
-version = "0.1.0"
+version = "0.2.0"
 description = "S.T.A.L.K.E.R. Anomaly PDA map and graph tools"
 requires-python = ">=3.10"
 dependencies = []
 
 [project.scripts]
 anomaly-pda-graph = "anomaly_pda.game_graph:main"
+anomaly-pda-level-graph = "anomaly_pda.level_graph:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
