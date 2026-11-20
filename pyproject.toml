@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "anomaly-pda"
+version = "0.1.0"
+description = "S.T.A.L.K.E.R. Anomaly PDA map and graph tools"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+anomaly-pda-graph = "anomaly_pda.game_graph:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
