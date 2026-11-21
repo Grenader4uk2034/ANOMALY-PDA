@@ -12,6 +12,7 @@ dependencies = []
 [project.scripts]
 anomaly-pda-graph = "anomaly_pda.game_graph:main"
 anomaly-pda-level-graph = "anomaly_pda.level_graph:main"
+anomaly-pda-map-data = "anomaly_pda.map_data:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
