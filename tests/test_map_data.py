@@ -10,6 +10,9 @@ class MapDataTests(unittest.TestCase):
         self.assertEqual(classify("zone_mine_acidic_average"), "anomaly")
         self.assertEqual(classify("smart_terrain"), "population")
         self.assertEqual(classify("level_changer"), "transition")
+        self.assertEqual(classify("m_trader"), "npc")
+        self.assertEqual(classify("m_lesnik"), "npc")
+        self.assertEqual(classify("m_bloodsucker"), "mutant")
 
     def test_builds_map_features_and_keeps_elevation(self):
         result = build_map_data({"entities": [
@@ -21,9 +24,10 @@ class MapDataTests(unittest.TestCase):
         self.assertEqual(result["metadata"]["entity_count"], 2)
         self.assertEqual(result["metadata"]["levels"]["jupiter"], 2)
         feature = result["features"][0]
-        self.assertEqual(feature["geometry"]["coordinates"], [10.0, -30.0])
-        self.assertEqual(feature["properties"]["y"], 2.5)
-        self.assertEqual(feature["properties"]["category"], "stash")
+        stash = next(item for item in result["features"] if item["properties"]["name"] == "box_01")
+        self.assertEqual(stash["geometry"]["coordinates"], [10.0, -30.0])
+        self.assertEqual(stash["properties"]["y"], 2.5)
+        self.assertEqual(stash["properties"]["category"], "stash")
 
     def test_skips_invalid_coordinates_and_rejects_missing_entities(self):
         result = build_map_data({"entities": [
