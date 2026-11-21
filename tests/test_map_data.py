@@ -1,4 +1,6 @@
+import json
 import unittest
+from pathlib import Path
 
 from anomaly_pda.map_data import build_map_data, classify
 
@@ -53,6 +55,15 @@ class MapDataTests(unittest.TestCase):
         self.assertEqual(by_name["jup_quest_1"]["category"], "quest")
         self.assertEqual(by_name["jup_weapon_1"]["category"], "weapon")
         self.assertEqual(by_name["jup_secret_1"]["source_kind"], "reference_export")
+
+    def test_saved_reference_export_contains_221_valid_map_points(self):
+        reference_path = Path(__file__).parents[1] / "data" / "reference" / "stashes_and_poi.json"
+        references = json.loads(reference_path.read_text(encoding="utf-8"))
+        result = build_map_data({"entities": []}, references)
+        self.assertEqual(len(references), 221)
+        self.assertEqual(result["metadata"]["reference_entity_count"], 221)
+        self.assertEqual(result["metadata"]["skipped_count"], 0)
+        self.assertEqual(len(result["metadata"]["levels"]), 15)
 
     def test_skips_invalid_coordinates_and_rejects_missing_entities(self):
         result = build_map_data({"entities": [
