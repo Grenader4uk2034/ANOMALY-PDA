@@ -36,10 +36,10 @@ def classify(section: str, name: str = "") -> str:
         return "camp"
     if section == "level_changer":
         return "transition"
+    if section in {"m_trader", "m_lesnik"} or section.startswith(("stalker", "actor", "trader", "squad")):
+        return "npc"
     if section.startswith("m_") or any(token in section for token in ("bloodsucker", "pseudodog", "snork", "controller", "chimera", "boar", "flesh", "dog", "zombie")):
         return "mutant"
-    if section.startswith(("stalker", "actor", "trader", "squad")) or section in {"m_trader", "m_lesnik"}:
-        return "npc"
     if any(token in name for token in ("stash", "treasure", "secret", "inventory_box")):
         return "stash"
     return "poi"
