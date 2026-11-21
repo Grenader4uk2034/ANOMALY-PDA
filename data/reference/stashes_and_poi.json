@@ -1,0 +1,1770 @@
+[
+  {
+    "level": "l10_limansk",
+    "name": "lim_treasure_1",
+    "type": "treasure",
+    "x": 25.168197631835938,
+    "y": -2.838787078857422,
+    "z": -257.8741149902344
+  },
+  {
+    "level": "l10_limansk",
+    "name": "lim_treasure_10",
+    "type": "treasure",
+    "x": -75.36367797851562,
+    "y": -7.867382049560547,
+    "z": 54.779945373535156
+  },
+  {
+    "level": "l10_limansk",
+    "name": "lim_treasure_11",
+    "type": "treasure",
+    "x": 21.205970764160156,
+    "y": -4.892461776733398,
+    "z": -81.53463745117188
+  },
+  {
+    "level": "l10_limansk",
+    "name": "lim_treasure_12",
+    "type": "treasure",
+    "x": 42.310447692871094,
+    "y": -0.19131499528884888,
+    "z": -271.8061218261719
+  },
+  {
+    "level": "l10_limansk",
+    "name": "lim_treasure_13",
+    "type": "treasure",
+    "x": -23.10494613647461,
+    "y": -7.223259925842285,
+    "z": -7.949676036834717
+  },
+  {
+    "level": "l10_limansk",
+    "name": "lim_treasure_14",
+    "type": "treasure",
+    "x": -25.15725326538086,
+    "y": 1.6400020122528076,
+    "z": -285.7981872558594
+  },
+  {
+    "level": "l10_limansk",
+    "name": "lim_treasure_2",
+    "type": "treasure",
+    "x": 15.925345420837402,
+    "y": -5.026393890380859,
+    "z": -120.33905792236328
+  },
+  {
+    "level": "l10_limansk",
+    "name": "lim_treasure_3",
+    "type": "treasure",
+    "x": 59.790470123291016,
+    "y": -9.578804969787598,
+    "z": -51.03167724609375
+  },
+  {
+    "level": "l10_limansk",
+    "name": "lim_treasure_5",
+    "type": "treasure",
+    "x": 91.53190612792969,
+    "y": 11.156631469726562,
+    "z": 242.6025390625
+  },
+  {
+    "level": "l10_limansk",
+    "name": "lim_treasure_6",
+    "type": "treasure",
+    "x": -21.11681365966797,
+    "y": -4.404256820678711,
+    "z": -261.857177734375
+  },
+  {
+    "level": "l10_limansk",
+    "name": "lim_treasure_7",
+    "type": "treasure",
+    "x": 47.86260223388672,
+    "y": -10.488865852355957,
+    "z": -13.347843170166016
+  },
+  {
+    "level": "l10_limansk",
+    "name": "lim_treasure_8",
+    "type": "treasure",
+    "x": -31.20117950439453,
+    "y": -4.088687896728516,
+    "z": 172.26675415039062
+  },
+  {
+    "level": "l10_limansk",
+    "name": "lim_treasure_9",
+    "type": "treasure",
+    "x": -4.3816399574279785,
+    "y": -4.197393894195557,
+    "z": -255.42698669433594
+  },
+  {
+    "level": "jupiter",
+    "name": "jup_b10_secret_01",
+    "type": "secret",
+    "x": 364.8193359375,
+    "y": -5.593955039978027,
+    "z": 350.2672424316406
+  },
+  {
+    "level": "jupiter",
+    "name": "jup_b10_secret_02",
+    "type": "secret",
+    "x": 224.5721893310547,
+    "y": -9.70057201385498,
+    "z": 160.11325073242188
+  },
+  {
+    "level": "jupiter",
+    "name": "jup_b10_secret_03",
+    "type": "secret",
+    "x": 478.0864562988281,
+    "y": 25.70125389099121,
+    "z": -408.1723327636719
+  },
+  {
+    "level": "jupiter",
+    "name": "jup_b202_actor_treasure",
+    "type": "treasure",
+    "x": -50.369998931884766,
+    "y": -0.6200000047683716,
+    "z": 195.64999389648438
+  },
+  {
+    "level": "jupiter",
+    "name": "jup_b202_snag_treasure",
+    "type": "treasure",
+    "x": 75.30135345458984,
+    "y": -0.42040398716926575,
+    "z": 330.9053649902344
+  },
+  {
+    "level": "l08_yantar",
+    "name": "yantar_treasure_1",
+    "type": "treasure",
+    "x": 5.1828460693359375,
+    "y": 0.09008900076150894,
+    "z": -29.380109786987305
+  },
+  {
+    "level": "l08_yantar",
+    "name": "yantar_treasure_10",
+    "type": "treasure",
+    "x": 61.5274543762207,
+    "y": 9.961690902709961,
+    "z": -24.391944885253906
+  },
+  {
+    "level": "l08_yantar",
+    "name": "yantar_treasure_11",
+    "type": "treasure",
+    "x": -3.693290948867798,
+    "y": 4.89284086227417,
+    "z": 0.33196699619293213
+  },
+  {
+    "level": "l08_yantar",
+    "name": "yantar_treasure_12",
+    "type": "treasure",
+    "x": 105.96709442138672,
+    "y": 0.03477900102734566,
+    "z": 96.01806640625
+  },
+  {
+    "level": "l08_yantar",
+    "name": "yantar_treasure_13",
+    "type": "treasure",
+    "x": 146.00083923339844,
+    "y": 1.1724239587783813,
+    "z": -213.6836395263672
+  },
+  {
+    "level": "l08_yantar",
+    "name": "yantar_treasure_14",
+    "type": "treasure",
+    "x": -140.5775604248047,
+    "y": 11.171031951904297,
+    "z": -230.51388549804688
+  },
+  {
+    "level": "l08_yantar",
+    "name": "yantar_treasure_15",
+    "type": "treasure",
+    "x": -1.155189037322998,
+    "y": -0.6241660118103027,
+    "z": -124.6449966430664
+  },
+  {
+    "level": "l08_yantar",
+    "name": "yantar_treasure_2",
+    "type": "treasure",
+    "x": 36.45259094238281,
+    "y": 1.5996099710464478,
+    "z": 37.25341033935547
+  },
+  {
+    "level": "l08_yantar",
+    "name": "yantar_treasure_3",
+    "type": "treasure",
+    "x": 86.409912109375,
+    "y": 0.24694199860095978,
+    "z": -12.347532272338867
+  },
+  {
+    "level": "l08_yantar",
+    "name": "yantar_treasure_4",
+    "type": "treasure",
+    "x": 47.06460189819336,
+    "y": 1.9091999530792236,
+    "z": 18.088224411010742
+  },
+  {
+    "level": "l08_yantar",
+    "name": "yantar_treasure_5",
+    "type": "treasure",
+    "x": 77.01670837402344,
+    "y": 0.2844110131263733,
+    "z": 43.119380950927734
+  },
+  {
+    "level": "l08_yantar",
+    "name": "yantar_treasure_6",
+    "type": "treasure",
+    "x": 19.709550857543945,
+    "y": 0.3151330053806305,
+    "z": -11.68754768371582
+  },
+  {
+    "level": "l08_yantar",
+    "name": "yantar_treasure_7",
+    "type": "treasure",
+    "x": 82.56283569335938,
+    "y": 1.3547970056533813,
+    "z": -63.966224670410156
+  },
+  {
+    "level": "l08_yantar",
+    "name": "yantar_treasure_8",
+    "type": "treasure",
+    "x": -14.802105903625488,
+    "y": 1.0875029563903809,
+    "z": -158.93443298339844
+  },
+  {
+    "level": "l08_yantar",
+    "name": "yantar_treasure_9",
+    "type": "treasure",
+    "x": 90.9723129272461,
+    "y": 0.7555980086326599,
+    "z": -6.349985122680664
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_1",
+    "type": "treasure",
+    "x": 52.19062042236328,
+    "y": 5.703464031219482,
+    "z": -30.852691650390625
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_10",
+    "type": "treasure",
+    "x": -70.42491149902344,
+    "y": -0.7271410226821899,
+    "z": -263.93438720703125
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_11",
+    "type": "treasure",
+    "x": 212.3918914794922,
+    "y": -2.4572620391845703,
+    "z": 70.6445083618164
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_12",
+    "type": "treasure",
+    "x": 116.5916976928711,
+    "y": -1.821586012840271,
+    "z": 261.9166564941406
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_13",
+    "type": "treasure",
+    "x": 70.33283233642578,
+    "y": -0.16578499972820282,
+    "z": -218.65133666992188
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_14",
+    "type": "treasure",
+    "x": -181.7479705810547,
+    "y": -1.43305504322052,
+    "z": 178.87904357910156
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_15",
+    "type": "treasure",
+    "x": -96.26509857177734,
+    "y": 0.3555780053138733,
+    "z": -55.548133850097656
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_16",
+    "type": "treasure",
+    "x": -34.55705261230469,
+    "y": 7.875585079193115,
+    "z": 80.31592559814453
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_17",
+    "type": "treasure",
+    "x": -49.118919372558594,
+    "y": 9.88387393951416,
+    "z": -133.38059997558594
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_18",
+    "type": "treasure",
+    "x": 149.85745239257812,
+    "y": 10.023428916931152,
+    "z": 16.93299674987793
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_19",
+    "type": "treasure",
+    "x": 107.73368835449219,
+    "y": 10.330681800842285,
+    "z": 8.019506454467773
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_2",
+    "type": "treasure",
+    "x": 64.14366912841797,
+    "y": 2.7402820587158203,
+    "z": 143.5902557373047
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_20",
+    "type": "treasure",
+    "x": -43.67527389526367,
+    "y": 11.191293716430664,
+    "z": -80.94135284423828
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_3",
+    "type": "treasure",
+    "x": -107.936279296875,
+    "y": 9.492606163024902,
+    "z": 123.41481018066406
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_4",
+    "type": "treasure",
+    "x": -47.8245849609375,
+    "y": 0.4617139995098114,
+    "z": 59.85943603515625
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_5",
+    "type": "treasure",
+    "x": 148.4261932373047,
+    "y": -0.9389399886131287,
+    "z": -173.35072326660156
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_6",
+    "type": "treasure",
+    "x": -159.96389770507812,
+    "y": 0.030417000874876976,
+    "z": -196.69711303710938
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_7",
+    "type": "treasure",
+    "x": -166.90452575683594,
+    "y": 4.391858100891113,
+    "z": 8.057113647460938
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_8",
+    "type": "treasure",
+    "x": 102.07046508789062,
+    "y": -2.204000949859619,
+    "z": -101.23596954345703
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_9",
+    "type": "treasure",
+    "x": 147.4594268798828,
+    "y": 3.233288049697876,
+    "z": 64.19678497314453
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_quest_bandit_base",
+    "type": "quest",
+    "x": -81.58350372314453,
+    "y": 1.1952519416809082,
+    "z": -3.6242549419403076
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_quest_old_pda",
+    "type": "quest",
+    "x": 72.81285095214844,
+    "y": 5.188135147094727,
+    "z": -19.1612548828125
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_quest_reward_in_anomaly",
+    "type": "quest",
+    "x": -248.9543914794922,
+    "y": 0.08541800081729889,
+    "z": 99.39521026611328
+  },
+  {
+    "level": "l02_garbage",
+    "name": "gar_treasure_quest_smuggler_weapons",
+    "type": "quest",
+    "x": 24.908918380737305,
+    "y": 2.085939884185791,
+    "z": -134.4126434326172
+  },
+  {
+    "level": "l11_hospital",
+    "name": "hos_treasure_1",
+    "type": "treasure",
+    "x": -97.34518432617188,
+    "y": 27.157621383666992,
+    "z": 623.3720703125
+  },
+  {
+    "level": "l11_hospital",
+    "name": "hos_treasure_2",
+    "type": "treasure",
+    "x": -99.03627014160156,
+    "y": 25.091411590576172,
+    "z": 725.6146850585938
+  },
+  {
+    "level": "l11_hospital",
+    "name": "hos_treasure_3",
+    "type": "treasure",
+    "x": -93.2890853881836,
+    "y": 32.38164138793945,
+    "z": 696.1824340820312
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_1",
+    "type": "treasure",
+    "x": 121.84140014648438,
+    "y": -2.838360071182251,
+    "z": -259.7646789550781
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_10",
+    "type": "treasure",
+    "x": 116.22003173828125,
+    "y": 6.540040016174316,
+    "z": -232.56988525390625
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_11",
+    "type": "treasure",
+    "x": 170.67864990234375,
+    "y": 5.831600189208984,
+    "z": -256.67156982421875
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_12",
+    "type": "treasure",
+    "x": -6.254922866821289,
+    "y": 5.614069938659668,
+    "z": -177.33270263671875
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_13",
+    "type": "treasure",
+    "x": 143.0134735107422,
+    "y": 10.421499252319336,
+    "z": -270.8890380859375
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_14",
+    "type": "treasure",
+    "x": 142.21507263183594,
+    "y": 6.21150016784668,
+    "z": -243.90060424804688
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_15",
+    "type": "treasure",
+    "x": -96.89476776123047,
+    "y": 1.3561680316925049,
+    "z": -522.9149169921875
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_16",
+    "type": "treasure",
+    "x": -3.167707920074463,
+    "y": -4.500308036804199,
+    "z": -285.1936340332031
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_17",
+    "type": "treasure",
+    "x": 53.28609085083008,
+    "y": -4.389257907867432,
+    "z": -377.9494323730469
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_18",
+    "type": "treasure",
+    "x": -160.64439392089844,
+    "y": 0.7760509848594666,
+    "z": -392.3040466308594
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_19",
+    "type": "treasure",
+    "x": 138.96356201171875,
+    "y": 7.4581379890441895,
+    "z": -420.2022705078125
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_2",
+    "type": "treasure",
+    "x": 153.95785522460938,
+    "y": 5.833499908447266,
+    "z": -275.19000244140625
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_20",
+    "type": "treasure",
+    "x": 35.28316879272461,
+    "y": -4.753318786621094,
+    "z": -357.30462646484375
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_21",
+    "type": "treasure",
+    "x": 61.179237365722656,
+    "y": -4.8434858322143555,
+    "z": -319.467529296875
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_22",
+    "type": "treasure",
+    "x": 88.01705169677734,
+    "y": -1.7796050310134888,
+    "z": -400.8181457519531
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_3",
+    "type": "treasure",
+    "x": -9.391914367675781,
+    "y": -6.580657005310059,
+    "z": -44.16140365600586
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_4",
+    "type": "treasure",
+    "x": 162.193603515625,
+    "y": -0.7264959812164307,
+    "z": -258.5716247558594
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_5",
+    "type": "treasure",
+    "x": -123.84638214111328,
+    "y": 0.8974699974060059,
+    "z": -534.8463134765625
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_6",
+    "type": "treasure",
+    "x": 118.19513702392578,
+    "y": -1.3664989471435547,
+    "z": -226.27272033691406
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_7",
+    "type": "treasure",
+    "x": -132.4448699951172,
+    "y": 6.444292068481445,
+    "z": -34.090911865234375
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_8",
+    "type": "treasure",
+    "x": -48.34578323364258,
+    "y": -2.2349181175231934,
+    "z": 1.6496740579605103
+  },
+  {
+    "level": "l04_darkvalley",
+    "name": "dark_valley_treasure_9",
+    "type": "treasure",
+    "x": 141.82879638671875,
+    "y": 9.54344654083252,
+    "z": -214.82151794433594
+  },
+  {
+    "level": "l03_agroprom",
+    "name": "agr_duty_bar_secret_1",
+    "type": "secret",
+    "x": -152.28411865234375,
+    "y": 2.730233907699585,
+    "z": -224.68917846679688
+  },
+  {
+    "level": "l03_agroprom",
+    "name": "agr_duty_bar_secret_2",
+    "type": "secret",
+    "x": -191.9247283935547,
+    "y": 4.74399995803833,
+    "z": -214.38018798828125
+  },
+  {
+    "level": "l03_agroprom",
+    "name": "agr_duty_bar_secret_3",
+    "type": "secret",
+    "x": 41.3409423828125,
+    "y": 4.825020790100098,
+    "z": -37.120140075683594
+  },
+  {
+    "level": "l03_agroprom",
+    "name": "agr_duty_bar_secret_4",
+    "type": "secret",
+    "x": 153.4318389892578,
+    "y": 18.833675384521484,
+    "z": 162.57676696777344
+  },
+  {
+    "level": "l03_agroprom",
+    "name": "agr_duty_trader_secret_1",
+    "type": "secret",
+    "x": -27.27214813232422,
+    "y": -2.374068021774292,
+    "z": -313.5039367675781
+  },
+  {
+    "level": "l03_agroprom",
+    "name": "agr_treasure_1",
+    "type": "treasure",
+    "x": 235.83847045898438,
+    "y": 23.08378791809082,
+    "z": 99.95402526855469
+  },
+  {
+    "level": "l03_agroprom",
+    "name": "agr_treasure_10",
+    "type": "treasure",
+    "x": -159.93399047851562,
+    "y": 2.0667591094970703,
+    "z": 66.14612579345703
+  },
+  {
+    "level": "l03_agroprom",
+    "name": "agr_treasure_11",
+    "type": "treasure",
+    "x": -37.804386138916016,
+    "y": 10.968168258666992,
+    "z": 166.86663818359375
+  },
+  {
+    "level": "l03_agroprom",
+    "name": "agr_treasure_12",
+    "type": "treasure",
+    "x": 17.808570861816406,
+    "y": -2.217278003692627,
+    "z": -219.08482360839844
+  },
+  {
+    "level": "l03_agroprom",
+    "name": "agr_treasure_13",
+    "type": "treasure",
+    "x": -69.15286254882812,
+    "y": 1.892833948135376,
+    "z": -149.73306274414062
+  },
+  {
+    "level": "l03_agroprom",
+    "name": "agr_treasure_14",
+    "type": "treasure",
+    "x": 133.60000610351562,
+    "y": 0,
+    "z": -275.8000183105469
+  },
+  {
+    "level": "l03_agroprom",
+    "name": "agr_treasure_15",
+    "type": "treasure",
+    "x": 122.61485290527344,
+    "y": 7.190328121185303,
+    "z": 139.45468139648438
+  },
+  {
+    "level": "l03_agroprom",
+    "name": "agr_treasure_2",
+    "type": "treasure",
+    "x": 40.761844635009766,
+    "y": 4.614727973937988,
+    "z": -18.704084396362305
+  },
+  {
+    "level": "l03_agroprom",
+    "name": "agr_treasure_3",
+    "type": "treasure",
+    "x": -14.330293655395508,
+    "y": 0.6799240112304688,
+    "z": -155.65933227539062
+  },
+  {
+    "level": "l03_agroprom",
+    "name": "agr_treasure_4",
+    "type": "treasure",
+    "x": -165.6774444580078,
+    "y": 0.7662870287895203,
+    "z": -222.22607421875
+  },
+  {
+    "level": "l03_agroprom",
+    "name": "agr_treasure_5",
+    "type": "treasure",
+    "x": 67.50167083740234,
+    "y": -0.04998200014233589,
+    "z": 48.167415618896484
+  },
+  {
+    "level": "l03_agroprom",
+    "name": "agr_treasure_6",
+    "type": "treasure",
+    "x": 93.5142822265625,
+    "y": 1.2760250568389893,
+    "z": -38.597591400146484
+  },
+  {
+    "level": "l03_agroprom",
+    "name": "agr_treasure_7",
+    "type": "treasure",
+    "x": -45.64617919921875,
+    "y": 0.2892169952392578,
+    "z": -37.950199127197266
+  },
+  {
+    "level": "l03_agroprom",
+    "name": "agr_treasure_8",
+    "type": "treasure",
+    "x": -47.57280349731445,
+    "y": 12.358407974243164,
+    "z": -131.9119873046875
+  },
+  {
+    "level": "l03_agroprom",
+    "name": "agr_treasure_9",
+    "type": "treasure",
+    "x": -51.58690643310547,
+    "y": 6.604372978210449,
+    "z": 10.399303436279297
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_1",
+    "type": "treasure",
+    "x": 424.0626220703125,
+    "y": -1.2059999704360962,
+    "z": 191.86526489257812
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_10",
+    "type": "treasure",
+    "x": -22.68112564086914,
+    "y": 1.1160000562667847,
+    "z": 449.66754150390625
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_11",
+    "type": "treasure",
+    "x": 321.31402587890625,
+    "y": 5.093999862670898,
+    "z": -57.83015823364258
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_12",
+    "type": "treasure",
+    "x": 492.67205810546875,
+    "y": 6.317999839782715,
+    "z": 55.486358642578125
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_13",
+    "type": "treasure",
+    "x": 312.67584228515625,
+    "y": 1.3320000171661377,
+    "z": -136.7200927734375
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_14",
+    "type": "treasure",
+    "x": 265.28497314453125,
+    "y": 0.3959999978542328,
+    "z": -123.96464538574219
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_15",
+    "type": "treasure",
+    "x": 217.90122985839844,
+    "y": -0.3779999911785126,
+    "z": -43.43181228637695
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_16",
+    "type": "treasure",
+    "x": 188.9758758544922,
+    "y": 1.350000023841858,
+    "z": -176.02127075195312
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_17",
+    "type": "treasure",
+    "x": 24.239999771118164,
+    "y": -0.7400000095367432,
+    "z": -38.90999984741211
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_18",
+    "type": "treasure",
+    "x": -74.70508575439453,
+    "y": -0.4320000112056732,
+    "z": 266.1934509277344
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_19",
+    "type": "treasure",
+    "x": 207.70973205566406,
+    "y": 1.277999997138977,
+    "z": 485.0355224609375
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_2",
+    "type": "treasure",
+    "x": 475.76263427734375,
+    "y": 1.3680000305175781,
+    "z": 148.83895874023438
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_20",
+    "type": "treasure",
+    "x": 238.82601928710938,
+    "y": 5.706002235412598,
+    "z": 514.8908081054688
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_21",
+    "type": "treasure",
+    "x": 496.4442443847656,
+    "y": 4.194014072418213,
+    "z": -189.2865447998047
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_22",
+    "type": "treasure",
+    "x": 140.4095001220703,
+    "y": 0.5220000147819519,
+    "z": 482.83087158203125
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_23",
+    "type": "treasure",
+    "x": 587.048828125,
+    "y": 3.2040019035339355,
+    "z": 408.10028076171875
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_24",
+    "type": "treasure",
+    "x": 470.5678405761719,
+    "y": 5.958000183105469,
+    "z": -89.7906265258789
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_25",
+    "type": "treasure",
+    "x": 448.6861572265625,
+    "y": 1.9980000257492065,
+    "z": 266.40496826171875
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_26",
+    "type": "treasure",
+    "x": -222.62620544433594,
+    "y": 0.6480000019073486,
+    "z": -155.4368896484375
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_27",
+    "type": "treasure",
+    "x": 182.90579223632812,
+    "y": 0.972000002861023,
+    "z": 321.2033386230469
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_28",
+    "type": "treasure",
+    "x": 71.92901611328125,
+    "y": -0.4860000014305115,
+    "z": -266.6786804199219
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_29",
+    "type": "treasure",
+    "x": 504.4739074707031,
+    "y": 1.0080000162124634,
+    "z": -241.4839630126953
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_3",
+    "type": "treasure",
+    "x": 463.8172912597656,
+    "y": 3.0780019760131836,
+    "z": 359.1033935546875
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_30",
+    "type": "treasure",
+    "x": 259.2642517089844,
+    "y": 1.9079999923706055,
+    "z": 271.23114013671875
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_31",
+    "type": "treasure",
+    "x": 209.8686981201172,
+    "y": 0.07199999690055847,
+    "z": 310.3342590332031
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_32",
+    "type": "treasure",
+    "x": 274.1195373535156,
+    "y": 4.6259989738464355,
+    "z": 45.26503372192383
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_33",
+    "type": "treasure",
+    "x": -243.3766326904297,
+    "y": 0.7519999742507935,
+    "z": -61.4201774597168
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_34",
+    "type": "treasure",
+    "x": -47.806785583496094,
+    "y": 0.3959999978542328,
+    "z": 66.75865936279297
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_35",
+    "type": "treasure",
+    "x": 520.8635864257812,
+    "y": -0.6840000152587891,
+    "z": -8.696993827819824
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_36",
+    "type": "treasure",
+    "x": 136.6000518798828,
+    "y": 0.44999998807907104,
+    "z": -6.180757999420166
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_37",
+    "type": "treasure",
+    "x": 50.06036376953125,
+    "y": 0.34200000762939453,
+    "z": -22.33038330078125
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_38",
+    "type": "treasure",
+    "x": 95.89591979980469,
+    "y": 0.7200000286102295,
+    "z": 193.15188598632812
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_39",
+    "type": "treasure",
+    "x": 119.87932586669922,
+    "y": 0.14399999380111694,
+    "z": 362.69500732421875
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_4",
+    "type": "treasure",
+    "x": 0.5847870111465454,
+    "y": 4.751999855041504,
+    "z": 19.807186126708984
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_40",
+    "type": "treasure",
+    "x": 176.38436889648438,
+    "y": 11.16000747680664,
+    "z": 532.4830322265625
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_41",
+    "type": "treasure",
+    "x": 296.9741516113281,
+    "y": 13.427998542785645,
+    "z": -166.0744171142578
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_42",
+    "type": "treasure",
+    "x": 431.2906799316406,
+    "y": 0.5400000214576721,
+    "z": -171.79705810546875
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_43",
+    "type": "treasure",
+    "x": 386.0227966308594,
+    "y": 0.5400000214576721,
+    "z": 124.45025634765625
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_44",
+    "type": "treasure",
+    "x": 171.63568115234375,
+    "y": -0.5040000081062317,
+    "z": 129.05264282226562
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_5",
+    "type": "treasure",
+    "x": -247.96502685546875,
+    "y": 0.1080000028014183,
+    "z": 94.75945281982422
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_6",
+    "type": "treasure",
+    "x": -305.21160888671875,
+    "y": 0,
+    "z": 104.32006072998047
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_7",
+    "type": "treasure",
+    "x": -9.287531852722168,
+    "y": 0.12600000202655792,
+    "z": 392.6032409667969
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_8",
+    "type": "treasure",
+    "x": -197.44589233398438,
+    "y": 0.7764999866485596,
+    "z": 329.6789855957031
+  },
+  {
+    "level": "k00_marsh",
+    "name": "mar_treasure_9",
+    "type": "treasure",
+    "x": 1.9621909856796265,
+    "y": 0.34200000762939453,
+    "z": 189.57188415527344
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_1",
+    "type": "treasure",
+    "x": -242.4687042236328,
+    "y": -21.677106857299805,
+    "z": 227.79971313476562
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_10",
+    "type": "treasure",
+    "x": -89.86041259765625,
+    "y": -10.003437995910645,
+    "z": 397.374267578125
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_11",
+    "type": "treasure",
+    "x": -66.28632354736328,
+    "y": -18.005477905273438,
+    "z": 170.16720581054688
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_12",
+    "type": "treasure",
+    "x": -148.5498046875,
+    "y": -6.056131839752197,
+    "z": 204.73577880859375
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_13",
+    "type": "treasure",
+    "x": 3.8195340633392334,
+    "y": -5.108067989349365,
+    "z": 79.855224609375
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_14",
+    "type": "treasure",
+    "x": -123.72929382324219,
+    "y": -15.08037281036377,
+    "z": 376.7870788574219
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_15",
+    "type": "treasure",
+    "x": -270.10479736328125,
+    "y": -27.06037712097168,
+    "z": 245.49298095703125
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_16",
+    "type": "treasure",
+    "x": -82.81128692626953,
+    "y": -13.072478294372559,
+    "z": 56.64925765991211
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_17",
+    "type": "treasure",
+    "x": -197.10508728027344,
+    "y": -11.575913429260254,
+    "z": 40.95305633544922
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_18",
+    "type": "treasure",
+    "x": -206.64588928222656,
+    "y": 2.018670082092285,
+    "z": 435.7450256347656
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_19",
+    "type": "treasure",
+    "x": -213.90301513671875,
+    "y": -20.61063575744629,
+    "z": 251.7987060546875
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_2",
+    "type": "treasure",
+    "x": -285.0628662109375,
+    "y": -18.008995056152344,
+    "z": 196.09130859375
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_20",
+    "type": "treasure",
+    "x": -13.899639129638672,
+    "y": -2.781675100326538,
+    "z": 451.77423095703125
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_21",
+    "type": "treasure",
+    "x": 62.22549057006836,
+    "y": -5.935125827789307,
+    "z": 97.56430053710938
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_3",
+    "type": "treasure",
+    "x": -154.87879943847656,
+    "y": -1.9466660022735596,
+    "z": 13.895358085632324
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_4",
+    "type": "treasure",
+    "x": -6.682258129119873,
+    "y": -8.739991188049316,
+    "z": 48.86141586303711
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_5",
+    "type": "treasure",
+    "x": 91.18380737304688,
+    "y": -4.394739151000977,
+    "z": 50.25336456298828
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_6",
+    "type": "treasure",
+    "x": -256.6805419921875,
+    "y": -22.33708381652832,
+    "z": 248.3541259765625
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_7",
+    "type": "treasure",
+    "x": 65.88388061523438,
+    "y": -6.622015953063965,
+    "z": -68.07450866699219
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_8",
+    "type": "treasure",
+    "x": -258.91424560546875,
+    "y": -11.66988468170166,
+    "z": 331.12396240234375
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_9",
+    "type": "treasure",
+    "x": -49.48564147949219,
+    "y": -13.058707237243652,
+    "z": 204.6710662841797
+  },
+  {
+    "level": "l07_military",
+    "name": "mil_treasure_weapon_box",
+    "type": "weapon",
+    "x": -6.587735176086426,
+    "y": -8.87139892578125,
+    "z": 2.4150779247283936
+  },
+  {
+    "level": "pripyat",
+    "name": "pri_a16_actor_treasure",
+    "type": "treasure",
+    "x": 158.5500030517578,
+    "y": 0.6340000033378601,
+    "z": -191.55999755859375
+  },
+  {
+    "level": "zaton",
+    "name": "zat_a2_actor_treasure",
+    "type": "treasure",
+    "x": 117.9561996459961,
+    "y": -3.934825897216797,
+    "z": 175.50558471679688
+  },
+  {
+    "level": "l01_escape",
+    "name": "esc_treasure_1",
+    "type": "treasure",
+    "x": -98.61231994628906,
+    "y": 28.940670013427734,
+    "z": 351.30999755859375
+  },
+  {
+    "level": "l01_escape",
+    "name": "esc_treasure_10",
+    "type": "treasure",
+    "x": -10.999048233032227,
+    "y": 10.799271583557129,
+    "z": 371.71307373046875
+  },
+  {
+    "level": "l01_escape",
+    "name": "esc_treasure_11",
+    "type": "treasure",
+    "x": -11.384949684143066,
+    "y": -11.662445068359375,
+    "z": -101.05325317382812
+  },
+  {
+    "level": "l01_escape",
+    "name": "esc_treasure_12",
+    "type": "treasure",
+    "x": -207.88330078125,
+    "y": -16.522123336791992,
+    "z": -198.0049591064453
+  },
+  {
+    "level": "l01_escape",
+    "name": "esc_treasure_13",
+    "type": "treasure",
+    "x": -60.49213409423828,
+    "y": -22.53004264831543,
+    "z": -253.57931518554688
+  },
+  {
+    "level": "l01_escape",
+    "name": "esc_treasure_14",
+    "type": "treasure",
+    "x": 157.1431427001953,
+    "y": 2.5303120613098145,
+    "z": 405.0802001953125
+  },
+  {
+    "level": "l01_escape",
+    "name": "esc_treasure_15",
+    "type": "treasure",
+    "x": 390.9747619628906,
+    "y": 20.031715393066406,
+    "z": 292.37200927734375
+  },
+  {
+    "level": "l01_escape",
+    "name": "esc_treasure_16",
+    "type": "treasure",
+    "x": -253.7909698486328,
+    "y": -12.6339111328125,
+    "z": -8.151537895202637
+  },
+  {
+    "level": "l01_escape",
+    "name": "esc_treasure_17",
+    "type": "treasure",
+    "x": 12.549430847167969,
+    "y": 1.893818974494934,
+    "z": 288.83660888671875
+  },
+  {
+    "level": "l01_escape",
+    "name": "esc_treasure_2",
+    "type": "treasure",
+    "x": 44.553768157958984,
+    "y": 28.730491638183594,
+    "z": 159.7110137939453
+  },
+  {
+    "level": "l01_escape",
+    "name": "esc_treasure_3",
+    "type": "treasure",
+    "x": -244.06394958496094,
+    "y": -14.394118309020996,
+    "z": -23.05613136291504
+  },
+  {
+    "level": "l01_escape",
+    "name": "esc_treasure_4",
+    "type": "treasure",
+    "x": -201.62255859375,
+    "y": -13.416439056396484,
+    "z": -162.82261657714844
+  },
+  {
+    "level": "l01_escape",
+    "name": "esc_treasure_5",
+    "type": "treasure",
+    "x": -106.92230224609375,
+    "y": 19.946426391601562,
+    "z": 278.1490478515625
+  },
+  {
+    "level": "l01_escape",
+    "name": "esc_treasure_6",
+    "type": "treasure",
+    "x": 342.9236755371094,
+    "y": 14.918828964233398,
+    "z": 242.0399932861328
+  },
+  {
+    "level": "l01_escape",
+    "name": "esc_treasure_7",
+    "type": "treasure",
+    "x": -43.813690185546875,
+    "y": -18.66926383972168,
+    "z": -192.42250061035156
+  },
+  {
+    "level": "l01_escape",
+    "name": "esc_treasure_8",
+    "type": "treasure",
+    "x": 140,
+    "y": 0.05999999865889549,
+    "z": 343.57000732421875
+  },
+  {
+    "level": "l01_escape",
+    "name": "esc_treasure_9",
+    "type": "treasure",
+    "x": -121.20932006835938,
+    "y": -3.700387954711914,
+    "z": -20.787113189697266
+  },
+  {
+    "level": "l01_escape",
+    "name": "esc_treasure_novice_stalker",
+    "type": "treasure",
+    "x": -223.19703674316406,
+    "y": -17.243860244750977,
+    "z": -165.6981658935547
+  },
+  {
+    "level": "l01_escape",
+    "name": "esc_treasure_weapon_box",
+    "type": "weapon",
+    "x": 8.321178436279297,
+    "y": 2.0113000869750977,
+    "z": 253.56944274902344
+  },
+  {
+    "level": "l01_escape",
+    "name": "esc_treasure_weapon_prisoner",
+    "type": "weapon",
+    "x": -240.93841552734375,
+    "y": -14.206951141357422,
+    "z": -31.594558715820312
+  },
+  {
+    "level": "l01_escape",
+    "name": "secret_fanat",
+    "type": "secret",
+    "x": -223.13314819335938,
+    "y": -15.858831405639648,
+    "z": -134.62425231933594
+  },
+  {
+    "level": "l13_generators",
+    "name": "stash_gen_undegr_mlr1",
+    "type": "special",
+    "x": -197.24755859375,
+    "y": 10.174450874328613,
+    "z": -300.9505920410156
+  },
+  {
+    "level": "l13_generators",
+    "name": "stash_gen_undegr_mlr2",
+    "type": "special",
+    "x": -105.82167053222656,
+    "y": 5.585113048553467,
+    "z": -262.31585693359375
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_1",
+    "type": "treasure",
+    "x": 28.522705078125,
+    "y": 0.9963110089302063,
+    "z": -5.472214221954346
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_10",
+    "type": "treasure",
+    "x": 5.784207820892334,
+    "y": 4.6664958000183105,
+    "z": -311.4221496582031
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_11",
+    "type": "treasure",
+    "x": 23.577274322509766,
+    "y": 2.260576009750366,
+    "z": -191.8968505859375
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_12",
+    "type": "treasure",
+    "x": -42.50432586669922,
+    "y": -0.8792060017585754,
+    "z": -263.4253845214844
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_13",
+    "type": "treasure",
+    "x": -47.86282730102539,
+    "y": 1.5163429975509644,
+    "z": -278.4906005859375
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_14",
+    "type": "treasure",
+    "x": 29.23584747314453,
+    "y": 0.17796100676059723,
+    "z": -230.67161560058594
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_15",
+    "type": "treasure",
+    "x": 83.41783142089844,
+    "y": 2.065361976623535,
+    "z": -263.55596923828125
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_16",
+    "type": "treasure",
+    "x": -60.590267181396484,
+    "y": 2.7163279056549072,
+    "z": -287.35601806640625
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_17",
+    "type": "treasure",
+    "x": 123.56121063232422,
+    "y": -2.5622479915618896,
+    "z": -313.0599060058594
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_18",
+    "type": "treasure",
+    "x": 133.1446533203125,
+    "y": 3.4728848934173584,
+    "z": -179.56817626953125
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_19",
+    "type": "treasure",
+    "x": -14.073683738708496,
+    "y": 0.9091489911079407,
+    "z": -112.30213165283203
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_2",
+    "type": "treasure",
+    "x": 52.88576889038086,
+    "y": 3.000011920928955,
+    "z": 14.160812377929688
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_20",
+    "type": "treasure",
+    "x": 193.17881774902344,
+    "y": -2.1506400108337402,
+    "z": 16.086091995239258
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_21",
+    "type": "treasure",
+    "x": 66.09993743896484,
+    "y": 1.484794020652771,
+    "z": -359.41796875
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_22",
+    "type": "treasure",
+    "x": 259.3617858886719,
+    "y": 0.24607999622821808,
+    "z": -288.7547912597656
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_23",
+    "type": "treasure",
+    "x": 11.469734191894531,
+    "y": 0.000009000000318337698,
+    "z": 19.83183479309082
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_24",
+    "type": "treasure",
+    "x": 5.212256908416748,
+    "y": 0.5288980007171631,
+    "z": -88.40518951416016
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_3",
+    "type": "treasure",
+    "x": -51.85311508178711,
+    "y": 3.2428979873657227,
+    "z": -85.24959564208984
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_4",
+    "type": "treasure",
+    "x": -74.11986541748047,
+    "y": 0.024088000878691673,
+    "z": -246.85394287109375
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_5",
+    "type": "treasure",
+    "x": 50.64813232421875,
+    "y": 4.1970648765563965,
+    "z": -219.6197967529297
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_6",
+    "type": "treasure",
+    "x": -67.94689178466797,
+    "y": 0.3928540050983429,
+    "z": -16.6689453125
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_7",
+    "type": "treasure",
+    "x": 246.02828979492188,
+    "y": 2.1275999546051025,
+    "z": -160.74305725097656
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_8",
+    "type": "treasure",
+    "x": -14.096528053283691,
+    "y": 0.5922639966011047,
+    "z": -89.09215545654297
+  },
+  {
+    "level": "l10_red_forest",
+    "name": "red_treasure_9",
+    "type": "treasure",
+    "x": -22.367795944213867,
+    "y": 6.323966026306152,
+    "z": -82.4096450805664
+  },
+  {
+    "level": "l03u_agr_underground",
+    "name": "agru_treasure_1",
+    "type": "treasure",
+    "x": 112.07403564453125,
+    "y": -6.240231990814209,
+    "z": 10.816025733947754
+  },
+  {
+    "level": "l03u_agr_underground",
+    "name": "agru_treasure_2",
+    "type": "treasure",
+    "x": 100.20257568359375,
+    "y": -8.776777267456055,
+    "z": -6.346096038818359
+  },
+  {
+    "level": "l03u_agr_underground",
+    "name": "agru_treasure_4",
+    "type": "treasure",
+    "x": 71.43553924560547,
+    "y": -16.116525650024414,
+    "z": 101.56534576416016
+  },
+  {
+    "level": "l03u_agr_underground",
+    "name": "agru_treasure_5",
+    "type": "treasure",
+    "x": 71.10578918457031,
+    "y": -8.20560359954834,
+    "z": 105.18804168701172
+  }
+]
