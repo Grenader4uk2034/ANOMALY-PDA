@@ -11,7 +11,7 @@ python -m pip install -e .
 python -m anomaly_pda.map_data "D:\Anomaly-PDA\data\processed\all_entities.json" "web\data\map-data.json"
 ```
 
-Путь к исходному `all_entities.json` замени на фактический путь к своему файлу. Экспортёр сохраняет координаты X-Ray: X/Z — плоскость карты, Y — высота.
+Путь к исходному `all_entities.json` замени на фактический путь к своему файлу. Файл `data/reference/stashes_and_poi.json` уже добавлен в репозиторий: это ранее подготовленная выгрузка из 221 тайника и специальной точки на 15 локациях. Экспортёр объединяет её с `all_entities.json` и удаляет точные дубликаты. Координаты X-Ray: X/Z — плоскость карты, Y — высота.
 
 ## Запуск
 
