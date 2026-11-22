@@ -25,6 +25,8 @@
  objects?.addEventListener("click",()=>openPanel(panels[1]));
  dossier?.addEventListener("click",()=>openPanel(panels[2]));
  overlay?.addEventListener("click",closePanels);
+ document.querySelectorAll(".panel-close").forEach(btn=>btn.addEventListener("click",closePanels));
+ document.addEventListener("anomaly:open-dossier",()=>openPanel(panels[2]));
 
  document.addEventListener("keydown",e=>{
   if(e.key==="Escape")closePanels();
