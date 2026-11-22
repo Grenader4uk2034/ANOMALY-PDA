@@ -23,81 +23,26 @@ main{display:grid;grid-template-columns:260px minmax(0,1fr) 280px;grid-template-
 #load-error{display:none;margin:18px;padding:16px;border:1px solid #725b35;background:#211b10;color:#e4c98d;border-radius:5px}
 @media(max-width:980px){main{grid-template-columns:220px minmax(0,1fr);grid-template-rows:minmax(520px,1fr) auto auto;height:auto;min-height:calc(100vh - 64px)}.filters-panel{grid-column:1;grid-row:1}.map-panel{grid-column:2;grid-row:1;min-height:520px}.list-panel{grid-column:1/-1;grid-row:2;min-height:180px}.detail-panel{grid-column:1/-1;grid-row:3;min-height:180px}.detail-panel .detail{display:grid;grid-template-columns:1fr 1fr;gap:12px}.detail-panel .panel-head{display:block}}
 @media(max-width:650px){header{padding:0 12px}.sub{display:none}main{display:flex;flex-direction:column;padding:8px;height:auto}.filters-panel{min-height:0}.filters-panel .controls{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{margin:0}.map-panel{height:58vh;min-height:380px}.list-panel{max-height:260px}.detail-panel{min-height:170px}.detail-panel .detail{display:block}}
-
-/* ===== MOBILE PDA ===== */
-.mobile-nav{display:none}
-.mobile-overlay{display:none}
-
+.mobile-nav{display:none}.mobile-overlay{display:none}
 @media(max-width:650px){
  body{height:100dvh;min-height:0;overflow:hidden}
  header{height:48px;min-height:48px;padding:0 10px}
- .brand{gap:8px;font-size:12px}
- .brand-mark{padding:3px 6px}
- main{
-  display:flex;
-  flex-direction:column;
-  gap:0;
-  padding:0;
-  height:calc(100dvh - 48px - 68px);
-  min-height:0;
-  overflow:hidden
- }
- .map-panel{
-  order:0;
-  height:auto;
-  min-height:0;
-  flex:1;
-  border:0;
-  border-radius:0
- }
- .toolbar{padding:8px 10px;min-height:42px}
- .toolbar strong{font-size:11px}
- .map-wrap{min-height:0;flex:1}
- canvas{touch-action:none}
+ .brand{gap:8px;font-size:12px}.brand-mark{padding:3px 6px}
+ main{display:flex;flex-direction:column;gap:0;padding:0;height:calc(100dvh - 48px - 68px);min-height:0;overflow:hidden}
+ .map-panel{order:0;height:auto;min-height:0;flex:1;border:0;border-radius:0}
+ .toolbar{padding:8px 10px;min-height:42px}.toolbar strong{font-size:11px}
+ .map-wrap{min-height:0;flex:1}canvas{touch-action:none}
  .map-hint{font-size:10px;left:6px;bottom:6px;padding:4px 6px}
  .status{padding:5px 9px;min-height:28px}
- .filters-panel,.list-panel,.detail-panel{
-  display:none;
-  position:fixed;
-  z-index:50;
-  top:56px;
-  bottom:66px;
-  left:8px;
-  right:8px;
-  min-height:0;
-  max-height:none;
-  border-radius:8px;
-  box-shadow:0 12px 40px #000b
- }
- .filters-panel.mobile-open,
- .list-panel.mobile-open,
- .detail-panel.mobile-open{display:flex;flex-direction:column}
+ .filters-panel,.list-panel,.detail-panel{display:none;position:fixed;z-index:50;top:56px;bottom:66px;left:8px;right:8px;min-height:0;max-height:none;border-radius:8px;box-shadow:0 12px 40px #000b}
+ .filters-panel.mobile-open,.list-panel.mobile-open,.detail-panel.mobile-open{display:flex;flex-direction:column}
  .filters-panel .panel-close,.list-panel .panel-close,.detail-panel .panel-close{display:inline-flex;align-items:center;justify-content:center}
  .filters-panel .controls{height:auto;flex:1;overflow:auto;display:block;padding:12px}
  .filters-panel .field{margin-bottom:12px}
- .list-panel .list{height:auto;flex:1;overflow:auto}
- .detail-panel .detail{display:block;overflow:auto}
- .mobile-nav{
-  display:flex;
-  gap:6px;
-  position:fixed;
-  z-index:60;
-  left:8px;
-  right:8px;
-  bottom:8px;
-  padding:6px;
-  background:#101812f5;
-  border:1px solid #344937;
-  border-radius:8px
- }
+ .list-panel .list{height:auto;flex:1;overflow:auto}.detail-panel .detail{display:block;overflow:auto}
+ .mobile-nav{display:flex;gap:6px;position:fixed;z-index:60;left:8px;right:8px;bottom:8px;padding:6px;background:#101812f5;border:1px solid #344937;border-radius:8px}
  .mobile-nav button{flex:1;min-height:44px;padding:6px 3px;font-size:11px}
- .mobile-overlay.active{
-  display:block;
-  position:fixed;
-  inset:48px 0 68px;
-  z-index:40;
-  background:#0008
- }
+ .mobile-overlay.active{display:block;position:fixed;inset:48px 0 68px;z-index:40;background:#0008}
  #load-error{position:fixed;z-index:70;bottom:65px;left:8px;right:8px;margin:0;max-height:30vh;overflow:auto}
 }
 </style>
@@ -123,6 +68,16 @@ main{display:grid;grid-template-columns:260px minmax(0,1fr) 280px;grid-template-
 <section class="panel detail-panel"><div class="panel-head"><span>Досье объекта</span><button class="panel-close" type="button" aria-label="Закрыть вкладку">×</button></div><div class="detail" id="detail"><div class="empty">Выберите точку на карте или объект в списке.</div></div></section>
 </main>
 <div id="load-error"></div>
-<script src="./app.js" defer></script>
-<div id="mobile-overlay" class="mobile-overlay"></div><script src="./mobile.js" defer></script></body>
+<script>
+window.addEventListener("error", function(e){
+ const box=document.getElementById("load-error");
+ if(box){box.style.display="block";box.textContent="JS ОШИБКА: "+(e.message||"unknown")+" | "+(e.filename||"")+" | строка "+(e.lineno||"?");}
+});
+window.addEventListener("unhandledrejection", function(e){
+ const box=document.getElementById("load-error");
+ if(box){box.style.display="block";box.textContent="PROMISE ОШИБКА: "+(e.reason?.message||String(e.reason));}
+});
+</script>
+<script src="./app.js" defer onerror="document.getElementById('load-error').style.display='block';document.getElementById('load-error').textContent='Не загрузился app.js (ошибка чтения скрипта)' ></script>
+<div id="mobile-overlay" class="mobile-overlay"></div><script src="./mobile.js" defer onerror="document.getElementById('load-error').style.display='block';document.getElementById('load-error').textContent='Не загрузился mobile.js (ошибка чтения скрипта)' ></script></body>
 </html>
