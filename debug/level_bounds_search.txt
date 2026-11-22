@@ -1,0 +1,5 @@
+﻿D:\ANOMALY-PDA\_research\container_defs\configs\configs\game_maps_single.ltx | Строка 7 | bound_rect                       = -10000.0f, -10000.0f, 10000.0f, 10000.0f
+D:\ANOMALY-PDA\_research\container_defs\configs\configs\game_maps_single.ltx | Строка 14 | bound_rect                       = 0.0, 0.0, 1024, 2634.0
+D:\ANOMALY-PDA\_level_test\levels\jupiter\level.ltx | Строка 5 | [level_map]
+D:\ANOMALY-PDA\_level_test\levels\jupiter\level.ltx | Строка 6 | bound_rect = -600.000000,-600.000000,600.000000,600.000000
+D:\ANOMALY-PDA\_level_test\levels\jupiter\level.ltx | Строка 7 | texture = map\map_jupiter
