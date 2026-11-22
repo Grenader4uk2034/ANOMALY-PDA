@@ -3,6 +3,43 @@
 const $ = id => document.getElementById(id);
 const canvas=$("map"),ctx=canvas.getContext("2d");
 const state={data:null,level:"",categories:new Set(),selected:null,zoom:1,panX:0,panY:0,drag:null,view:null,baseImage:null,baseImageLevel:null,imageUrl:null,imageBounds:{minX:-600,maxX:600,minZ:-600,maxZ:600},uiBound:false,referenceEntities:null};
+const autoMapBounds={
+fake_start:{minX:-10.023566,maxX:10.039769,minZ:-10.023566,maxZ:10.039769},
+jupiter:{minX:-600,maxX:600,minZ:-600,maxZ:600},
+jupiter_underground:{minX:-390.807584,maxX:349.192416,minZ:-265.132240,maxZ:474.867776},
+k00_marsh:{minX:-445,maxX:755,minZ:-445,maxZ:755},
+k01_darkscape:{minX:-702,maxX:708.5,minZ:-704.09,maxZ:716.778},
+k02_trucks_cemetery:{minX:-543.947936,maxX:387.098880,minZ:-472.688896,maxZ:467.011776},
+l01_escape:{minX:-335,maxX:415,minZ:-630,maxZ:870},
+l02_garbage:{minX:-370,maxX:370,minZ:-422,maxZ:327.866848},
+l03_agroprom:{minX:-275,maxX:335,minZ:-370,maxZ:240},
+l03u_agr_underground:{minX:-21.868332,maxX:161.910336,minZ:-208.823840,maxZ:195.814976},
+l04_darkvalley:{minX:-215,maxX:235,minZ:-665,maxZ:235},
+l04u_labx18:{minX:-52.315828,maxX:49.368364,minZ:-39.219492,maxZ:82.367952},
+l05_bar:{minX:0,maxX:512,minZ:-512.030,maxZ:512.001},
+l06_rostok:{minX:-512,maxX:0,minZ:-512.030,maxZ:512.001},
+l07_military:{minX:-420,maxX:180,minZ:-105,maxZ:495},
+l08_yantar:{minX:-270,maxX:270,minZ:-405,maxZ:135},
+l08u_brainlab:{minX:-149.449904,maxX:157.071968,minZ:-45.408460,maxZ:25.718082},
+l09_deadcity:{minX:-481.497344,maxX:379.976288,minZ:-412.284256,maxZ:474.479296},
+l10_limansk:{minX:-210,maxX:210,minZ:-415,maxZ:425},
+l10_radar:{minX:-136.256,maxX:714.384,minZ:-503.108,maxZ:353.524},
+l10_red_forest:{minX:-285,maxX:375,minZ:-485,maxZ:175},
+l10u_bunker:{minX:-75.655176,maxX:30.715904,minZ:-112.497312,maxZ:85.010144},
+l11_hospital:{minX:-180,maxX:10,minZ:537,maxZ:917},
+l11_pripyat:{minX:-529.399,maxX:574.854,minZ:-457.516,maxZ:769.050},
+l12_stancia:{minX:-254.776,maxX:1398.440,minZ:-747.782,maxZ:52.878906276},
+l12_stancia_2:{minX:-255.776,maxX:1398.440,minZ:51,maxZ:851.523},
+l12u_control_monolith:{minX:-43.996280,maxX:43.946928,minZ:-44.347900,maxZ:40.701820},
+l12u_sarcofag:{minX:-34.982,maxX:102.851,minZ:-43.509800,maxZ:55.244396},
+l13_generators:{minX:-525.205024,maxX:540.927424,minZ:-853.156224,maxZ:209.523920},
+l13u_warlab:{minX:-51.512672,maxX:51.512672,minZ:-80.720520,maxZ:43.720964},
+labx8:{minX:-122.440560,maxX:-40.440560,minZ:44.614076,maxZ:126.614072},
+pripyat:{minX:-550,maxX:550,minZ:-550,maxZ:550},
+y04_pole:{minX:-544.541120,maxX:555.461440,minZ:-615.296064,maxZ:484.704160},
+zaton:{minX:-600,maxX:600,minZ:-615,maxZ:585}
+};
+
 const autoMapCatalog={
 fake_start:"map_fake_start.png",
 jupiter:"map_jupiter.png",
@@ -52,8 +89,7 @@ function loadAutoMap(){
   if(requestId!==autoMapRequestId)return;
   state.baseImage=img;
   state.baseImageLevel=state.level;
-  const v=extent(levelFeatures());
-  state.imageBounds={minX:v.minX,maxX:v.maxX,minZ:v.minZ,maxZ:v.maxZ};
+  state.imageBounds=autoMapBounds[state.level]||{minX:-600,maxX:600,minZ:-600,maxZ:600};
   draw();
  };
  img.onerror=()=>{
@@ -69,16 +105,16 @@ const fmt=n=>Number(n).toLocaleString("ru-RU",{maximumFractionDigits:2});
 function resize(){const r=canvas.getBoundingClientRect(),dpr=window.devicePixelRatio||1;canvas.width=Math.max(1,Math.round(r.width*dpr));canvas.height=Math.max(1,Math.round(r.height*dpr));ctx.setTransform(dpr,0,0,dpr,0,0);draw()}
 function levelFeatures(){return state.data.features.filter(f=>f.properties.level===state.level)}
 function visibleFeatures(){const q=$("search").value.trim().toLowerCase();return levelFeatures().filter(f=>state.categories.has(f.properties.category)&&(!q||[f.properties.name,f.properties.section,f.properties.category_label].join(" ").toLowerCase().includes(q)))}
-function extent(items){let xs=items.map(f=>f.properties.x),zs=items.map(f=>f.properties.z);let minX=Math.min(...xs),maxX=Math.max(...xs),minZ=Math.min(...zs),maxZ=Math.max(...zs);if(minX===maxX){minX-=1;maxX+=1}if(minZ===maxZ){minZ-=1;maxZ+=1}const dx=maxX-minX,dz=maxZ-minZ;return{minX:minX-dx*.06,maxX:maxX+dx*.06,minZ:minZ-dz*.06,maxZ:maxZ+dz*.06}}
+function extent(items){if(!items.length)return autoMapBounds[state.level]||{minX:-600,maxX:600,minZ:-600,maxZ:600};let xs=items.map(f=>f.properties.x),zs=items.map(f=>f.properties.z);let minX=Math.min(...xs),maxX=Math.max(...xs),minZ=Math.min(...zs),maxZ=Math.max(...zs);if(minX===maxX){minX-=1;maxX+=1}if(minZ===maxZ){minZ-=1;maxZ+=1}const dx=maxX-minX,dz=maxZ-minZ;return{minX:minX-dx*.06,maxX:maxX+dx*.06,minZ:minZ-dz*.06,maxZ:maxZ+dz*.06}}
 function transform(){const w=canvas.clientWidth,h=canvas.clientHeight,cx=w/2+state.panX,cy=h/2+state.panY;if(state.baseImage&&state.baseImageLevel===state.level){const scale=Math.min(w/state.baseImage.width,h/state.baseImage.height)*state.zoom;return{w,h,scale,cx,cy,image:true}}const v=state.view||extent(levelFeatures());const scale=Math.min(w/(v.maxX-v.minX),h/(v.maxZ-v.minZ))*state.zoom;return{w,h,scale,cx,cy,centerX:(v.minX+v.maxX)/2,centerZ:(v.minZ+v.maxZ)/2}}
 function point(f,t){if(t.image){const b=state.imageBounds,px=(f.properties.x-b.minX)/(b.maxX-b.minX)*state.baseImage.width,py=(b.maxZ-f.properties.z)/(b.maxZ-b.minZ)*state.baseImage.height;return{x:t.cx+(px-state.baseImage.width/2)*t.scale,y:t.cy+(py-state.baseImage.height/2)*t.scale}}return{x:t.cx+(f.properties.x-t.centerX)*t.scale,y:t.cy-(f.properties.z-t.centerZ)*t.scale}}
-function draw(){if(!ctx)return;const w=canvas.clientWidth,h=canvas.clientHeight;ctx.clearRect(0,0,w,h);if(!state.data||!state.level)return;const all=levelFeatures();if(!all.length){ctx.fillStyle="#a5b39f";ctx.textAlign="center";ctx.fillText("Для этой локации нет объектов в наборе данных",w/2,h/2);return}
+function draw(){if(!ctx)return;const w=canvas.clientWidth,h=canvas.clientHeight;ctx.clearRect(0,0,w,h);if(!state.data||!state.level)return;const all=levelFeatures();
 const t=transform();if(t.image){ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(state.baseImage,t.cx-state.baseImage.width*t.scale/2,t.cy-state.baseImage.height*t.scale/2,state.baseImage.width*t.scale,state.baseImage.height*t.scale);ctx.restore()}ctx.save();ctx.strokeStyle="#344737";ctx.lineWidth=1;ctx.setLineDash([3,7]);for(let x=0;x<w;x+=48){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,h);ctx.stroke()}for(let y=0;y<h;y+=48){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke()}ctx.setLineDash([]);
 for(const f of visibleFeatures()){const p=point(f,t),cat=f.properties.category;ctx.beginPath();ctx.arc(p.x,p.y,f===state.selected?7:4.2,0,Math.PI*2);ctx.fillStyle=colors[cat]||colors.poi;ctx.globalAlpha=.88;ctx.fill();ctx.globalAlpha=1;if(f===state.selected){ctx.strokeStyle="#f0f5e8";ctx.lineWidth=2;ctx.stroke();ctx.beginPath();ctx.arc(p.x,p.y,11,0,Math.PI*2);ctx.strokeStyle=colors[cat]||colors.poi;ctx.stroke()}}
-ctx.restore();$("count").textContent=visibleFeatures().length.toLocaleString("ru-RU")+" / "+all.length.toLocaleString("ru-RU")+" объектов";$("map-title").textContent=state.level.toUpperCase().replaceAll("_"," ")}
+ctx.restore();if(!all.length){ctx.fillStyle="#a5b39f";ctx.textAlign="center";ctx.font="14px sans-serif";ctx.fillText("Для этой локации пока нет объектов",w/2,h/2)}$("count").textContent=visibleFeatures().length.toLocaleString("ru-RU")+" / "+all.length.toLocaleString("ru-RU")+" объектов";$("map-title").textContent=state.level.toUpperCase().replaceAll("_"," ")}
 function renderList(){const list=$("object-list"),items=visibleFeatures();list.replaceChildren();if(!items.length){list.innerHTML='<div class="empty">По заданным условиям ничего не найдено.</div>';return}const frag=document.createDocumentFragment();for(const f of items){const p=f.properties,el=document.createElement("div");el.className="item"+(f===state.selected?" active":"");const name=document.createElement("div");name.className="item-name";name.textContent=p.name||p.section;const meta=document.createElement("div");meta.className="item-meta";meta.textContent=(p.category_label||p.category)+" · X "+fmt(p.x)+" / Z "+fmt(p.z);el.append(name,meta);el.addEventListener("click",()=>select(f,true));frag.append(el)}list.append(frag);}
 function select(f,center=false){state.selected=f;const p=f.properties;$("detail").replaceChildren();const h=document.createElement("h2");h.textContent=p.name||p.section;const tag=document.createElement("span");tag.className="tag";tag.textContent=p.category_label||p.category;$("detail").append(h,tag);const kv=document.createElement("div");kv.className="kv";const values=[["Секция",p.section],["Локация",p.level],["Координата X",fmt(p.x)],["Высота Y",fmt(p.y)],["Координата Z",fmt(p.z)],["Game vertex",p.game_vertex_id??"—"],["Level vertex",p.level_vertex_id??"—"]];for(const [k,v] of values){const d=document.createElement("div"),s=document.createElement("small"),b=document.createElement("b");s.textContent=k;b.textContent=v;d.append(s,b);kv.append(d)}$("detail").append(kv);renderList();if(center){state.panX=0;state.panY=0;state.zoom=Math.max(1.5,state.zoom);draw()}}
-function init(data){if(!data||!Array.isArray(data.features))throw Error("Неверный формат карты: ожидался массив features.");state.data=data;state.categories.clear();state.selected=null;const levels=Object.keys(data.metadata?.levels||{}).sort((a,b)=>a.localeCompare(b,"ru"));if(!levels.length)throw Error("В наборе нет локаций.");const level=$("level");level.replaceChildren();for(const name of levels){const o=document.createElement("option");o.value=name;o.textContent=name.replaceAll("_"," ");level.append(o)}state.level=levels.includes("jupiter")?"jupiter":levels[0];level.value=state.level;loadAutoMap();level.disabled=false;$("search").disabled=false;const counts=data.metadata?.categories||{};const filters=$("filters");filters.replaceChildren();for(const cat of Object.keys(counts).sort()){state.categories.add(cat);const label=document.createElement("label");label.className="filter";const cb=document.createElement("input");cb.type="checkbox";cb.checked=true;cb.value=cat;cb.addEventListener("change",()=>{cb.checked?state.categories.add(cat):state.categories.delete(cat);renderList();draw()});const span=document.createElement("span");span.textContent=(data.metadata?.category_labels||{})[cat]||cat;label.append(cb,span);filters.append(label)}if(!state.uiBound){bindUi();state.uiBound=true}$("detail").innerHTML='<div class="empty">Выберите точку на карте или объект в списке.</div>';renderList();draw()}
+function init(data){if(!data||!Array.isArray(data.features))throw Error("Неверный формат карты: ожидался массив features.");state.data=data;state.categories.clear();state.selected=null;const levels=[...new Set([...Object.keys(data.metadata?.levels||{}),...Object.keys(autoMapCatalog)])].sort((a,b)=>a.localeCompare(b,"ru"));if(!levels.length)throw Error("В наборе нет локаций.");const level=$("level");level.replaceChildren();for(const name of levels){const o=document.createElement("option");o.value=name;o.textContent=name.replaceAll("_"," ");level.append(o)}state.level=levels.includes("jupiter")?"jupiter":levels[0];level.value=state.level;loadAutoMap();level.disabled=false;$("search").disabled=false;const counts=data.metadata?.categories||{};const filters=$("filters");filters.replaceChildren();for(const cat of Object.keys(counts).sort()){state.categories.add(cat);const label=document.createElement("label");label.className="filter";const cb=document.createElement("input");cb.type="checkbox";cb.checked=true;cb.value=cat;cb.addEventListener("change",()=>{cb.checked?state.categories.add(cat):state.categories.delete(cat);renderList();draw()});const span=document.createElement("span");span.textContent=(data.metadata?.category_labels||{})[cat]||cat;label.append(cb,span);filters.append(label)}if(!state.uiBound){bindUi();state.uiBound=true}$("detail").innerHTML='<div class="empty">Выберите точку на карте или объект в списке.</div>';renderList();draw()}
 function bindUi(){const level=$("level");level.addEventListener("change",()=>{state.level=level.value;loadAutoMap();state.selected=null;state.zoom=1;state.panX=0;state.panY=0;state.view=null;$("detail").innerHTML='<div class="empty">Выберите точку на карте или объект в списке.</div>';renderList();draw()});$("search").addEventListener("input",()=>{renderList();draw()});$("zoom-in").onclick=()=>{state.zoom=Math.min(20,state.zoom*1.25);draw()};$("zoom-out").onclick=()=>{state.zoom=Math.max(.5,state.zoom/1.25);draw()};$("reset").onclick=()=>{state.zoom=1;state.panX=0;state.panY=0;draw()}}
 function readBundledJson(path){return new Promise((resolve,reject)=>{const xhr=new XMLHttpRequest();xhr.open("GET",path,true);xhr.responseType="text";xhr.onload=()=>{if(xhr.status!==200&&xhr.status!==0){reject(Error("HTTP "+xhr.status+" при чтении "+path));return}try{resolve(JSON.parse(xhr.responseText))}catch(error){reject(Error("Повреждён JSON "+path+": "+error.message))}};xhr.onerror=()=>reject(Error("Не удалось прочитать встроенный файл "+path));xhr.onabort=()=>reject(Error("Чтение встроенного файла отменено: "+path));xhr.send()})}
 async function getReferenceEntities(){if(Array.isArray(state.referenceEntities))return state.referenceEntities;state.referenceEntities=await readBundledJson("./data/reference/stashes_and_poi.json");if(!Array.isArray(state.referenceEntities)||!state.referenceEntities.length)throw Error("Встроенный справочник пуст или имеет неверный формат");return state.referenceEntities}
