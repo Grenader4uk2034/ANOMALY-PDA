@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#111713">
-<title>ANOMALY PDA — РљР°СЂС‚Р° Р—РѕРЅС‹</title>
+<title>ANOMALY PDA — Карта Зоны</title>
 <style>
 :root{color-scheme:dark;--bg:#0b100d;--panel:#121a15;--panel2:#18231b;--line:#304334;--text:#d8e2d5;--muted:#91a18f;--green:#9bc47c;--amber:#d2ad65}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 0,#1b2a1e 0,#0b100d 58%);color:var(--text);font:14px/1.45 "Segoe UI",Arial,sans-serif;min-height:100vh}
@@ -101,24 +101,24 @@ main{display:grid;grid-template-columns:260px minmax(0,1fr) 280px;grid-template-
 </style>
 </head>
 <body>
-<header><div class="brand"><span class="brand-mark">PDA</span><span>ANOMALY</span></div><div class="sub">РЎРџР РђР’РћР§РќРђРЇ РљРђР РўРђ Р—РћРќР« · РќР• РР“Р РћР’РђРЇ РќРђР’РР“РђР¦РРЇ</div></header>
+<header><div class="brand"><span class="brand-mark">PDA</span><span>ANOMALY</span></div><div class="sub">СПРАВОЧНАЯ КАРТА ЗОНЫ · НЕ ИГРОВАЯ НАВИГАЦИЯ</div></header>
 <div class="mobile-nav">
 <button id="mobile-menu" type="button">☰ ФИЛЬТРЫ</button>
 <button id="mobile-objects" type="button">☷ ОБЪЕКТЫ</button>
 <button id="mobile-dossier" type="button">▤ ДОСЬЕ</button>
 </div>
 <main>
-<section class="panel filters-panel"><div class="panel-head">РџР°СЂР°РјРµС‚СЂС‹ РєР°СЂС‚С‹</div><div class="controls">
-<div class="field"><label for="level">Р›РћРљРђР¦РРЇ</label><select id="level" disabled><option>Ожидание данных…</option></select></div>
-<div class="field"><label for="search">РџРћРРЎРљ РћР‘РЄР•РљРўРђ</label><input id="search" type="search" placeholder="Название или секция…" disabled></div>
-<div class="field"><label>РРњРџРћР Рў РџРћР›РќРћР“Рћ Р Р•Р•РЎРўР Рђ</label><button id="choose-spawn" type="button">Загрузить all_entities.json</button><input id="spawn-file" type="file" accept=".json,application/json" hidden><div class="item-meta" id="import-status">Р¤Р°Р№Р» РѕР±СЂР°Р±Р°С‚С‹РІР°РµС‚СЃСЏ Р»РѕРєР°Р»СЊРЅРѕ в Р±СЂР°СѓР·РµСЂРµ и РЅРµ РѕС‚РїСЂР°РІР»СЏРµС‚СЃСЏ РЅР° СЃРµСЂРІРµСЂ.</div></div><div class="field"><label>РџРћР”Р›РћР–РљРђ Р›РћРљРђР¦РР</label><button id="choose-map" type="button">Загрузить изображение РєР°СЂС‚С‹</button><input id="map-image-file" type="file" accept="image/png,image/jpeg,image/webp" hidden><div class="item-meta" id="map-image-status">Р‘РµР· С‚РµРєСЃС‚СѓСЂС‹ — координатная СЃРµС‚РєР°</div></div><div class="field"><label>РџР РР’РЇР—РљРђ РР—РћР‘Р РђР–Р•РќРРЇ Рљ РљРћРћР Р”РРќРђРўРђРњ</label><div class="kv"><div><small>X min</small><input id="bound-x-min" type="number" value="-600" step="1"></div><div><small>X max</small><input id="bound-x-max" type="number" value="600" step="1"></div><div><small>Z min</small><input id="bound-z-min" type="number" value="-600" step="1"></div><div><small>Z max</small><input id="bound-z-max" type="number" value="600" step="1"></div></div><div class="item-meta">Р”Р»СЏ Юпитера: X/Z в€’600…+600.</div></div><div class="field"><label>РљРђРўР•Р“РћР РР</label><div id="filters"><div class="empty">Фильтры РїРѕСЏРІСЏС‚СЃСЏ РїРѕСЃР»Рµ загрузки РґР°РЅРЅС‹С….</div></div></div>
-<div class="field"><button id="reset" type="button">РЎР±СЂРѕСЃРёС‚СЊ РјР°СЃС€С‚Р°Р± и смещение</button></div>
+<section class="panel filters-panel"><div class="panel-head">ПАРАМЕТРЫ КАРТЫ</div><div class="controls">
+<div class="field"><label for="level">ЛОКАЦИЯ</label><select id="level" disabled><option>Ожидание данных…</option></select></div>
+<div class="field"><label for="search">ПОИСК ОБЪЕКТА</label><input id="search" type="search" placeholder="Название или секция…" disabled></div>
+<div class="field"><label>ИМПОРТ ПОЛНОГО РЕЕСТРА</label><button id="choose-spawn" type="button">Загрузить all_entities.json</button><input id="spawn-file" type="file" accept=".json,application/json" hidden><div class="item-meta" id="import-status">Файл обрабатывается локально в Р±СЂР°СѓР·РµСЂРµ и РЅРµ РѕС‚РїСЂР°РІР»СЏРµС‚СЃСЏ РЅР° СЃРµСЂРІРµСЂ.</div></div><div class="field"><label>ПОДЛОЖКА ЛОКАЦИИ</label><button id="choose-map" type="button">Загрузить изображение карты</button><input id="map-image-file" type="file" accept="image/png,image/jpeg,image/webp" hidden><div class="item-meta" id="map-image-status">Без текстуры — координатная сетка</div></div><div class="field"><label>ПРИВЯЗКА ИЗОБРАЖЕНИЯ К КООРДИНАТАМ</label><div class="kv"><div><small>X min</small><input id="bound-x-min" type="number" value="-600" step="1"></div><div><small>X max</small><input id="bound-x-max" type="number" value="600" step="1"></div><div><small>Z min</small><input id="bound-z-min" type="number" value="-600" step="1"></div><div><small>Z max</small><input id="bound-z-max" type="number" value="600" step="1"></div></div><div class="item-meta">Для Юпитера: X/Z −600…+600.</div></div><div class="field"><label>КАТЕГОРИИ</label><div id="filters"><div class="empty">Фильтры появятся после загрузки данных.</div></div></div>
+<div class="field"><button id="reset" type="button">Сбросить масштаб и смещение</button></div>
 </div></section>
-<section class="panel map-panel"><div class="toolbar"><strong id="map-title">РљРђР РўРђ РќР• Р—РђР“Р РЈР–Р•РќРђ</strong><div><button id="zoom-out" type="button" aria-label="Уменьшить">в€’</button> <button id="zoom-in" type="button" aria-label="Увеличить">+</button></div></div>
-<div class="map-wrap"><canvas id="map" aria-label="РЎРїСЂР°РІРѕС‡РЅР°СЏ РєР°СЂС‚Р° РѕР±СЉРµРєС‚РѕРІ РІС‹Р±СЂР°РЅРЅРѕР№ локации"></canvas><div class="map-hint">РљРѕР»РµСЃРѕ мыши — РјР°СЃС€С‚Р°Р± · Перетаскивание — РѕР±Р·РѕСЂ · Нажмите РЅР° С‚РѕС‡РєСѓ РґР»СЏ сведений</div></div>
-<div class="status"><span id="count">Р”Р°РЅРЅС‹Рµ РЅРµ Р·Р°РіСЂСѓР¶РµРЅС‹</span><span id="coords">X / Z</span></div></section>
-<section class="panel list-panel"><div class="panel-head">РћР±СЉРµРєС‚С‹ локации</div><div class="list" id="object-list"><div class="empty">РЎРЅР°С‡Р°Р»Р° загрузите map-data.json.</div></div></section>
-<section class="panel detail-panel"><div class="panel-head">Р”РѕСЃСЊРµ РѕР±СЉРµРєС‚Р°</div><div class="detail" id="detail"><div class="empty">Выберите С‚РѕС‡РєСѓ РЅР° РєР°СЂС‚Рµ или РѕР±СЉРµРєС‚ в списке.</div></div></section>
+<section class="panel map-panel"><div class="toolbar"><strong id="map-title">КАРТА НЕ ЗАГРУЖЕНА</strong><div><button id="zoom-out" type="button" aria-label="Уменьшить">в€’</button> <button id="zoom-in" type="button" aria-label="Увеличить">+</button></div></div>
+<div class="map-wrap"><canvas id="map" aria-label="Справочная карта объектов выбранной локации"></canvas><div class="map-hint">Колесо мыши — масштаб · Перетаскивание — обзор · Нажмите на точку для сведений</div></div>
+<div class="status"><span id="count">Данные не загружены</span><span id="coords">X / Z</span></div></section>
+<section class="panel list-panel"><div class="panel-head">Объекты локации</div><div class="list" id="object-list"><div class="empty">Сначала загрузите map-data.json.</div></div></section>
+<section class="panel detail-panel"><div class="panel-head">Досье объекта</div><div class="detail" id="detail"><div class="empty">Выберите точку на карте или объект в списке.</div></div></section>
 </main>
 <div id="load-error"></div>
 <script src="./app.js" defer></script>
