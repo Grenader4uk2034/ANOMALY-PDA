@@ -24,7 +24,7 @@ tasks.register<Copy>("copyWebAssets") {
 
 tasks.register<Copy>("copyReferenceData") {
     from(rootProject.projectDir.parentFile.resolve("data/reference"))
-    into(layout.buildDirectory.dir("generated/webAssets/data/reference"))
+    into(layout.buildDirectory.dir("generated/webAssets/www/data/reference"))
 }
 
 tasks.named("preBuild") {
