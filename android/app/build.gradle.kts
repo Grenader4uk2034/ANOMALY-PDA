@@ -27,6 +27,29 @@ tasks.register<Copy>("copyReferenceData") {
     into(layout.buildDirectory.dir("generated/webAssets/www/data/reference"))
 }
 
-tasks.named("preBuild") {
+tasks.register("verifyBundledAssets") {
     dependsOn("copyWebAssets", "copyReferenceData")
+    doLast {
+        val webRoot = layout.buildDirectory.dir("generated/webAssets/www").get().asFile
+        val requiredFiles = listOf(
+            "index.html",
+            "app.js",
+            "mobile.js",
+            "data/reference/stashes_and_poi.json"
+        )
+        val missing = requiredFiles.filterNot { webRoot.resolve(it).isFile }
+        if (missing.isNotEmpty()) {
+            throw GradleException("Не найдены обязательные ресурсы APK: ${missing.joinToString()}")
+        }
+        val mapsDir = webRoot.resolve("maps")
+        val mapCount = mapsDir.listFiles()?.count { it.isFile && it.extension.equals("png", true) } ?: 0
+        if (mapCount == 0) {
+            throw GradleException("В APK не попали PNG-карты: ${mapsDir.absolutePath}")
+        }
+        logger.lifecycle("ANOMALY-PDA assets OK: ${mapCount} карт, встроенный справочник найден")
+    }
+}
+
+tasks.named("preBuild") {
+    dependsOn("verifyBundledAssets")
 }
