@@ -1,0 +1,127 @@
+ANOMALY PDA - SPAWN POINT EXCEPTIONS REPORT
+===========================================
+
+1. ANALYSIS SUMMARY
+-------------------
+Source sections: 556
+Extracted spawn_point variants: 227
+Unique spawn_point names: 168
+Matched unique names in all.spawn patrol paths: 166
+Unmatched unique names: 2
+
+2. UNRESOLVED SPAWN REFERENCES
+------------------------------
+
+[1] alex_selo_smart_terrain_mob_home
+
+Source file:
+squad_descr_zaton.ltx
+
+Section:
+[renderman_selo_test_controller_squad]
+
+Faction:
+monster_zombied_day
+
+NPC:
+m_controller_normal
+
+Target smart terrain:
+alex_selo_smart_terrain
+
+Findings:
+- Name occurs only once in searched configuration and script files.
+- No occurrence in binary all.spawn.
+- No patrol path with this name.
+- Target smart terrain definition was not found in searched configuration files.
+- Squad is listed in spawner_blacklist.ltx (line 1149).
+- No external creation or simulation reference to this squad was found.
+- Separate squad zat_b42_controller_squad is used in simulation files.
+- Its spawn point zat_b42_smart_terrain_mob_home exists in all.spawn.
+
+Classification:
+UNRESOLVED ? likely test or obsolete configuration entry.
+Not a confirmed coordinate.
+
+[2] lain_test_smart_terrain_home
+
+Source file:
+squad_descr_labx8.ltx
+
+Section:
+[test_lain_squad]
+
+Faction:
+monster_predatory_night
+
+NPC:
+burer_normal
+
+Target smart terrain:
+lain_test_smart_terrain
+
+Story ID:
+test_lain_squad
+
+Findings:
+- Name occurs only once in searched configuration and script files.
+- No occurrence in binary all.spawn.
+- No patrol path with this name.
+- Target smart terrain definition was not found in searched configuration files.
+- Squad is listed in spawner_blacklist.ltx (line 1332).
+- No external creation or simulation reference to this squad was found.
+- Separate squad lx8_controller_squad is created by an X-8 script.
+- Its spawn point lx8_smart_terrain_controller_home exists in all.spawn.
+
+Classification:
+UNRESOLVED ? likely test configuration entry.
+Not a confirmed coordinate.
+
+3. CONTROL CHECK
+----------------
+
+Known Zaton controller:
+Squad: zat_b42_controller_squad
+Spawn point: zat_b42_smart_terrain_mob_home
+Occurrences in all.spawn: 1
+External references: simulation.ltx and simulation_survival_mode.ltx
+
+Known X-8 controller:
+Squad: lx8_controller_squad
+Spawn point: lx8_smart_terrain_controller_home
+Occurrences in all.spawn: 1
+External creation: lx8_sr_counter.ltx
+
+Both control spawn point names were successfully found in all.spawn.
+
+4. CONCLUSION
+-------------
+
+The binary search was validated against two known working spawn point names.
+
+166 of 168 unique names extracted from spawn_point configuration
+references were matched to patrol path data.
+
+Two references remain unresolved:
+- alex_selo_smart_terrain_mob_home
+- lain_test_smart_terrain_home
+
+Neither name occurs in all.spawn. Their associated squads have no
+confirmed external spawn references in the searched files.
+
+These entries must not be treated as coordinate-confirmed locations.
+
+The findings indicate likely test or obsolete configuration entries,
+but do not prove that the engine can never create these squads through
+another mechanism.
+
+5. SCOPE AND LIMITATIONS
+-----------------------
+
+- Analysis is based on the extracted configuration/script files and
+  the supplied all.spawn binary.
+- Absence from all.spawn does not prove absence from every possible
+  runtime or dynamically generated spawn source.
+- No application source files were modified.
+- No map resources, map bounds, textures, offsets or player navigation
+  were modified.
