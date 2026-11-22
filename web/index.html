@@ -13,6 +13,7 @@ header{height:64px;border-bottom:1px solid var(--line);display:flex;align-items:
 main{display:grid;grid-template-columns:260px minmax(0,1fr) 280px;grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:12px;padding:12px;height:calc(100vh - 64px);min-height:560px}.filters-panel{grid-column:1;grid-row:1/3}.map-panel{grid-column:2;grid-row:1/3}.list-panel{grid-column:3;grid-row:1}.detail-panel{grid-column:3;grid-row:2}
 .panel{background:linear-gradient(160deg,#17221a,#101712);border:1px solid var(--line);border-radius:7px;min-height:0;overflow:hidden}
 .panel-head{padding:13px 14px;border-bottom:1px solid var(--line);font-size:11px;letter-spacing:.15em;color:var(--green);text-transform:uppercase}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.panel-close{display:none;border:1px solid #49634b;background:#17231a;color:var(--green);font-size:20px;line-height:1;min-width:32px;min-height:30px;padding:2px 8px}
 .controls{padding:14px;overflow:auto;height:calc(100% - 43px)}label{display:block;color:var(--muted);font-size:11px;margin:0 0 6px;letter-spacing:.08em}select,input{width:100%;background:#0b120d;border:1px solid #3a503e;border-radius:4px;color:var(--text);padding:10px;font:inherit;outline:none}select:focus,input:focus{border-color:var(--green)}
 .field{margin-bottom:17px}.filter{display:flex;align-items:center;gap:9px;padding:7px 0;color:#c5d0c2}.filter input{width:15px;height:15px;accent-color:var(--green)}
 .map-panel{display:flex;flex-direction:column;position:relative}.toolbar{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid var(--line);flex-wrap:wrap}.toolbar strong{font-size:12px;letter-spacing:.1em;color:var(--green)}button{background:#1c2b20;border:1px solid #49634b;color:var(--text);padding:7px 10px;border-radius:4px;cursor:pointer}button:hover{border-color:var(--green);color:var(--green)}.map-wrap{position:relative;flex:1;min-height:0;background-color:#0a100c;background-image:linear-gradient(#25352855 1px,transparent 1px),linear-gradient(90deg,#25352855 1px,transparent 1px),radial-gradient(ellipse at center,#1a2a1d 0,#0b110d 70%);background-size:48px 48px,48px 48px,100% 100%;overflow:hidden}canvas{display:block;width:100%;height:100%;cursor:grab}canvas.dragging{cursor:grabbing}.map-hint{position:absolute;left:14px;bottom:12px;color:#8fa08e;background:#0a100dd9;padding:6px 9px;border:1px solid #304334;border-radius:3px;font-size:11px;pointer-events:none}
@@ -71,6 +72,7 @@ main{display:grid;grid-template-columns:260px minmax(0,1fr) 280px;grid-template-
  .filters-panel.mobile-open,
  .list-panel.mobile-open,
  .detail-panel.mobile-open{display:flex;flex-direction:column}
+ .filters-panel .panel-close,.list-panel .panel-close,.detail-panel .panel-close{display:inline-flex;align-items:center;justify-content:center}
  .filters-panel .controls{height:auto;flex:1;overflow:auto;display:block;padding:12px}
  .filters-panel .field{margin-bottom:12px}
  .list-panel .list{height:auto;flex:1;overflow:auto}
@@ -108,7 +110,7 @@ main{display:grid;grid-template-columns:260px minmax(0,1fr) 280px;grid-template-
 <button id="mobile-dossier" type="button">▤ ДОСЬЕ</button>
 </div>
 <main>
-<section class="panel filters-panel"><div class="panel-head">ПАРАМЕТРЫ КАРТЫ</div><div class="controls">
+<section class="panel filters-panel"><div class="panel-head"><span>ПАРАМЕТРЫ КАРТЫ</span><button class="panel-close" type="button" aria-label="Закрыть вкладку">×</button></div><div class="controls">
 <div class="field"><label for="level">ЛОКАЦИЯ</label><select id="level" disabled><option>Ожидание данных…</option></select></div>
 <div class="field"><label for="search">ПОИСК ОБЪЕКТА</label><input id="search" type="search" placeholder="Название или секция…" disabled></div>
 <div class="field"><label>КАТЕГОРИИ</label><div id="filters"><div class="empty">Фильтры появятся после загрузки данных.</div></div></div>
@@ -117,8 +119,8 @@ main{display:grid;grid-template-columns:260px minmax(0,1fr) 280px;grid-template-
 <section class="panel map-panel"><div class="toolbar"><strong id="map-title">КАРТА НЕ ЗАГРУЖЕНА</strong><div><button id="zoom-out" type="button" aria-label="Уменьшить">−</button> <button id="zoom-in" type="button" aria-label="Увеличить">+</button></div></div>
 <div class="map-wrap"><canvas id="map" aria-label="Справочная карта объектов выбранной локации"></canvas><div class="map-hint">Колесо мыши — масштаб · Перетаскивание — обзор · Нажмите на точку для сведений</div></div>
 <div class="status"><span id="count">Данные не загружены</span><span id="coords">X / Z</span></div></section>
-<section class="panel list-panel"><div class="panel-head">Объекты локации</div><div class="list" id="object-list"><div class="empty">Подготовка встроенных данных…</div></div></section>
-<section class="panel detail-panel"><div class="panel-head">Досье объекта</div><div class="detail" id="detail"><div class="empty">Выберите точку на карте или объект в списке.</div></div></section>
+<section class="panel list-panel"><div class="panel-head"><span>Объекты локации</span><button class="panel-close" type="button" aria-label="Закрыть вкладку">×</button></div><div class="list" id="object-list"><div class="empty">Подготовка встроенных данных…</div></div></section>
+<section class="panel detail-panel"><div class="panel-head"><span>Досье объекта</span><button class="panel-close" type="button" aria-label="Закрыть вкладку">×</button></div><div class="detail" id="detail"><div class="empty">Выберите точку на карте или объект в списке.</div></div></section>
 </main>
 <div id="load-error"></div>
 <script src="./app.js" defer></script>
