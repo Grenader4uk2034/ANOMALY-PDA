@@ -2,7 +2,7 @@
 "use strict";
 const $ = id => document.getElementById(id);
 const canvas=$("map"),ctx=canvas.getContext("2d");
-const state={data:null,level:"",categories:new Set(),selected:null,zoom:1,panX:0,panY:0,drag:null,view:null,baseImage:null,baseImageLevel:null,imageBounds:{minX:-600,maxX:600,minZ:-600,maxZ:600},uiBound:false,referenceEntities:null};
+const state={data:null,level:"",categories:new Set(),selected:null,zoom:1,panX:0,panY:0,drag:null,view:null,baseImage:null,baseImageLevel:null,imageUrl:null,imageBounds:{minX:-600,maxX:600,minZ:-600,maxZ:600},uiBound:false,referenceEntities:null};
 const autoMapCatalog={
 fake_start:"map_fake_start.png",
 jupiter:"map_jupiter.png",
@@ -44,7 +44,6 @@ function loadAutoMap(){
  if(!file){
   state.baseImage=null;
   state.baseImageLevel=null;
-  $("map-image-status").textContent="Для этой локации карта ещё не привязана";
   draw();
   return;
  }
@@ -55,15 +54,12 @@ function loadAutoMap(){
   state.baseImageLevel=state.level;
   const v=extent(levelFeatures());
   state.imageBounds={minX:v.minX,maxX:v.maxX,minZ:v.minZ,maxZ:v.maxZ};
-  setBoundsInputs();
-  $("map-image-status").textContent="Автокарта: "+file+" · "+img.width+"×"+img.height;
   draw();
  };
  img.onerror=()=>{
   if(requestId!==autoMapRequestId)return;
   state.baseImage=null;
   state.baseImageLevel=null;
-  $("map-image-status").textContent="Ошибка загрузки карты: "+file;
   draw();
  };
  img.src="./maps/"+file;
@@ -83,8 +79,43 @@ ctx.restore();$("count").textContent=visibleFeatures().length.toLocaleString("ru
 function renderList(){const list=$("object-list"),items=visibleFeatures();list.replaceChildren();if(!items.length){list.innerHTML='<div class="empty">По заданным условиям ничего не найдено.</div>';return}const frag=document.createDocumentFragment();for(const f of items){const p=f.properties,el=document.createElement("div");el.className="item"+(f===state.selected?" active":"");const name=document.createElement("div");name.className="item-name";name.textContent=p.name||p.section;const meta=document.createElement("div");meta.className="item-meta";meta.textContent=(p.category_label||p.category)+" · X "+fmt(p.x)+" / Z "+fmt(p.z);el.append(name,meta);el.addEventListener("click",()=>select(f,true));frag.append(el)}list.append(frag);}
 function select(f,center=false){state.selected=f;const p=f.properties;$("detail").replaceChildren();const h=document.createElement("h2");h.textContent=p.name||p.section;const tag=document.createElement("span");tag.className="tag";tag.textContent=p.category_label||p.category;$("detail").append(h,tag);const kv=document.createElement("div");kv.className="kv";const values=[["Секция",p.section],["Локация",p.level],["Координата X",fmt(p.x)],["Высота Y",fmt(p.y)],["Координата Z",fmt(p.z)],["Game vertex",p.game_vertex_id??"—"],["Level vertex",p.level_vertex_id??"—"]];for(const [k,v] of values){const d=document.createElement("div"),s=document.createElement("small"),b=document.createElement("b");s.textContent=k;b.textContent=v;d.append(s,b);kv.append(d)}$("detail").append(kv);renderList();if(center){state.panX=0;state.panY=0;state.zoom=Math.max(1.5,state.zoom);draw()}}
 function init(data){if(!data||!Array.isArray(data.features))throw Error("Неверный формат карты: ожидался массив features.");state.data=data;state.categories.clear();state.selected=null;const levels=Object.keys(data.metadata?.levels||{}).sort((a,b)=>a.localeCompare(b,"ru"));if(!levels.length)throw Error("В наборе нет локаций.");const level=$("level");level.replaceChildren();for(const name of levels){const o=document.createElement("option");o.value=name;o.textContent=name.replaceAll("_"," ");level.append(o)}state.level=levels.includes("jupiter")?"jupiter":levels[0];level.value=state.level;loadAutoMap();level.disabled=false;$("search").disabled=false;const counts=data.metadata?.categories||{};const filters=$("filters");filters.replaceChildren();for(const cat of Object.keys(counts).sort()){state.categories.add(cat);const label=document.createElement("label");label.className="filter";const cb=document.createElement("input");cb.type="checkbox";cb.checked=true;cb.value=cat;cb.addEventListener("change",()=>{cb.checked?state.categories.add(cat):state.categories.delete(cat);renderList();draw()});const span=document.createElement("span");span.textContent=(data.metadata?.category_labels||{})[cat]||cat;label.append(cb,span);filters.append(label)}if(!state.uiBound){bindUi();state.uiBound=true}$("detail").innerHTML='<div class="empty">Выберите точку на карте или объект в списке.</div>';renderList();draw()}
-function bindUi(){const level=$("level");level.addEventListener("change",()=>{state.level=level.value;loadAutoMap();state.selected=null;state.zoom=1;state.panX=0;state.panY=0;state.view=null;if(state.baseImage&&state.baseImageLevel===state.level){const v=extent(levelFeatures());state.imageBounds=state.level==="jupiter"?{minX:-600,maxX:600,minZ:-600,maxZ:600}:{minX:v.minX,maxX:v.maxX,minZ:v.minZ,maxZ:v.maxZ};setBoundsInputs()}$("detail").innerHTML='<div class="empty">Выберите точку на карте или объект в списке.</div>';renderList();draw()});$("search").addEventListener("input",()=>{renderList();draw()});$("zoom-in").onclick=()=>{state.zoom=Math.min(20,state.zoom*1.25);draw()};$("zoom-out").onclick=()=>{state.zoom=Math.max(.5,state.zoom/1.25);draw()};$("reset").onclick=()=>{state.zoom=1;state.panX=0;state.panY=0;draw()};$("choose-map").addEventListener("click",()=>$("map-image-file").click());$("map-image-file").addEventListener("change",e=>{const file=e.target.files?.[0];if(!file)return;if(state.imageUrl)URL.revokeObjectURL(state.imageUrl);state.imageUrl=URL.createObjectURL(file);const img=new Image();img.onload=()=>{state.baseImage=img;state.baseImageLevel=state.level;state.imageBounds=state.level==="jupiter"?{minX:-600,maxX:600,minZ:-600,maxZ:600}:(()=>{const v=extent(levelFeatures());return{minX:v.minX,maxX:v.maxX,minZ:v.minZ,maxZ:v.maxZ}})();setBoundsInputs();$("map-image-status").textContent=file.name+" · "+img.width+"×"+img.height+" px";state.zoom=1;state.panX=0;state.panY=0;draw()};img.onerror=()=>$("map-image-status").textContent="Не удалось открыть изображение";img.src=state.imageUrl});for(const id of ["bound-x-min","bound-x-max","bound-z-min","bound-z-max"]){$(id).addEventListener("change",()=>{const b=readBounds();if(b)state.imageBounds=b;draw()})}$("choose-spawn").addEventListener("click",()=>$("spawn-file").click());$("spawn-file").addEventListener("change",async e=>{const file=e.target.files?.[0];if(!file)return;$("import-status").textContent="Чтение и классификация объектов…";try{const source=JSON.parse(await file.text());const refs=await getReferenceEntities();const data=buildMapDataFromSpawn(source,refs);init(data);$("import-status").textContent="Импортировано "+data.metadata.spawn_entity_count+" объектов all.spawn и "+data.metadata.reference_entity_count+" справочных точек. Всего: "+data.metadata.entity_count+"."}catch(err){$("import-status").textContent="Ошибка импорта: "+err.message}})}
-async function getReferenceEntities(){if(Array.isArray(state.referenceEntities))return state.referenceEntities;try{const response=await fetch("./data/reference/stashes_and_poi.json");if(!response.ok)throw Error("HTTP "+response.status);state.referenceEntities=await response.json();return state.referenceEntities}catch(error){throw Error("Не удалось прочитать встроенную базу объектов: "+error.message)}}, true);
+function bindUi(){const level=$("level");level.addEventListener("change",()=>{state.level=level.value;loadAutoMap();state.selected=null;state.zoom=1;state.panX=0;state.panY=0;state.view=null;$("detail").innerHTML='<div class="empty">Выберите точку на карте или объект в списке.</div>';renderList();draw()});$("search").addEventListener("input",()=>{renderList();draw()});$("zoom-in").onclick=()=>{state.zoom=Math.min(20,state.zoom*1.25);draw()};$("zoom-out").onclick=()=>{state.zoom=Math.max(.5,state.zoom/1.25);draw()};$("reset").onclick=()=>{state.zoom=1;state.panX=0;state.panY=0;draw()}}
+async function getReferenceEntities(){if(Array.isArray(state.referenceEntities))return state.referenceEntities;try{const response=await fetch("./data/reference/stashes_and_poi.json");if(!response.ok)return[];state.referenceEntities=await response.json();return state.referenceEntities}catch{return[]}}
+function readBounds(){const b={minX:Number($("bound-x-min").value),maxX:Number($("bound-x-max").value),minZ:Number($("bound-z-min").value),maxZ:Number($("bound-z-max").value)};return Object.values(b).every(Number.isFinite)&&b.maxX>b.minX&&b.maxZ>b.minZ?b:null}
+function setBoundsInputs(){const b=state.imageBounds;$("bound-x-min").value=b.minX;$("bound-x-max").value=b.maxX;$("bound-z-min").value=b.minZ;$("bound-z-max").value=b.maxZ}
+function buildReferenceFallback(records){const labels={stash:"Тайники и контейнеры",quest:"Квестовые точки",weapon:"Оружие и уникальные предметы",special:"Особые точки",vehicle:"Транспорт",poi:"Другие объекты"};const categories={},levels={},features=[];for(let i=0;i<records.length;i++){const r=records[i],type=String(r.type||"special").toLowerCase(),category=type==="treasure"||type==="secret"?"stash":["quest","weapon","special"].includes(type)?type:"poi";categories[category]=(categories[category]||0)+1;levels[r.level]=(levels[r.level]||0)+1;features.push({type:"Feature",id:"reference-"+i,geometry:{type:"Point",coordinates:[r.x,r.z]},properties:{id:"reference-"+i,name:r.name,section:category==="stash"?"inventory_box":"reference_"+type,level:r.level,category,category_label:labels[category]||labels.poi,source_kind:"reference_export",reference_type:type,x:r.x,y:r.y,z:r.z}})}return{type:"FeatureCollection",metadata:{source:"stashes_and_poi.json (reference-only fallback)",entity_count:features.length,levels,categories,category_labels:labels},features}}
+function classifySpawn(section,name){section=String(section||"").toLowerCase();name=String(name||"").toLowerCase();if(["inventory_box","hidden_box","inv_backpack"].includes(section))return"stash";if(section==="anomal_zone"||section.startsWith("zone_")||section.includes("anomal"))return"anomaly";if(section==="smart_terrain")return"population";if(["campfire","campfire_burn"].includes(section))return"camp";if(section==="level_changer")return"transition";if(["m_trader","m_lesnik"].includes(section)||["stalker","actor","trader","squad"].some(x=>section.startsWith(x)))return"npc";if(section==="m_car")return"vehicle";if(section.startsWith("m_")||["bloodsucker","pseudodog","snork","controller","chimera","boar","flesh","dog","zombie","tushkano","poltergeist","gigant","fracture","burer","cat"].some(x=>section.includes(x)))return"mutant";if(["stash","treasure","secret","inventory_box"].some(x=>name.includes(x)))return"stash";return"poi"}
+function buildMapDataFromSpawn(source,references){if(!source||!Array.isArray(source.entities))throw Error("В JSON отсутствует массив entities.");const labels={stash:"Тайники и контейнеры",anomaly:"Аномалии",population:"Точки симуляции",mutant:"Мутанты",npc:"Персонажи",camp:"Лагеря и костры",transition:"Переходы между уровнями",quest:"Квестовые точки",weapon:"Оружие и уникальные предметы",special:"Особые точки",vehicle:"Транспорт",poi:"Другие объекты"};const features=[],seen=new Set(),categories={},levels={};let skipped=0,spawnCount=0,referenceCount=0;const add=f=>{const p=f.properties,key=[p.level,p.name,p.x,p.y,p.z].map((v,i)=>i>1?Number(v).toFixed(3):v).join("|");if(seen.has(key))return;seen.add(key);features.push(f);categories[p.category]=(categories[p.category]||0)+1;levels[p.level]=(levels[p.level]||0)+1;if(p.source_kind==="spawn")spawnCount++;else referenceCount++};for(let i=0;i<source.entities.length;i++){const e=source.entities[i];if(!e||typeof e!=="object"||!Array.isArray(e.position)||e.position.length<3||typeof e.level!=="string"||!e.level||typeof e.section!=="string"||!e.section){skipped++;continue}const xyz=e.position.slice(0,3).map(Number);if(!xyz.every(Number.isFinite)){skipped++;continue}const name=typeof e.name==="string"&&e.name?e.name:e.section,category=classifySpawn(e.section,name),[x,y,z]=xyz,id="spawn-"+i;add({type:"Feature",id,geometry:{type:"Point",coordinates:[x,z]},properties:{id,name,section:e.section,level:e.level,category,category_label:labels[category],source_kind:"spawn",x,y,z,game_vertex_id:e.game_vertex_id??null,level_vertex_id:e.level_vertex_id??null}})}const refs=buildReferenceFallback(references||[]);for(const f of refs.features)add(f);features.sort((a,b)=>a.properties.level.localeCompare(b.properties.level)||a.properties.category.localeCompare(b.properties.category)||a.properties.name.localeCompare(b.properties.name));return{type:"FeatureCollection",metadata:{source:"all_entities.json + stashes_and_poi.json",entity_count:features.length,spawn_entity_count:spawnCount,reference_entity_count:referenceCount,skipped_count:skipped,levels,categories,category_labels:labels},features}}
+async function load(){try{const response=await fetch("./data/map-data.json");if(!response.ok)throw Error("HTTP "+response.status);init(await response.json());return}catch(primaryError){try{const records=await getReferenceEntities();const data=buildReferenceFallback(records);init(data);$("load-error").style.display="none"}catch(fallbackError){const box=$("load-error");box.style.display="block";box.textContent="Не удалось загрузить встроенные данные карты: "+fallbackError.message;$("map-title").textContent="НЕТ ДАННЫХ"}}}
+// ===== MOBILE_PINCH_ZOOM =====
+const mobilePointers = new Map();
+let mobilePinch = null;
+
+canvas.addEventListener("pointerdown", e => {
+    if (e.pointerType !== "touch") return;
+
+    mobilePointers.set(e.pointerId, {x:e.clientX, y:e.clientY});
+
+    if (mobilePointers.size === 2) {
+        const pts = [...mobilePointers.values()];
+        const rect = canvas.getBoundingClientRect();
+        const cx = (pts[0].x + pts[1].x) / 2 - rect.left;
+        const cy = (pts[0].y + pts[1].y) / 2 - rect.top;
+
+        mobilePinch = {
+            distance: Math.hypot(pts[1].x - pts[0].x, pts[1].y - pts[0].y),
+            zoom: state.zoom,
+            panX: state.panX,
+            panY: state.panY,
+            cx, cy
+        };
+
+        state.drag = null;
+        canvas.classList.remove("dragging");
+        e.preventDefault();
+        e.stopImmediatePropagation();
+    }
+}, true);
 
 canvas.addEventListener("pointermove", e => {
     if (!mobilePointers.has(e.pointerId)) return;
