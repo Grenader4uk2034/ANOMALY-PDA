@@ -27,15 +27,21 @@ tasks.register<Copy>("copyReferenceData") {
     into(layout.buildDirectory.dir("generated/webAssets/www/data/reference"))
 }
 
+tasks.register<Copy>("copyFullEntityData") {
+    from(rootProject.projectDir.parentFile.resolve("data/processed/all_entities.json"))
+    into(layout.buildDirectory.dir("generated/webAssets/www/data"))
+}
+
 tasks.register("verifyBundledAssets") {
-    dependsOn("copyWebAssets", "copyReferenceData")
+    dependsOn("copyWebAssets", "copyReferenceData", "copyFullEntityData")
     doLast {
         val webRoot = layout.buildDirectory.dir("generated/webAssets/www").get().asFile
         val requiredFiles = listOf(
             "index.html",
             "app.js",
             "mobile.js",
-            "data/reference/stashes_and_poi.json"
+            "data/reference/stashes_and_poi.json",
+            "data/all_entities.json"
         )
         val missing = requiredFiles.filterNot { webRoot.resolve(it).isFile }
         if (missing.isNotEmpty()) {
