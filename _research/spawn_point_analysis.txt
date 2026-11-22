@@ -1,0 +1,819 @@
+SPAWN POINT ANALYSIS
+======================================================================
+Sections with spawn_point: 189
+Unique spawn_point names: 159
+Patrol paths parsed: 15833
+MATCHED: 152
+NOT FOUND: 7
+
+======================================================================
+MATCHED COORDINATES
+======================================================================
+
+PATROL: agr_smart_terrain_1_6_near_2_agr_duty_commander_walk
+POINT COUNT: 1
+ID=0 | NAME=name00 | POSITION=(-149.1082305908203, 9.99992561340332, -200.89328002929688) | LEVEL_VERTEX=66997 | GAME_VERTEX=977
+SECTION: [agr_smart_terrain_1_6_near_2_military_colonel_kovalski_squad] | FILE: squad_descr_agroprom.ltx | FACTION: army | NPC: agr_smart_terrain_1_6_near_2_military_colonel_kovalski | TARGET: agr_smart_terrain_1_6_near_2
+
+PATROL: agr_u_bloodsucker_2_walk
+POINT COUNT: 2
+ID=0 | NAME=name00 | POSITION=(29.669801712036133, -8.238386154174805, 82.34017181396484) | LEVEL_VERTEX=2716 | GAME_VERTEX=3658
+ID=1 | NAME=name02 | POSITION=(32.576358795166016, -8.238415718078613, 89.36434173583984) | LEVEL_VERTEX=2918 | GAME_VERTEX=3658
+SECTION: [agr_u_bloodsucker_2_squad] | FILE: squad_descr_agroprom_underground.ltx | FACTION: monster | NPC: bloodsucker_black_strong, psysucker_2_strong, zombie_blind, m_poltergeist_normal_tele, burer_normal | TARGET: agr_u_bloodsucker_2
+
+PATROL: agr_u_bloodsucker_home
+POINT COUNT: 1
+ID=0 | NAME=name00 | POSITION=(4.378114223480225, -8.230262756347656, 108.16675567626953) | LEVEL_VERTEX=603 | GAME_VERTEX=3669
+SECTION: [agr_u_bloodsucker_1_squad] | FILE: squad_descr_agroprom_underground.ltx | FACTION: monster | NPC: bloodsucker_red_strong, psysucker_2_strong, zombie_blind | TARGET: agr_u_bloodsucker
+SECTION: [agr_u_bloodsucker_3_squad] | FILE: squad_descr_agroprom_underground.ltx | FACTION: monster | NPC: bloodsucker_red_strong, bloodsucker_black_strong, psysucker_3_strong | TARGET: agr_u_bloodsucker
+
+PATROL: agr_u_monsters_spawn_point
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(139.08924865722656, -7.732783794403076, -24.68241310119629) | LEVEL_VERTEX=11564 | GAME_VERTEX=3727
+SECTION: [agru_poltergeist_squad] | FILE: squad_descr_agroprom_underground.ltx | FACTION: monster | NPC: agru_poltergeist_1, agru_poltergeist_2, agru_poltergeist_3, agru_poltergeist_4 | TARGET: ?
+
+PATROL: agr_u_monsters_walk
+POINT COUNT: 1
+ID=0 | NAME=wp01 | POSITION=(110.39219665527344, -6.748307228088379, -10.222588539123535) | LEVEL_VERTEX=8956 | GAME_VERTEX=3727
+SECTION: [agru_controller_1_squad] | FILE: squad_descr_agroprom_underground.ltx | FACTION: monster | NPC: agru_controller_1 | TARGET: agr_u_monsters
+
+PATROL: agr_u_soldiers_home1
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(46.55291748046875, 4.335931777954102, 4.5815019607543945) | LEVEL_VERTEX=4084 | GAME_VERTEX=3617
+SECTION: [agr_u_soldiers_controller_squad] | FILE: squad_descr_agroprom_underground.ltx | FACTION: monster | NPC: m_controller_normal2, m_controller_normal1111, m_controller_normal777, m_controller_normal888, zombie_blind, psysucker_3_strong, m_karlik_e | TARGET: agr_u_soldiers
+
+PATROL: agru_end_poltergeist_squad_spawn_point
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(41.27779769897461, 4.3354878425598145, 28.334028244018555) | LEVEL_VERTEX=3550 | GAME_VERTEX=3703
+SECTION: [agru_end_poltergeist_squad] | FILE: squad_descr_agroprom_underground.ltx | FACTION: monster | NPC: agru_end_poltergeist_1, agru_end_poltergeist_2, agru_end_poltergeist_3, agru_end_poltergeist_4 | TARGET: ?
+
+PATROL: bar_barman_spawn
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(130.5509796142578, -4.744850158691406, 20.51121711730957) | LEVEL_VERTEX=36156 | GAME_VERTEX=1743
+SECTION: [bar_visitors_barman_stalker_trader_squad] | FILE: squad_descr_bar.ltx | FACTION: stalker | NPC: bar_visitors_barman_stalker_trader | TARGET: bar_visitors
+
+PATROL: bar_dolg_bunker_bar_dolg_leader_walk
+POINT COUNT: 1
+ID=0 | NAME=wp00|a=walk | POSITION=(225.38192749023438, -5.248178005218506, 130.99818420410156) | LEVEL_VERTEX=57882 | GAME_VERTEX=1702
+SECTION: [bar_dolg_leader_squad] | FILE: squad_descr_bar.ltx | FACTION: dolg | NPC: bar_dolg_leader | TARGET: bar_dolg_bunker
+
+PATROL: bar_dolg_general_zoneguard_stalker_spawn
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(197.55316162109375, 3.2868199348449707, 52.47205352783203) | LEVEL_VERTEX=47990 | GAME_VERTEX=1681
+SECTION: [bar_dolg_general_zoneguard_stalker_squad] | FILE: squad_descr_bar.ltx | FACTION: dolg | NPC: bar_dolg_general_zoneguard_stalker | TARGET: bar_dolg_general
+
+PATROL: bar_medic_spawn_point
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(231.36453247070312, -5.448860168457031, 130.6383819580078) | LEVEL_VERTEX=59082 | GAME_VERTEX=1698
+SECTION: [dolg_medic_squad] | FILE: squad_descr_bar.ltx | FACTION: dolg | NPC: bar_dolg_medic | TARGET: bar_dolg_general
+
+PATROL: bar_visitors_cardan_spawn
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(111.30046081542969, 0.09996800124645233, 71.11519622802734) | LEVEL_VERTEX=33197 | GAME_VERTEX=1730
+SECTION: [bar_visitors_cardan_tech_squad] | FILE: squad_descr_bar.ltx | FACTION: stalker | NPC: bar_visitors_stalker_mechanic | TARGET: bar_visitors
+
+PATROL: bar_visitors_guard2_walk
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(119.71861267089844, -3.312014102935791, 39.071144104003906) | LEVEL_VERTEX=34539 | GAME_VERTEX=1760
+SECTION: [bar_visitors_zhorik_stalker_guard2_squad] | FILE: squad_descr_bar.ltx | FACTION: stalker | NPC: bar_visitors_zhorik_stalker_guard2 | TARGET: bar_visitors
+
+PATROL: bar_visitors_guard_door_walk
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(126.87349700927734, -4.814527988433838, 23.792987823486328) | LEVEL_VERTEX=35573 | GAME_VERTEX=1741
+SECTION: [bar_visitors_garik_stalker_guard_squad] | FILE: squad_descr_bar.ltx | FACTION: stalker | NPC: bar_visitors_garik_stalker_guard | TARGET: bar_visitors
+
+PATROL: dar_angar_home
+POINT COUNT: 1
+ID=0 | NAME=name00 | POSITION=(9.75062370300293, -16.343069076538086, 70.25732421875) | LEVEL_VERTEX=4284 | GAME_VERTEX=3788
+SECTION: [dar_angar_gigant_squad] | FILE: squad_descr_labx18.ltx | FACTION: monster_predatory_day | NPC: gigant_normal | TARGET: dar_angar
+
+PATROL: dar_control_poltergeist_home
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(14.090154647827148, -10.819334030151367, -22.388439178466797) | LEVEL_VERTEX=4881 | GAME_VERTEX=3760
+SECTION: [dar_control_poltergeist_squad] | FILE: squad_descr_labx18.ltx | FACTION: monster | NPC: m_poltergeist_normal_flame | TARGET: dar_control_poltergeist
+
+PATROL: dar_poltergeist_ring_way
+POINT COUNT: 8
+ID=0 | NAME=name00 | POSITION=(-2.3027589321136475, -10.81401252746582, 1.0810470581054688) | LEVEL_VERTEX=2428 | GAME_VERTEX=3763
+ID=1 | NAME=name01 | POSITION=(-2.4095709323883057, -10.814006805419922, 19.409549713134766) | LEVEL_VERTEX=2462 | GAME_VERTEX=3764
+ID=2 | NAME=name02 | POSITION=(13.270509719848633, -12.412017822265625, 20.385059356689453) | LEVEL_VERTEX=4816 | GAME_VERTEX=3775
+ID=3 | NAME=name03 | POSITION=(-12.634866714477539, -10.78919792175293, 20.08301544189453) | LEVEL_VERTEX=1457 | GAME_VERTEX=3765
+ID=4 | NAME=name04 | POSITION=(-13.009567260742188, -11.103476524353027, 3.79323410987854) | LEVEL_VERTEX=1344 | GAME_VERTEX=3766
+ID=5 | NAME=name05 | POSITION=(-31.30019187927246, -10.814204216003418, 3.887868881225586) | LEVEL_VERTEX=509 | GAME_VERTEX=3767
+ID=6 | NAME=name06 | POSITION=(-30.85259246826172, -10.813048362731934, -4.298602104187012) | LEVEL_VERTEX=536 | GAME_VERTEX=3769
+ID=7 | NAME=name07 | POSITION=(-6.633089065551758, -10.813912391662598, -4.1117658615112305) | LEVEL_VERTEX=1973 | GAME_VERTEX=3770
+SECTION: [dar_poltergeist_ring_squad_1] | FILE: squad_descr_labx18.ltx | FACTION: monster | NPC: m_poltergeist_normal_tele, m_poltergeist_normal_tele | TARGET: dar_poltergeist_ring
+SECTION: [dar_poltergeist_ring_squad_2] | FILE: squad_descr_labx18.ltx | FACTION: monster | NPC: m_poltergeist_normal_flame, m_poltergeist_normal_tele | TARGET: dar_poltergeist_ring
+SECTION: [dar_monster_ring_squad_1] | FILE: squad_descr_labx18.ltx | FACTION: monster | NPC: bloodsucker_black_strong, psysucker_2_strong, zombie_blind, snork_strong3, snork_strong4 | TARGET: dar_poltergeist_ring
+SECTION: [dar_monster_ring_squad_2] | FILE: squad_descr_labx18.ltx | FACTION: monster | NPC: m_karlik_e, m_controller_normal777, m_controller_normal888, zombie_blind, burer_normal | TARGET: dar_poltergeist_ring
+
+PATROL: dar_poltergeist_tele_home
+POINT COUNT: 1
+ID=0 | NAME=name00 | POSITION=(-43.907745361328125, -13.005135536193848, -20.525590896606445) | LEVEL_VERTEX=125 | GAME_VERTEX=3773
+SECTION: [dar_poltergeist_tele_squad] | FILE: squad_descr_labx18.ltx | FACTION: monster | NPC: m_poltergeist_normal_tele | TARGET: dar_poltergeist_tele
+
+PATROL: dar_poltergeist_tele_round_home
+POINT COUNT: 1
+ID=0 | NAME=name00 | POSITION=(-14.889579772949219, -11.069825172424316, 5.321481227874756) | LEVEL_VERTEX=1209 | GAME_VERTEX=3766
+SECTION: [dar_poltergeist_tele_round_squad] | FILE: squad_descr_labx18.ltx | FACTION: monster | NPC: m_poltergeist_normal_tele | TARGET: dar_poltergeist_tele_round
+
+PATROL: esc_smart_terrain_2_12_nimble_spawn_point
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-239.6560516357422, -20.0371150970459, -154.988037109375) | LEVEL_VERTEX=18969 | GAME_VERTEX=454
+SECTION: [esc_2_12_stalker_trader_squad] | FILE: squad_descr_escape.ltx | FACTION: stalker | NPC: esc_2_12_stalker_trader | TARGET: esc_smart_terrain_2_12
+
+PATROL: esc_smart_terrain_2_12_teleport_walk
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-240.26776123046875, -19.9849910736084, -144.2439727783203) | LEVEL_VERTEX=18396 | GAME_VERTEX=508
+SECTION: [esc_2_12_stalker_fanat_squad] | FILE: squad_descr_escape.ltx | FACTION: stalker | NPC: esc_2_12_stalker_fanat | TARGET: {+fanat_kmb_3_give2} esc_smart_terrain_2_12, {+fanat_kmb_3_give} nil, {+fanat_kmb_1_give4} esc_smart_terrain_2_12, {+fanat_kmb_1_give3} nil, {+fanat_kmb_1_give2} esc_smart_terrain_1_11, {+fanat_kmb_1_give} nil, esc_smart_terrain_2_12
+SECTION: [devushka_squad] | FILE: squad_descr_escape.ltx | FACTION: stalker | NPC: devushka | TARGET: esc_smart_terrain_2_12
+
+PATROL: esc_smart_terrain_2_12_wolf_spawn_point
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-250.2720184326172, -19.58744239807129, -128.88084411621094) | LEVEL_VERTEX=12088 | GAME_VERTEX=372
+SECTION: [esc_2_12_stalker_wolf_squad] | FILE: squad_descr_escape.ltx | FACTION: stalker | NPC: esc_2_12_stalker_wolf | TARGET: esc_smart_terrain_2_12
+
+PATROL: haron_spawn_point
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-4.209969520568848, -5.161567687988281, 192.57627868652344) | LEVEL_VERTEX=97217 | GAME_VERTEX=3063
+SECTION: [lider_monolith_haron_squad] | FILE: squad_descr_pripyat.ltx | FACTION: monolith | NPC: lider_monolith_haron | TARGET: mlr_terrain
+
+PATROL: jup_a12_bandit_cashier_squad_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-406.65863037109375, -9.999999974752427e-07, -344.36285400390625) | LEVEL_VERTEX=34882 | GAME_VERTEX=4469
+SECTION: [jup_a12_bandit_cashier_squad] | FILE: squad_descr_jupiter.ltx | FACTION: bandit | NPC: jup_a12_bandit_cashier, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_0 | TARGET: jup_a12
+SECTION: [jup_a12_bandit_sim_squad] | FILE: squad_descr_jupiter.ltx | FACTION: bandit | NPC: sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0 | TARGET: {-jup_a12_task_done} jup_a12, {+jup_a12_task_done} nil
+
+PATROL: jup_a12_bandit_chief_squad_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-431.83172607421875, -3.000000106112566e-06, -354.8130798339844) | LEVEL_VERTEX=7461 | GAME_VERTEX=4469
+SECTION: [jup_a12_bandit_chief_squad] | FILE: squad_descr_jupiter.ltx | FACTION: bandit | NPC: sim_default_bandit_1, sim_default_bandit_1 | TARGET: jup_a12
+
+PATROL: jup_a12_bandit_guard_squad_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-386.4508056640625, 1.9999999949504854e-06, -343.0921325683594) | LEVEL_VERTEX=64589 | GAME_VERTEX=4468
+SECTION: [jup_a12_bandit_guard_squad] | FILE: squad_descr_jupiter.ltx | FACTION: bandit | NPC: jup_a12_bandit_guard, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_0 | TARGET: jup_a12
+
+PATROL: jup_a6_barmen_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-56.194618225097656, 3.488476037979126, 207.8987579345703) | LEVEL_VERTEX=626112 | GAME_VERTEX=4559
+SECTION: [jup_a6_stalker_barmen_squad] | FILE: squad_descr_jupiter.ltx | FACTION: stalker | NPC: jup_a6_stalker_barmen | TARGET: jup_a6
+
+PATROL: jup_a6_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-34.92444610595703, 3.5692479610443115, 198.50555419921875) | LEVEL_VERTEX=659792 | GAME_VERTEX=4735
+SECTION: [jup_a6_freedom_trader_ashot_squad] | FILE: squad_descr_jupiter.ltx | FACTION: freedom | NPC: jup_a6_freedom_trader_ashot | TARGET: jup_a6
+SECTION: [jup_b25_alex_squad] | FILE: squad_descr_jupiter.ltx | FACTION: stalker | NPC: jup_b220_trapper | TARGET: jup_a6
+SECTION: [jup_a6_stalker_medik_squad] | FILE: squad_descr_jupiter.ltx | FACTION: stalker | NPC: jup_a6_stalker_medik | TARGET: jup_a6
+SECTION: [zat_b215_stalker_guide_jupiter_squad] | FILE: squad_descr_jupiter.ltx | FACTION: stalker | NPC: zat_b215_stalker_guide_jupiter | TARGET: jup_a6
+SECTION: [jup_a6_freedom_leader_squad] | FILE: squad_descr_jupiter.ltx | FACTION: freedom | NPC: jup_a6_freedom_leader | TARGET: jup_a6
+SECTION: [jup_b10_stalker_drunk_squad] | FILE: squad_descr_jupiter.ltx | FACTION: stalker | NPC: jup_b217_stalker_tech | TARGET: jup_a6
+SECTION: [jup_a6_kardan_squad] | FILE: squad_descr_jupiter.ltx | FACTION: stalker | NPC: zat_a2_stalker_mechanic | TARGET: jup_a6
+SECTION: [zat_a2_stalker_mechanic_squad] | FILE: squad_descr_zaton.ltx | FACTION: stalker | NPC: zat_a2_stalker_mechanic | TARGET: jup_a6
+
+PATROL: jup_b19_zombied_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-337.4588623046875, -4.012052059173584, 224.4250030517578) | LEVEL_VERTEX=145529 | GAME_VERTEX=4526
+SECTION: [jup_b19_kopatci_zombied_squad] | FILE: squad_descr_jupiter.ltx | FACTION: zombied | NPC: jup_b19_zombied_1, jup_b19_zombied_1, jup_b19_zombied_1, jup_b19_zombied_1, jup_b19_zombied_1, jup_b19_zombied_2, jup_b19_zombied_2, jup_b19_zombied_2, jup_b19_zombied_2, jup_b19_zombied_2 | TARGET: {+jup_b6_anom_2 -jup_b6_task_fail} jup_b6_anom_2, {+jup_b19_complete} nil, {+jup_b19_yar_enemy_or_dead} nil, jup_b19
+
+PATROL: jup_b1_controller_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-309.32965087890625, 3.568510055541992, 405.9800109863281) | LEVEL_VERTEX=192411 | GAME_VERTEX=4580
+SECTION: [jup_b1_controller_squad] | FILE: squad_descr_jupiter.ltx | FACTION: monster_zombied_day | NPC: jup_b1_controller | TARGET: {+jup_b1_complete_end} nil, jup_b1
+
+PATROL: jup_b1_tushkano_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-305.2154846191406, 3.6669199466705322, 410.7261047363281) | LEVEL_VERTEX=199380 | GAME_VERTEX=4579
+SECTION: [jup_b1_tushkano_squad] | FILE: squad_descr_jupiter.ltx | FACTION: monster_predatory_night | NPC: jup_b1_tushkano_target, tushkano_normal, tushkano_normal, tushkano_normal, tushkano_normal | TARGET: {+jup_b1_complete_end} nil, jup_b1
+
+PATROL: jup_b1_zombie_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-323.5889892578125, 4.413559913635254, 394.08416748046875) | LEVEL_VERTEX=168799 | GAME_VERTEX=4581
+SECTION: [jup_b1_zombie] | FILE: squad_descr_jupiter.ltx | FACTION: zombied | NPC: jup_b1_zombie_1, jup_b1_zombie_2, jup_b1_zombie_3 | TARGET: {+jup_b1_complete_end} nil, jup_b1
+
+PATROL: jup_b200_tushkan_smart_terrain_home_1
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(378.599609375, 0.6005039811134338, 314.3211669921875) | LEVEL_VERTEX=1316139 | GAME_VERTEX=4497
+SECTION: [jup_b200_tushkano_squad] | FILE: squad_descr_jupiter.ltx | FACTION: monster_predatory_night | NPC: tushkano_normal, tushkano_normal, tushkano_normal, tushkano_normal, tushkano_normal | TARGET: jup_b200_tushkan_smart_terrain
+
+PATROL: jup_b200_walker_2_walk
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(362.5687255859375, 33.372188568115234, 339.41912841796875) | LEVEL_VERTEX=1292204 | GAME_VERTEX=4495
+SECTION: [jup_b200_stalker_squad] | FILE: squad_descr_jupiter.ltx | FACTION: stalker | NPC: sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2 | TARGET: {+jup_b200_tech_materials_brought_some} nil, {+jup_b200_tech_materials_brought_all} nil, jup_b200
+
+PATROL: jup_b203_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-195.2572479248047, 0.7753329873085022, -278.7468566894531) | LEVEL_VERTEX=385688 | GAME_VERTEX=4704
+SECTION: [jup_b203_zombied_squad] | FILE: squad_descr_jupiter.ltx | FACTION: zombied | NPC: sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_3, sim_default_zombied_2 | TARGET: jup_b203
+
+PATROL: jup_b203_tushkano_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-180.53289794921875, 11.598023414611816, -300.804931640625) | LEVEL_VERTEX=410293 | GAME_VERTEX=4810
+SECTION: [jup_b203_tushkano] | FILE: squad_descr_jupiter.ltx | FACTION: monster_predatory_night | NPC: tushkano_normal, tushkano_normal, tushkano_normal, tushkano_normal, tushkano_normal, tushkano_normal, tushkano_normal, tushkano_normal, tushkano_normal, tushkano_normal, tushkano_normal, tushkano_normal | TARGET: jup_b203
+
+PATROL: jup_b204_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00|a=sprint" | POSITION=(131.87872314453125, 18.097055435180664, -376.8541259765625) | LEVEL_VERTEX=940148 | GAME_VERTEX=4474
+SECTION: [jup_b204_squad] | FILE: squad_descr_jupiter.ltx | FACTION: bandit | NPC: sim_default_bandit_3, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_1 | TARGET: jup_b204
+
+PATROL: jup_b205_monster_01_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-391.9203186035156, 2.641606092453003, -2.323395013809204) | LEVEL_VERTEX=56681 | GAME_VERTEX=4519
+SECTION: [jup_b205_monster_04_squad] | FILE: squad_descr_jupiter.ltx | FACTION: monster_predatory_night | NPC: burer_normal | TARGET: jup_b205_smart_terrain
+
+PATROL: jup_b205_smart_terrain_tushkano_evil_tushkano_look
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-364.7322998046875, 2.6416079998016357, -6.96218204498291) | LEVEL_VERTEX=99145 | GAME_VERTEX=4520
+SECTION: [jup_b205_monster_02_squad] | FILE: squad_descr_jupiter.ltx | FACTION: monster_predatory_night | NPC: tushkano_normal, tushkano_normal, tushkano_normal, tushkano_normal;, tushkano_normal, tushkano_normal, tushkano_normal, tushkano_normal | TARGET: jup_b205_smart_terrain_tushkano
+
+PATROL: jup_b205_smart_terrain_tushkano_home_1
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-402.49114990234375, 2.641602039337158, 9.814045906066895) | LEVEL_VERTEX=41480 | GAME_VERTEX=4523
+SECTION: [jup_b205_monster_01_squad] | FILE: squad_descr_jupiter.ltx | FACTION: monster_predatory_night | NPC: tushkano_normal, tushkano_normal, tushkano_normal, tushkano_normal, tushkano_normal, tushkano_normal, tushkano_normal | TARGET: jup_b205_smart_terrain
+
+PATROL: jup_b205_zombie_01_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-391.76727294921875, 11.417876243591309, -6.041584014892578) | LEVEL_VERTEX=56671 | GAME_VERTEX=4522
+SECTION: [jup_b205_zombie_01_squad] | FILE: squad_descr_jupiter.ltx | FACTION: zombied | NPC: sim_default_zombied_3, sim_default_zombied_2, sim_default_zombied_1, sim_default_zombied_2 | TARGET: jup_b205_smart_terrain
+
+PATROL: jup_b205_zombie_02_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-301.1015319824219, 7.741611957550049, -10.990276336669922) | LEVEL_VERTEX=206015 | GAME_VERTEX=4770
+SECTION: [jup_b205_zombie_02_squad] | FILE: squad_descr_jupiter.ltx | FACTION: zombied | NPC: sim_default_zombied_3, sim_default_zombied_2, sim_default_zombied_2, sim_default_zombied_2, sim_default_zombied_1 | TARGET: jup_b205_smart_terrain
+
+PATROL: jup_b209_snork_home_d_1
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(174.22296142578125, 8.475784301757812, -87.2791976928711) | LEVEL_VERTEX=1012581 | GAME_VERTEX=4476
+SECTION: [jup_b209_squad_snork_1] | FILE: squad_descr_jupiter.ltx | FACTION: monster_zombied_day | NPC: snork_normal | TARGET: jup_b209
+
+PATROL: jup_b209_snork_home_d_3
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(243.27517700195312, 2.7650110721588135, -58.297889709472656) | LEVEL_VERTEX=1130181 | GAME_VERTEX=4730
+SECTION: [jup_b209_squad_snork_2] | FILE: squad_descr_jupiter.ltx | FACTION: monster_zombied_day | NPC: snork_normal | TARGET: jup_b209
+
+PATROL: jup_b209_snork_home_up
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(235.8096160888672, 27.617773056030273, -167.01803588867188) | LEVEL_VERTEX=1118798 | GAME_VERTEX=4642
+SECTION: [jup_b209_squad_snork_up] | FILE: squad_descr_jupiter.ltx | FACTION: monster_zombied_day | NPC: snork_normal, snork_normal, snork_normal, snork_normal, snork_normal | TARGET: jup_b209
+
+PATROL: jup_b211_mob_home_hunter_prime
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(338.8038024902344, -5.107234954833984, 456.4886474609375) | LEVEL_VERTEX=1257942 | GAME_VERTEX=4463
+SECTION: [jup_b6_swamp_hunters] | FILE: squad_descr_jupiter.ltx | FACTION: monster_predatory_night | NPC: jup_b6_bloodsucker_1, jup_b6_bloodsucker_2, jup_b6_bloodsucker_3 | TARGET: {+jup_b6_complete_end} nil, jup_b211
+
+PATROL: jup_b41_merc_guard_spown
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-197.92669677734375, -3.7368860244750977, 74.10961151123047) | LEVEL_VERTEX=381485 | GAME_VERTEX=4486
+SECTION: [jup_b47_merc_guard_squad] | FILE: squad_descr_jupiter.ltx | FACTION: ecolog | NPC: sim_default_ecolog_5, sim_default_ecolog_3, sim_default_ecolog_3, sim_default_ecolog_3 | TARGET: jup_b41
+SECTION: [jup_b47_bunker_guard_freedom] | FILE: squad_descr_jupiter.ltx | FACTION: freedom | NPC: sim_default_freedom_3, sim_default_freedom_2, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_1 | TARGET: jup_b41
+SECTION: [jup_b47_bunker_guard_lost_merc] | FILE: squad_descr_jupiter.ltx | FACTION: killer | NPC: zat_b103_lost_merc_leader, zat_b103_lost_merc_1, zat_b103_lost_merc_2, zat_b103_lost_merc_3, zat_b103_lost_merc_4 | TARGET: jup_b41
+SECTION: [jup_b47_bunker_guard_stalker_leader] | FILE: squad_descr_jupiter.ltx | FACTION: stalker | NPC: zat_b7_stalker_victim_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2 | TARGET: jup_b41
+
+PATROL: jup_b41_sci_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-217.03538513183594, -3.5669660568237305, 74.61689758300781) | LEVEL_VERTEX=349592 | GAME_VERTEX=4531
+SECTION: [jup_b6_scientist_group] | FILE: squad_descr_jupiter.ltx | FACTION: ecolog | NPC: jup_b6_scientist_tech, jup_b6_scientist_nuclear_physicist, jup_b6_scientist_biochemist | TARGET: jup_b41
+
+PATROL: jup_b41_stalker_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-193.38162231445312, -4.929272174835205, 78.11660766601562) | LEVEL_VERTEX=389570 | GAME_VERTEX=4486
+SECTION: [jup_b1_stalker_squad] | FILE: squad_descr_jupiter.ltx | FACTION: ecolog | NPC: sim_default_ecolog_4, sim_default_ecolog_4, sim_default_ecolog_0, sim_default_ecolog_0 | TARGET: jup_b41
+
+PATROL: jup_b47_dogs_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(444.9027099609375, 26.70635986328125, -262.924072265625) | LEVEL_VERTEX=1422488 | GAME_VERTEX=4785
+SECTION: [jup_a9_dogs_normal] | FILE: squad_descr_jupiter.ltx | FACTION: monster_predatory_day | NPC: dog_weak, dog_strong, dog_normal, dog_normal, dog_normal | TARGET: jup_b47;jup_a9:jup_sim_19:loop;:jup_b47
+
+PATROL: jup_b8_psy_dog_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(360.4781188964844, 27.544361114501953, -376.5406188964844) | LEVEL_VERTEX=1288402 | GAME_VERTEX=4771
+SECTION: [jup_b8_psy_dog_squad] | FILE: squad_descr_jupiter.ltx | FACTION: monster_predatory_day | NPC: psy_dog_normal, psy_dog_normal | TARGET: jup_b8_smart_terrain
+
+PATROL: lx8_smart_terrain_burer_home
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-56.74372100830078, -22.013444900512695, 88.13416290283203) | LEVEL_VERTEX=6312 | GAME_VERTEX=5080
+SECTION: [lx8_burers_squad] | FILE: squad_descr_labx8.ltx | FACTION: monster_zombied_night | NPC: lx8_burer, lx8_burer_2, lx8_burer_3 | TARGET: lx8_smart_terrain
+
+PATROL: lx8_smart_terrain_controller_home
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-79.19108581542969, -15.978104591369629, 69.23165130615234) | LEVEL_VERTEX=3353 | GAME_VERTEX=5094
+SECTION: [lx8_controller_squad] | FILE: squad_descr_labx8.ltx | FACTION: monster_zombied_day | NPC: lx8_controller | TARGET: lx8_smart_terrain
+
+PATROL: lx8_smart_terrain_polter_home
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-79.15460968017578, -10.365617752075195, 58.14214324951172) | LEVEL_VERTEX=3326 | GAME_VERTEX=5088
+SECTION: [lx8_polter_squad] | FILE: squad_descr_labx8.ltx | FACTION: monster | NPC: lx8_poltergeist | TARGET: lx8_smart_terrain
+
+PATROL: lx8_smart_terrain_snork_down
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-88.23628997802734, -24.323183059692383, 82.59654998779297) | LEVEL_VERTEX=1944 | GAME_VERTEX=5077
+SECTION: [lx8_snork_down_squad] | FILE: squad_descr_labx8.ltx | FACTION: monster_zombied_day | NPC: lx8_snork_2_jump, lx8_snork | TARGET: lx8_smart_terrain
+
+PATROL: lx8_smart_terrain_snork_up
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-91.12276458740234, -15.899999618530273, 91.3567123413086) | LEVEL_VERTEX=1585 | GAME_VERTEX=5078
+SECTION: [lx8_snork_up_squad] | FILE: squad_descr_labx8.ltx | FACTION: monster_zombied_day | NPC: lx8_snork_1_jump | TARGET: lx8_smart_terrain
+
+PATROL: lx8_smart_terrain_toilet_burer_1_walk
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-100.94194030761719, -16.003183364868164, 90.51158905029297) | LEVEL_VERTEX=709 | GAME_VERTEX=5099
+SECTION: [lx8_toilet_burer_squad] | FILE: squad_descr_labx8.ltx | FACTION: monster_zombied_night | NPC: lx8_toilet_burer | TARGET: lx8_smart_terrain
+
+PATROL: lx8_smart_terrain_tushkano_1_home
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-76.18245697021484, -23.854476928710938, 59.496700286865234) | LEVEL_VERTEX=3955 | GAME_VERTEX=5082
+SECTION: [lx8_tushkano_1_squad] | FILE: squad_descr_labx8.ltx | FACTION: monster_predatory_night | NPC: lx8_1_tushkano_1, lx8_1_tushkano_2, lx8_1_tushkano_3, lx8_1_tushkano_4 | TARGET: lx8_smart_terrain
+
+PATROL: lx8_smart_terrain_tushkano_2_home
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-85.35008239746094, -36.62272644042969, 86.16712951660156) | LEVEL_VERTEX=2385 | GAME_VERTEX=5083
+SECTION: [lx8_tushkano_2_squad] | FILE: squad_descr_labx8.ltx | FACTION: monster_predatory_night | NPC: lx8_2_tushkano_1, lx8_2_tushkano_2, lx8_2_tushkano_3, lx8_2_tushkano_4 | TARGET: lx8_smart_terrain
+
+PATROL: lx8_tushkano_lab_spawn
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-70.73957824707031, -28.29268455505371, 74.6719970703125) | LEVEL_VERTEX=5092 | GAME_VERTEX=5079
+SECTION: [lx8_tushkano_lab_squad] | FILE: squad_descr_labx8.ltx | FACTION: monster_predatory_night | NPC: lx8_lab_tushkano_1, lx8_lab_tushkano_2, lx8_lab_tushkano_3, lx8_lab_tushkano_4, lx8_lab_tushkano_5 | TARGET: lx8_smart_terrain
+
+PATROL: lx8_tushkano_lift_spawn
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-74.73786926269531, -24.339651107788086, 68.03643798828125) | LEVEL_VERTEX=4254 | GAME_VERTEX=5100
+SECTION: [lx8_tushkano_lift_squad] | FILE: squad_descr_labx8.ltx | FACTION: monster_predatory_night | NPC: lx8_litf_tushkano_1, lx8_litf_tushkano_2, lx8_litf_tushkano_3, lx8_litf_tushkano_4 | TARGET: lx8_smart_terrain
+
+PATROL: lx8_tushkano_upper_spawn
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-70.60315704345703, -20.145875930786133, 64.54044342041016) | LEVEL_VERTEX=5042 | GAME_VERTEX=5085
+SECTION: [lx8_tushkano_upper_squad] | FILE: squad_descr_labx8.ltx | FACTION: monster_predatory_night | NPC: lx8_upper_tushkano_1, lx8_upper_tushkano_2, lx8_upper_tushkano_3, lx8_upper_tushkano_4, lx8_upper_tushkano_5 | TARGET: lx8_smart_terrain
+
+PATROL: mar_doctor_squad_spawn
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-156.59442138671875, 1.8145920038223267, -277.12725830078125) | LEVEL_VERTEX=66366 | GAME_VERTEX=142
+SECTION: [mar_doctor_squad] | FILE: squad_descr_marsh.ltx | FACTION: ecolog | NPC: mar_smart_terrain_base_doctor | TARGET: mar_smart_terrain_base
+
+PATROL: mar_smart_terrain_base_barman_walk
+POINT COUNT: 1
+ID=0 | NAME=name00 | POSITION=(-132.9723663330078, 1.2985919713974, -277.1942138671875) | LEVEL_VERTEX=79701 | GAME_VERTEX=139
+SECTION: [mar_base_stalker_barmen_squad] | FILE: squad_descr_marsh.ltx | FACTION: csky | NPC: mar_base_stalker_barmen | TARGET: mar_smart_terrain_base
+
+PATROL: mar_smart_terrain_base_commander_walk
+POINT COUNT: 1
+ID=0 | NAME=name00 | POSITION=(-177.32937622070312, 1.849661946296692, -275.04779052734375) | LEVEL_VERTEX=53174 | GAME_VERTEX=143
+SECTION: [mar_smart_terrain_base_stalker_leader_marsh_squad] | FILE: squad_descr_marsh.ltx | FACTION: csky | NPC: mar_smart_terrain_base_stalker_leader_marsh | TARGET: mar_smart_terrain_base
+
+PATROL: mar_smart_terrain_base_dog_doctor_spawn_point
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-131.16957092285156, 0.7074130177497864, -340.5050354003906) | LEVEL_VERTEX=80509 | GAME_VERTEX=138
+SECTION: [mar_smart_terrain_base_dog_doctor_squad] | FILE: squad_descr_marsh.ltx | FACTION: monster | NPC: mar_smart_terrain_base_dog_doctor | TARGET: mar_smart_terrain_base
+
+PATROL: mar_smart_terrain_base_tech_walk
+POINT COUNT: 1
+ID=0 | NAME=name00 | POSITION=(-135.0972442626953, 2.5301311016082764, -307.0411376953125) | LEVEL_VERTEX=78705 | GAME_VERTEX=136
+SECTION: [mar_base_stalker_tech_squad] | FILE: squad_descr_marsh.ltx | FACTION: csky | NPC: mar_base_stalker_tech | TARGET: mar_smart_terrain_base
+
+PATROL: mar_smart_terrain_base_trader_walk
+POINT COUNT: 1
+ID=0 | NAME=name00 | POSITION=(-179.02813720703125, 0.9324610233306885, -320.42584228515625) | LEVEL_VERTEX=51679 | GAME_VERTEX=140
+SECTION: [mar_base_owl_stalker_trader_squad] | FILE: squad_descr_marsh.ltx | FACTION: csky | NPC: mar_base_owl_stalker_trader | TARGET: mar_smart_terrain_base
+
+PATROL: mil_smart_terrain_7_7_freedom_leader_stalker_squad_spawn
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-21.34649085998535, -4.112752914428711, -18.54691505432129) | LEVEL_VERTEX=272438 | GAME_VERTEX=2092
+SECTION: [mil_smart_terrain_7_7_freedom_leader_stalker_squad] | FILE: squad_descr_military.ltx | FACTION: freedom | NPC: mil_smart_terrain_7_7_freedom_leader_stalker, mil_smart_terrain_7_7_freedom_bodyguard_stalker, mil_smart_terrain_7_7_freedom_bodyguard2_stalker | TARGET: mil_smart_terrain_7_7
+
+PATROL: pas_b400_canalisation_1_zombied_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(17.279966354370117, 4.669494152069092, -126.79248046875) | LEVEL_VERTEX=24559 | GAME_VERTEX=4869
+SECTION: [pas_b400_canalisation_1_zombied] | FILE: squad_descr_underpass.ltx | FACTION: zombied | NPC: sim_default_zombied_1, sim_default_zombied_1 | TARGET: pas_b400_canalisation
+
+PATROL: pas_b400_canalisation_3_zombied_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(38.92572784423828, 4.504655838012695, -165.82400512695312) | LEVEL_VERTEX=32296 | GAME_VERTEX=4871
+SECTION: [pas_b400_canalisation_3_zombied] | FILE: squad_descr_underpass.ltx | FACTION: zombied | NPC: sim_default_zombied_3, sim_default_zombied_2, sim_default_zombied_2, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1 | TARGET: pas_b400_canalisation
+
+PATROL: pas_b400_canalisation_5_zombied_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(62.79685974121094, 4.178165912628174, -200.33212280273438) | LEVEL_VERTEX=38922 | GAME_VERTEX=4874
+SECTION: [pas_b400_canalisation_5_zombied] | FILE: squad_descr_underpass.ltx | FACTION: zombied | NPC: sim_default_zombied_4, sim_default_zombied_3, sim_default_zombied_2, sim_default_zombied_2, sim_default_zombied_1, sim_default_zombied_1 | TARGET: pas_b400_canalisation
+
+PATROL: pas_b400_canalisation_snork_2_l_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(39.83885192871094, 7.185535907745361, -133.79550170898438) | LEVEL_VERTEX=32567 | GAME_VERTEX=4870
+SECTION: [pas_b400_canalisation_snork_2_l] | FILE: squad_descr_underpass.ltx | FACTION: monster_zombied_day | NPC: snork_weak | TARGET: pas_b400_canalisation
+
+PATROL: pas_b400_canalisation_snork_2_r_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(26.506471633911133, 7.186837196350098, -147.01829528808594) | LEVEL_VERTEX=28612 | GAME_VERTEX=4870
+SECTION: [pas_b400_canalisation_snork_2_r] | FILE: squad_descr_underpass.ltx | FACTION: monster_zombied_day | NPC: snork_weak | TARGET: pas_b400_canalisation
+
+PATROL: pas_b400_canalisation_snork_2_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-9.917093276977539, 11.03880786895752, -142.83316040039062) | LEVEL_VERTEX=7678 | GAME_VERTEX=4869
+SECTION: [pas_b400_canalisation_snork_2] | FILE: squad_descr_underpass.ltx | FACTION: monster_zombied_day | NPC: snork_normal | TARGET: pas_b400_canalisation
+
+PATROL: pas_b400_canalisation_tushkano_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(4.406085968017578, 4.359402179718018, -135.6653289794922) | LEVEL_VERTEX=15874 | GAME_VERTEX=4869
+SECTION: [pas_b400_canalisation_tushkano] | FILE: squad_descr_underpass.ltx | FACTION: monster_predatory_night | NPC: pas_b400_tushkano_smart, pas_b400_tushkano_smart, pas_b400_tushkano_smart | TARGET: ?
+
+PATROL: pas_b400_elevator_4_snork_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(16.89862060546875, 9.408164978027344, 439.6713562011719) | LEVEL_VERTEX=24528 | GAME_VERTEX=4830
+SECTION: [pas_b400_snork_elevator_4] | FILE: squad_descr_underpass.ltx | FACTION: monster_zombied_day | NPC: snork_normal | TARGET: pas_b400_elevator
+
+PATROL: pas_b400_elevator_zulus_1_walk
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-48.72732925415039, 8.008164405822754, 450.00689697265625) | LEVEL_VERTEX=965 | GAME_VERTEX=4826
+SECTION: [pas_b400_stalkers_squad] | FILE: squad_descr_underpass.ltx | FACTION: stalker | NPC: pas_b400_zulus | TARGET: ?
+
+PATROL: pas_b400_hall_monolith_after_bwd_squad_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-14.608746528625488, 0.007868999615311623, 75.0809326171875) | LEVEL_VERTEX=6703 | GAME_VERTEX=4851
+SECTION: [pas_b400_hall_monolith_after_bwd_squad] | FILE: squad_descr_underpass.ltx | FACTION: monolith | NPC: sim_default_monolith_2, sim_default_monolith_1 | TARGET: ?
+
+PATROL: pas_b400_hall_monolith_after_fwd_squad_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-3.9104549884796143, 0.007868999615311623, -67.67611694335938) | LEVEL_VERTEX=10295 | GAME_VERTEX=4865
+SECTION: [pas_b400_hall_monolith_after_fwd_squad] | FILE: squad_descr_underpass.ltx | FACTION: monolith | NPC: sim_default_monolith_2, sim_default_monolith_1 | TARGET: ?
+
+PATROL: pas_b400_hall_monolith_sniper_1_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(0.07804399728775024, 27.269973754882812, -41.50923156738281) | LEVEL_VERTEX=13292 | GAME_VERTEX=4862
+SECTION: [pas_b400_hall_monolith_sniper_1] | FILE: squad_descr_underpass.ltx | FACTION: monolith | NPC: pas_b400_monolith_sniper | TARGET: ?
+
+PATROL: pas_b400_hall_monolith_sniper_2_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-30.297822952270508, 17.302837371826172, 30.262332916259766) | LEVEL_VERTEX=3752 | GAME_VERTEX=4863
+SECTION: [pas_b400_hall_monolith_sniper_2] | FILE: squad_descr_underpass.ltx | FACTION: monolith | NPC: pas_b400_monolith_sniper | TARGET: ?
+
+PATROL: pas_b400_hall_monolith_sniper_3_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-11.501886367797852, 0.19377200305461884, 73.65885162353516) | LEVEL_VERTEX=7457 | GAME_VERTEX=4851
+SECTION: [pas_b400_hall_monolith_sniper_3] | FILE: squad_descr_underpass.ltx | FACTION: monolith | NPC: pas_b400_monolith_sniper | TARGET: ?
+
+PATROL: pas_b400_hall_monolith_sniper_4_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(36.41603088378906, 0.0, -41.05244827270508) | LEVEL_VERTEX=31421 | GAME_VERTEX=4859
+SECTION: [pas_b400_hall_monolith_sniper_4] | FILE: squad_descr_underpass.ltx | FACTION: monolith | NPC: pas_b400_monolith_sniper | TARGET: ?
+
+PATROL: pas_b400_hall_monolith_squad_2_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(66.54122924804688, 1.897657036781311, 12.21519660949707) | LEVEL_VERTEX=4294967295 | GAME_VERTEX=29424
+SECTION: [pas_b400_hall_monolith_2_squad] | FILE: squad_descr_underpass.ltx | FACTION: monolith | NPC: sim_default_monolith_3, sim_default_monolith_2 | TARGET: ?
+
+PATROL: pas_b400_hall_monolith_squad_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-54.609886169433594, 3.2105588912963867, 0.49181699752807617) | LEVEL_VERTEX=331 | GAME_VERTEX=4855
+SECTION: [pas_b400_hall_monolith_squad] | FILE: squad_descr_underpass.ltx | FACTION: monolith | NPC: sim_default_monolith_4, sim_default_monolith_4, sim_default_monolith_3, sim_default_monolith_3, sim_default_monolith_2, sim_default_monolith_2, sim_default_monolith_2 | TARGET: ?
+
+PATROL: pas_b400_track_2_snork_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(6.327750205993652, 8.047699928283691, 306.3642883300781) | LEVEL_VERTEX=17368 | GAME_VERTEX=4834
+SECTION: [pas_b400_snork_track_2] | FILE: squad_descr_underpass.ltx | FACTION: monster_zombied_day | NPC: snork_normal, snork_normal | TARGET: pas_b400_track
+
+PATROL: pas_b400_tunnel_snork_tunnel_2_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(51.49836349487305, 6.009024143218994, 155.43463134765625) | LEVEL_VERTEX=36133 | GAME_VERTEX=4848
+SECTION: [pas_b400_snork_tunnel_2] | FILE: squad_descr_underpass.ltx | FACTION: monster_zombied_day | NPC: snork_normal | TARGET: pas_b400_tunnel
+
+PATROL: pas_b400_tunnel_snork_tunnel_3_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(56.46670913696289, 0.0, 108.72177124023438) | LEVEL_VERTEX=37737 | GAME_VERTEX=4844
+SECTION: [pas_b400_snork_tunnel_3] | FILE: squad_descr_underpass.ltx | FACTION: monster_zombied_day | NPC: snork_normal, snork_normal, snork_normal | TARGET: pas_b400_tunnel
+
+PATROL: pas_b400_tunnel_snork_tunnel_4_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(14.662314414978027, 7.1479811668396, 87.74849700927734) | LEVEL_VERTEX=22745 | GAME_VERTEX=4846
+SECTION: [pas_b400_snork_tunnel_4] | FILE: squad_descr_underpass.ltx | FACTION: monster_zombied_day | NPC: snork_normal | TARGET: pas_b400_tunnel
+
+PATROL: pas_b400_tunnel_snork_tunnel_5_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(11.082493782043457, 0.37569600343704224, 33.159664154052734) | LEVEL_VERTEX=20452 | GAME_VERTEX=4849
+SECTION: [pas_b400_snork_tunnel_5] | FILE: squad_descr_underpass.ltx | FACTION: monster_zombied_day | NPC: snork_weak_special, snork_weak_special, snork_weak_special, snork_weak_special, snork_weak_special, snork_weak_special, snork_weak_special | TARGET: pas_b400_tunnel
+
+PATROL: pri_a17_mon_pat_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(230.32679748535156, 0.550000011920929, 8.11423110961914) | LEVEL_VERTEX=450214 | GAME_VERTEX=4981
+SECTION: [pri_a17_monolith_assault_squad] | FILE: squad_descr_lostzone_oa.ltx | FACTION: monolith | NPC: pri_a17_monolith_leader, pri_a17_monolith_trooper, pri_a17_monolith_trooper2 | TARGET: ?
+
+PATROL: pri_a25_smart_terrain_cutscene_actor_walk
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-55.02719497680664, 0.876285970211029, -88.65949249267578) | LEVEL_VERTEX=134004 | GAME_VERTEX=4947
+SECTION: [stalker_rogue_oa_squad] | FILE: squad_descr_lostzone_oa.ltx | FACTION: stalker | NPC: stalker_rogue_oa | TARGET: ?
+
+PATROL: pri_a25_smart_terrain_pri_a25_poltergeist_1_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-53.915103912353516, 4.125405788421631, -99.83940124511719) | LEVEL_VERTEX=135342 | GAME_VERTEX=4947
+SECTION: [pri_a25_poltergeist_1_squad] | FILE: squad_descr_pripyat.ltx | FACTION: monster | NPC: m_poltergeist_normal_tele | TARGET: ?
+
+PATROL: pri_a25_smart_terrain_pri_a25_poltergeist_2_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-78.7996597290039, 0.7567639946937561, -91.95198059082031) | LEVEL_VERTEX=110704 | GAME_VERTEX=4948
+SECTION: [pri_a25_poltergeist_2_squad] | FILE: squad_descr_pripyat.ltx | FACTION: monster | NPC: m_poltergeist_normal_tele | TARGET: ?
+SECTION: [pri_a25_poltergeist_3_squad] | FILE: squad_descr_pripyat.ltx | FACTION: monster | NPC: m_poltergeist_normal_tele | TARGET: ?
+
+PATROL: pri_a28_heli_evac_military_1_walk
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(166.3595733642578, -0.7065200209617615, 344.2767639160156) | LEVEL_VERTEX=396399 | GAME_VERTEX=5020
+SECTION: [stalker_stitch_oa_squad] | FILE: squad_descr_lostzone_oa.ltx | FACTION: stalker | NPC: stalker_stitch_oa | TARGET: pri_a28_heli
+
+PATROL: pri_b303_save_home
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(11.107623100280762, 4.495298862457275, 268.1190185546875) | LEVEL_VERTEX=212077 | GAME_VERTEX=4926
+SECTION: [pri_b303_burer_squad] | FILE: squad_descr_pripyat.ltx | FACTION: monster_zombied_night | NPC: burer_normal | TARGET: pri_b303
+
+PATROL: pri_b304_monsters_smart_terrain_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-91.03193664550781, -0.42322900891304016, -273.9082946777344) | LEVEL_VERTEX=99496 | GAME_VERTEX=5018
+SECTION: [pri_b304_dogs] | FILE: squad_descr_pripyat.ltx | FACTION: monster_predatory_day | NPC: dog_weak, dog_weak, dog_weak, dog_weak, dog_weak, dog_weak, dog_weak, dog_weak, dog_strong, dog_strong | TARGET: ?
+
+PATROL: pri_b304_monsters_smart_terrain_spawn_1
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-114.04401397705078, 0.48842599987983704, -249.24862670898438) | LEVEL_VERTEX=80008 | GAME_VERTEX=4889
+SECTION: [pri_b304_tushkano_1] | FILE: squad_descr_pripyat.ltx | FACTION: monster_predatory_day | NPC: pas_b400_tushkano_smart, pas_b400_tushkano_smart | TARGET: ?
+
+PATROL: pri_b304_monsters_smart_terrain_spawn_2
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-128.96054077148438, 0.4884270131587982, -261.6873474121094) | LEVEL_VERTEX=69253 | GAME_VERTEX=4889
+SECTION: [pri_b304_tushkano_2] | FILE: squad_descr_pripyat.ltx | FACTION: monster_predatory_night | NPC: pas_b400_tushkano_smart, pas_b400_tushkano_smart | TARGET: ?
+
+PATROL: pri_b304_monsters_smart_terrain_spawn_3
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-121.74148559570312, 0.48842498660087585, -259.8839416503906) | LEVEL_VERTEX=74204 | GAME_VERTEX=4889
+SECTION: [pri_b304_tushkano_3] | FILE: squad_descr_pripyat.ltx | FACTION: monster_predatory_night | NPC: pas_b400_tushkano_smart, pas_b400_tushkano_smart | TARGET: ?
+
+PATROL: pri_b304_monsters_smart_terrain_spawn_4
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-107.62410736083984, 0.488427996635437, -235.96322631835938) | LEVEL_VERTEX=85077 | GAME_VERTEX=4889
+SECTION: [pri_b304_tushkano_4] | FILE: squad_descr_pripyat.ltx | FACTION: monster_predatory_night | NPC: pas_b400_tushkano_smart | TARGET: ?
+
+PATROL: pri_b304_monsters_smart_terrain_spawn_5
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-111.2877197265625, 0.48842498660087585, -242.2527618408203) | LEVEL_VERTEX=82128 | GAME_VERTEX=4889
+SECTION: [pri_b304_tushkano_5] | FILE: squad_descr_pripyat.ltx | FACTION: monster_predatory_night | NPC: pas_b400_tushkano_smart | TARGET: ?
+
+PATROL: pri_b304_monsters_smart_terrain_spawn_6
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-104.33302307128906, 0.48842498660087585, -235.18121337890625) | LEVEL_VERTEX=87980 | GAME_VERTEX=4889
+SECTION: [pri_b304_tushkano_6] | FILE: squad_descr_pripyat.ltx | FACTION: monster_predatory_night | NPC: pas_b400_tushkano_smart, pas_b400_tushkano_smart | TARGET: ?
+
+PATROL: pri_b304_monsters_smart_terrain_spawn_7
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-110.64221954345703, -3.4072659015655518, -236.52748107910156) | LEVEL_VERTEX=82691 | GAME_VERTEX=4889
+SECTION: [pri_b304_tushkano_7] | FILE: squad_descr_pripyat.ltx | FACTION: monster_predatory_night | NPC: pas_b400_tushkano_smart | TARGET: ?
+
+PATROL: pri_b304_monsters_smart_terrain_spawn_8
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-111.3720474243164, -3.4037649631500244, -232.39215087890625) | LEVEL_VERTEX=82138 | GAME_VERTEX=4889
+SECTION: [pri_b304_tushkano_8] | FILE: squad_descr_pripyat.ltx | FACTION: monster_predatory_night | NPC: pas_b400_tushkano_smart, pas_b400_tushkano_smart | TARGET: ?
+
+PATROL: pri_b305_dogs_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(25.811439514160156, -0.5068749785423279, -285.25054931640625) | LEVEL_VERTEX=231436 | GAME_VERTEX=4917
+SECTION: [pri_b305_dogs_squad] | FILE: squad_descr_pripyat.ltx | FACTION: monster_predatory_day | NPC: dog_weak, dog_weak, dog_weak, dog_strong, dog_strong | TARGET: ?
+
+PATROL: pri_b306_1_floor_spawn_zombied
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-63.74818801879883, 4.502188205718994, 94.46814727783203) | LEVEL_VERTEX=125997 | GAME_VERTEX=4941
+SECTION: [pri_b306_1_floor_zombied] | FILE: squad_descr_pripyat.ltx | FACTION: zombied | NPC: sim_default_zombied_2, sim_default_zombied_2, sim_default_zombied_1, sim_default_zombied_1 | TARGET: pri_b306
+SECTION: [pri_b306_1_floor_zombied_2] | FILE: squad_descr_pripyat.ltx | FACTION: zombied | NPC: sim_default_zombied_2, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1 | TARGET: pri_b306
+
+PATROL: pri_b306_2_floor_spawn_monolith
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-48.29885482788086, 8.602189064025879, 94.53874969482422) | LEVEL_VERTEX=140909 | GAME_VERTEX=4937
+SECTION: [pri_b306_2_floor_monolith] | FILE: squad_descr_pripyat.ltx | FACTION: monolith | NPC: sim_default_monolith_2, sim_default_monolith_1, sim_default_monolith_1, sim_default_monolith_1 | TARGET: pri_b306
+
+PATROL: pri_b306_2_floor_spawn_zombied
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-66.84529876708984, 8.602201461791992, 83.7486343383789) | LEVEL_VERTEX=123076 | GAME_VERTEX=4940
+SECTION: [pri_b306_2_floor_zombied] | FILE: squad_descr_pripyat.ltx | FACTION: zombied | NPC: sim_default_zombied_3, sim_default_zombied_2, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1 | TARGET: pri_b306
+
+PATROL: pri_b306_3_floor_spawn_monolith
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-51.1776123046875, 12.702190399169922, 84.16143798828125) | LEVEL_VERTEX=138283 | GAME_VERTEX=4936
+SECTION: [pri_b306_3_floor_monolith] | FILE: squad_descr_pripyat.ltx | FACTION: monolith | NPC: sim_default_monolith_3, sim_default_monolith_2, sim_default_monolith_1, sim_default_monolith_1 | TARGET: pri_b306
+
+PATROL: pri_b306_3_floor_spawn_zombied
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-54.52994155883789, 12.702191352844238, 103.74639892578125) | LEVEL_VERTEX=134991 | GAME_VERTEX=4936
+SECTION: [pri_b306_3_floor_zombied] | FILE: squad_descr_pripyat.ltx | FACTION: zombied | NPC: sim_default_zombied_2 | TARGET: pri_b306
+
+PATROL: pri_b306_4_floor_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-78.91580963134766, 16.80219078063965, 94.76546478271484) | LEVEL_VERTEX=110938 | GAME_VERTEX=4934
+SECTION: [pri_b306_4_floor_monolith] | FILE: squad_descr_pripyat.ltx | FACTION: monolith | NPC: sim_default_monolith_3, sim_default_monolith_2 | TARGET: pri_b306
+
+PATROL: pri_b306_4_floor_spawn_2
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-51.74561309814453, 16.802188873291016, 94.44002532958984) | LEVEL_VERTEX=137653 | GAME_VERTEX=4934
+SECTION: [pri_b306_4_floor_monolith_2] | FILE: squad_descr_pripyat.ltx | FACTION: monolith | NPC: sim_default_monolith_2, sim_default_monolith_1 | TARGET: pri_b306
+
+PATROL: pri_b306_mercs_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-71.37176513671875, -0.00886400043964386, 122.6715087890625) | LEVEL_VERTEX=118333 | GAME_VERTEX=4955
+SECTION: [pri_b306_mercs_squad_light] | FILE: squad_descr_pripyat.ltx | FACTION: killer | NPC: sim_default_killer_1, sim_default_killer_2, sim_default_killer_2 | TARGET: {-pri_b306_mercs_attacked} pri_b306, nil
+
+PATROL: pri_b36_guard_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(264.68267822265625, 0.16783000528812408, 305.1617736816406) | LEVEL_VERTEX=466024 | GAME_VERTEX=4893
+SECTION: [pri_b36_monolith_guard_squad] | FILE: squad_descr_pripyat.ltx | FACTION: monolith | NPC: sim_default_monolith_2, sim_default_monolith_2 | TARGET: pri_b36_smart_terrain
+
+PATROL: pri_b36_smart_terrain_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(301.3735046386719, 0.6782749891281128, 231.86451721191406) | LEVEL_VERTEX=479087 | GAME_VERTEX=4894
+SECTION: [pri_b36_monolith_marine_squad] | FILE: squad_descr_pripyat.ltx | FACTION: monolith | NPC: pri_b36_monolith_marine_sniper, sim_default_monolith_2 , sim_default_monolith_2, sim_default_monolith_2, sim_default_monolith_3,sim_default_monolith_3 | TARGET: pri_b36_smart_terrain
+
+PATROL: pri_b36_sniper_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(276.53387451171875, 12.347758293151855, 312.2222595214844) | LEVEL_VERTEX=470438 | GAME_VERTEX=4891
+SECTION: [pri_b36_monolith_sniper_squad] | FILE: squad_descr_pripyat.ltx | FACTION: monolith | NPC: pri_b36_monolith_sniper | TARGET: pri_b36_smart_terrain
+
+PATROL: pri_b36_zombied_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(273.23309326171875, -0.3463810086250305, 295.405517578125) | LEVEL_VERTEX=469119 | GAME_VERTEX=4891
+SECTION: [pri_b36_zombied_squad] | FILE: squad_descr_pripyat.ltx | FACTION: zombied | NPC: sim_default_zombied_3, sim_default_zombied_4, sim_default_zombied_3, sim_default_zombied_3 , sim_default_zombied_4 | TARGET: pri_b36_smart_terrain
+
+PATROL: pri_monolith_monolith_mechanic_spawn
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-8.702157020568848, -5.160027980804443, 189.8894805908203) | LEVEL_VERTEX=91698 | GAME_VERTEX=3069
+SECTION: [pri_monolith_monolith_mechanic_stalker_squad] | FILE: squad_descr_pripyat.ltx | FACTION: monolith | NPC: pri_monolith_monolith_mechanic_stalker | TARGET: pri_monolith
+
+PATROL: warlab_common_consciousness_smart_terrain_psycontroller_home
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(7.349421977996826, -7.3097710609436035, 14.451482772827148) | LEVEL_VERTEX=6553 | GAME_VERTEX=4062
+SECTION: [warlab_main_psycontroller_squad] | FILE: squad_descr_warlab.ltx | FACTION: monster | NPC: warlab_main_psycontroller | TARGET: warlab_common_consciousness_smart_terrain
+
+PATROL: warlab_common_consciousness_smart_terrain_psysucker_home
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-4.465942859649658, -11.385444641113281, -46.19784164428711) | LEVEL_VERTEX=4498 | GAME_VERTEX=4079
+SECTION: [warlab_main_psysucker_squad] | FILE: squad_descr_warlab.ltx | FACTION: monster | NPC: warlab_main_psysucker | TARGET: warlab_common_consciousness_smart_terrain
+
+PATROL: warlab_main_polter_squad_spawn_point
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-24.65420150756836, -11.469771385192871, -4.726779937744141) | LEVEL_VERTEX=1453 | GAME_VERTEX=4106
+SECTION: [warlab_main_polter_squad] | FILE: squad_descr_warlab.ltx | FACTION: monster | NPC: warlab_main_poltergeist_1, warlab_main_poltergeist_2 | TARGET: warlab_common_consciousness_smart_terrain
+
+PATROL: yan_semenov_spawn
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-42.69844055175781, -12.083040237426758, -304.6658630371094) | LEVEL_VERTEX=48404 | GAME_VERTEX=2262
+SECTION: [yan_ecolog_semenov_squad] | FILE: squad_descr_yantar.ltx | FACTION: ecolog | NPC: yan_ecolog_semenov | TARGET: yan_smart_terrain_6_4
+
+PATROL: yan_smart_terrain_4_4_zombied_wave_spawn_point
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(32.66484069824219, 2.169693946838379, -166.25253295898438) | LEVEL_VERTEX=81013 | GAME_VERTEX=2228
+SECTION: [yan_faction_base_defense_zombi_in_sci_base3] | FILE: squad_descr_defense.ltx | FACTION: zombied | NPC: sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_4 | TARGET: ?
+SECTION: [yan_faction_base_defense_zombi_in_sci_base6] | FILE: squad_descr_defense.ltx | FACTION: zombied | NPC: sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_4 | TARGET: ?
+SECTION: [yan_faction_base_defense_zombi_in_sci_base9] | FILE: squad_descr_defense.ltx | FACTION: zombied | NPC: sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_4 | TARGET: ?
+
+PATROL: yan_smart_terrain_5_5_zombied_wave_spawn_point
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(116.4734115600586, -8.75547981262207, -196.42999267578125) | LEVEL_VERTEX=122577 | GAME_VERTEX=2235
+SECTION: [yan_faction_base_defense_zombi_in_sci_base2] | FILE: squad_descr_defense.ltx | FACTION: zombied | NPC: sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_4 | TARGET: ?
+SECTION: [yan_faction_base_defense_zombi_in_sci_base5] | FILE: squad_descr_defense.ltx | FACTION: zombied | NPC: sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_4 | TARGET: ?
+SECTION: [yan_faction_base_defense_zombi_in_sci_base8] | FILE: squad_descr_defense.ltx | FACTION: zombied | NPC: sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_4 | TARGET: ?
+
+PATROL: yan_smart_terrain_6_2_zombied_wave_spawn_point
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(-155.22286987304688, 5.90346622467041, -302.0703430175781) | LEVEL_VERTEX=11766 | GAME_VERTEX=2196
+SECTION: [yan_faction_base_defense_zombi_in_sci_base1] | FILE: squad_descr_defense.ltx | FACTION: zombied | NPC: sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_4 | TARGET: ?
+SECTION: [yan_faction_base_defense_zombi_in_sci_base4] | FILE: squad_descr_defense.ltx | FACTION: zombied | NPC: sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_4 | TARGET: ?
+SECTION: [yan_faction_base_defense_zombi_in_sci_base7] | FILE: squad_descr_defense.ltx | FACTION: zombied | NPC: sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_4 | TARGET: ?
+
+PATROL: yan_smart_terrain_6_4_yan_walker_saharov_walk
+POINT COUNT: 4
+ID=0 | NAME=name00 | POSITION=(25.89887237548828, -11.68748664855957, -276.5365905761719) | LEVEL_VERTEX=77400 | GAME_VERTEX=2281
+ID=1 | NAME=name01 | POSITION=(28.661415100097656, -11.71678352355957, -272.4082946777344) | LEVEL_VERTEX=78862 | GAME_VERTEX=2281
+ID=2 | NAME=name02 | POSITION=(28.402198791503906, -11.71678352355957, -271.7901611328125) | LEVEL_VERTEX=78864 | GAME_VERTEX=2281
+ID=3 | NAME=name03 | POSITION=(25.809415817260742, -11.71678352355957, -271.6470947265625) | LEVEL_VERTEX=77414 | GAME_VERTEX=2281
+SECTION: [yan_stalker_sakharov_squad] | FILE: squad_descr_yantar.ltx | FACTION: ecolog | NPC: yan_stalker_sakharov | TARGET: yan_smart_terrain_6_4
+
+PATROL: yan_vasilyev_spawn
+POINT COUNT: 1
+ID=0 | NAME=wp00 | POSITION=(42.82932662963867, -7.316259860992432, -212.3779754638672) | LEVEL_VERTEX=85728 | GAME_VERTEX=2272
+SECTION: [yan_ecolog_vasilyev_squad] | FILE: squad_descr_yantar.ltx | FACTION: ecolog | NPC: yan_ecolog_vasilyev | TARGET: yan_smart_terrain_6_4
+
+PATROL: zat_b100_poltergeist_01_walk
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-397.0224914550781, 40.220558166503906, -339.4727478027344) | LEVEL_VERTEX=182491 | GAME_VERTEX=4442
+SECTION: [zat_b100_poltergeist_squad_01] | FILE: squad_descr_zaton.ltx | FACTION: monster | NPC: m_poltergeist_normal_tele | TARGET: {-zat_b100_heli_2_searched} zat_b100, nil
+
+PATROL: zat_b104_zombied_1_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-301.71142578125, 10.57880973815918, 429.95062255859375) | LEVEL_VERTEX=344292 | GAME_VERTEX=4252
+SECTION: [zat_b104_zombied_1] | FILE: squad_descr_zaton.ltx | FACTION: zombied | NPC: sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_2, sim_default_zombied_3 | TARGET: {-zat_b104_task_end} zat_b104_zombied, nil
+
+PATROL: zat_b104_zombied_2_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-342.34246826171875, 8.936234474182129, 397.1448669433594) | LEVEL_VERTEX=269624 | GAME_VERTEX=4137
+SECTION: [zat_b104_zombied_2] | FILE: squad_descr_zaton.ltx | FACTION: zombied | NPC: sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_2, sim_default_zombied_3 | TARGET: {-zat_b104_task_end} zat_b104_zombied, nil
+
+PATROL: zat_b104_zombied_3_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-319.8275146484375, 18.133264541625977, 359.6688232421875) | LEVEL_VERTEX=309727 | GAME_VERTEX=4137
+SECTION: [zat_b104_zombied_3] | FILE: squad_descr_zaton.ltx | FACTION: zombied | NPC: sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_2, sim_default_zombied_3 | TARGET: {-zat_b104_task_end} zat_b104_zombied, nil
+
+PATROL: zat_b106_infirmary_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(117.24816131591797, -3.906569004058838, 187.44161987304688) | LEVEL_VERTEX=1167226 | GAME_VERTEX=4453
+SECTION: [zat_b106_stalker_gonta_squad] | FILE: squad_descr_zaton.ltx | FACTION: stalker | NPC: zat_b106_stalker_gonta, zat_b106_stalker_garmata | TARGET: zat_stalker_base_smart
+SECTION: [zat_b106_stalker_crab_squad] | FILE: squad_descr_zaton.ltx | FACTION: stalker | NPC: zat_b106_stalker_crab | TARGET: zat_stalker_base_smart
+
+PATROL: zat_b14_smart_terrain_zat_b14_stalker_1_walk_1
+POINT COUNT: 1
+ID=0 | NAME="wp00|sig=end" | POSITION=(408.389404296875, -5.750596046447754, 220.0877227783203) | LEVEL_VERTEX=1636687 | GAME_VERTEX=4144
+SECTION: [zat_b14_stalkers] | FILE: squad_descr_zaton.ltx | FACTION: stalker | NPC: zat_b14_stalker_1, zat_b14_stalker_2, zat_b14_stalker_3 | TARGET: {+zat_b14_stalkers_go_sim} nil, {+zat_b14_stalker_change_smart} zat_stalker_base_smart, zat_b14_smart_terrain
+
+PATROL: zat_b18_noah_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(153.40538024902344, -6.8237738609313965, -139.2464599609375) | LEVEL_VERTEX=1228278 | GAME_VERTEX=4150
+SECTION: [zat_b18_noah_squad] | FILE: squad_descr_zaton.ltx | FACTION: stalker | NPC: zat_b18_noah | TARGET: zat_b18
+SECTION: [zat_b18_dog_noah_squad] | FILE: squad_descr_zaton.ltx | FACTION: monster | NPC: zat_b18_dog_noah, zat_b18_dog_little, zat_b18_dog_little_two | TARGET: {-zat_b18_dog_noah_free} zat_b18, nil
+
+PATROL: zat_b28_smart_terrain_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(78.3633041381836, 39.026798248291016, -476.8438720703125) | LEVEL_VERTEX=1099721 | GAME_VERTEX=4155
+SECTION: [zat_b28_snork_squad] | FILE: squad_descr_zaton.ltx | FACTION: monster_zombied_day | NPC: snork_weak, snork_weak, snork_weak, snork_weak | TARGET: {-zat_b28_heli_3_searched} zat_b28, nil
+
+PATROL: zat_b33_snork_first_wave_spown
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-101.45074462890625, -5.381562232971191, -222.5894775390625) | LEVEL_VERTEX=737389 | GAME_VERTEX=4142
+SECTION: [zat_b33_snork_first_wave] | FILE: squad_descr_zaton.ltx | FACTION: monster_zombied_day | NPC: snork_indoor, snork_indoor, snork_indoor, snork_indoor | TARGET: zat_b33
+
+PATROL: zat_b33_snork_jump_05_walk
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-84.7168197631836, 7.990002155303955, -204.33755493164062) | LEVEL_VERTEX=771994 | GAME_VERTEX=4193
+SECTION: [zat_b33_snork_second_wave] | FILE: squad_descr_zaton.ltx | FACTION: monster_zombied_day | NPC: snork_outdoor | TARGET: zat_b33
+
+PATROL: zat_b38_bloodsucker_1_wait_walk
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-405.3111267089844, 10.999922752380371, -1.4031339883804321) | LEVEL_VERTEX=170310 | GAME_VERTEX=4188
+SECTION: [zat_b38_bloodsucker_1_lair] | FILE: squad_descr_zaton.ltx | FACTION: monster_predatory_night | NPC: zat_b38_bloodsucker_1 | TARGET: zat_b38
+
+PATROL: zat_b38_bloodsucker_2_wait_walk
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-386.23297119140625, 6.900531768798828, -12.607383728027344) | LEVEL_VERTEX=198349 | GAME_VERTEX=4189
+SECTION: [zat_b38_bloodsucker_2_lair] | FILE: squad_descr_zaton.ltx | FACTION: monster_predatory_night | NPC: zat_b38_bloodsucker_2 | TARGET: zat_b38
+
+PATROL: zat_b38u_sleeper_bloodsuckers_spawn
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-417.5301513671875, -1.0963460206985474, 59.09962463378906) | LEVEL_VERTEX=152570 | GAME_VERTEX=4151
+SECTION: [zat_b38_bloodsuckers_sleepers] | FILE: squad_descr_zaton.ltx | FACTION: monster_predatory_night | NPC: bloodsucker_strong, bloodsucker_strong, bloodsucker_weak, bloodsucker_weak, bloodsucker_weak, bloodsucker_strong, bloodsucker_weak, bloodsucker_weak, bloodsucker_weak | TARGET: zat_b38u
+
+PATROL: zat_b39_dogs_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-303.9901123046875, 23.264965057373047, -191.81785583496094) | LEVEL_VERTEX=339435 | GAME_VERTEX=4269
+SECTION: [zat_b39_dogs_squad] | FILE: squad_descr_zaton.ltx | FACTION: monster_predatory_day | NPC: dog_normal, dog_normal, dog_normal | TARGET: zat_b39
+
+PATROL: zat_b40_smart_terrain_spown_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(322.03582763671875, 33.242767333984375, -404.5911865234375) | LEVEL_VERTEX=1506685 | GAME_VERTEX=4138
+SECTION: [zat_b40_merc_squad] | FILE: squad_descr_zaton.ltx | FACTION: killer | NPC: sim_default_killer_1, sim_default_killer_1, sim_default_killer_1, sim_default_killer_1, sim_default_killer_0, sim_default_killer_0, sim_default_killer_0, sim_default_killer_0 | TARGET: zat_b40_smart_terrain
+
+PATROL: zat_b42_smart_terrain_mob_home
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(30.876806259155273, 4.119373798370361, 367.4045715332031) | LEVEL_VERTEX=1006927 | GAME_VERTEX=4196
+SECTION: [zat_b42_controller_squad] | FILE: squad_descr_zaton.ltx | FACTION: monster_zombied_day | NPC: m_controller_normal | TARGET: zat_b42_smart_terrain
+
+PATROL: zat_b52_smart_terrain_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(204.83074951171875, 6.708380222320557, 6.6681671142578125) | LEVEL_VERTEX=1313411 | GAME_VERTEX=4192
+SECTION: [zat_b52_port_bandits] | FILE: squad_descr_zaton.ltx | FACTION: bandit | NPC: zat_b52_port_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1 | TARGET: {-zat_b52_actor_go_offline} zat_b52, nil
+
+PATROL: zat_b56_poltergeist_home
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(13.11672306060791, 9.24915885925293, -394.33734130859375) | LEVEL_VERTEX=970480 | GAME_VERTEX=4145
+SECTION: [zat_b56_polter_squad] | FILE: squad_descr_zaton.ltx | FACTION: monster | NPC: m_poltergeist_normal_flame | TARGET: zat_b56
+
+PATROL: zat_b57_bloodsucker_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(-408.5698547363281, 11.651041984558105, 13.226293563842773) | LEVEL_VERTEX=165087 | GAME_VERTEX=4188
+SECTION: [zat_b57_bloodsuckers] | FILE: squad_descr_zaton.ltx | FACTION: monster_predatory_night | NPC: bloodsucker_weak, bloodsucker_weak | TARGET: zat_b38
+
+PATROL: zat_b7_stalkers_victims_spawn_1
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(11.844018936157227, -0.5402950048446655, 36.4708137512207) | LEVEL_VERTEX=968215 | GAME_VERTEX=4156
+SECTION: [zat_b7_stalkers_victims_1] | FILE: squad_descr_zaton.ltx | FACTION: stalker | NPC: zat_b7_stalker_victim_1, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0 | TARGET: zat_b7
+
+PATROL: zat_sim_15_spawn_for_a1
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(234.08560180664062, 9.028268814086914, 407.47308349609375) | LEVEL_VERTEX=1364691 | GAME_VERTEX=4377
+SECTION: [simulation_stalker_for_a1] | FILE: squad_descr_default_stalkers.ltx | FACTION: stalker | NPC: ? | TARGET: {+zat_a1_atack_from_zat_sim_15} zat_a1:nil, nil
+
+PATROL: zat_stalker_base_smart_nimble_spawn_point
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(107.08065032958984, -1.3387659788131714, 185.48634338378906) | LEVEL_VERTEX=1150635 | GAME_VERTEX=4453
+SECTION: [zat_a2_stalker_nimble_squad] | FILE: squad_descr_zaton.ltx | FACTION: stalker | NPC: zat_a2_stalker_nimble | TARGET: zat_stalker_base_smart
+
+PATROL: zat_stalker_base_smart_spawn_barmen
+POINT COUNT: 1
+ID=0 | NAME="wp00" | POSITION=(123.90275573730469, -7.340000152587891, 177.8865203857422) | LEVEL_VERTEX=1179308 | GAME_VERTEX=4457
+SECTION: [zat_b22_barmen] | FILE: squad_descr_zaton.ltx | FACTION: stalker | NPC: zat_a2_stalker_barmen | TARGET: zat_stalker_base_smart
+
+======================================================================
+NOT FOUND IN PATROL PATHS
+======================================================================
+alex_selo_smart_terrain_mob_home
+lain_test_smart_terrain_home
+yan_semenov_spawn ;yan_kruglov_spawn
+{-jup_a12_spawn_merc_squad} jup_a12_merc_stalker_squad_spawn_point_2, {+jup_a12_spawn_merc_squad} jup_a12_merc_stalker_squad_spawn_point
+{=actor_in_zone(jup_b212_chimera_spawn_zone)} jup_b212_chimera_spawn_point_1, jup_b212_chimera_spawn_point_2
+{=actor_on_level(k00_marsh)} mar_smart_terrain_5_12_home_attackers, {=actor_on_level(l03_agroprom)} agr_smart_terrain_1_3_home_attackers, {=actor_on_level(l01_escape)} esc_smart_terrain_4_11_home_attackers, {=actor_on_level(l04_darkvalley)} val_smart_terrain_6_4_home_attackers, {=actor_on_level(l05_bar)} bar_zastava_dogs_lair_home_attackers, {=actor_on_level(l07_military)} mil_smart_terrain_4_7_home_attackers, {=actor_on_level(l09_deadcity)} cit_killers_2_home_attackers, mar_smart_terrain_5_12_home_attackers
+{=actor_on_level(l03_agroprom)} agr_smart_terrain_4_6_home_attackers, {=actor_on_level(l04_darkvalley)} val_smart_terrain_9_2_home_attackers, {=actor_on_level(l05_bar)} bar_zastava_dogs_lair_2_home_attackers, {=actor_on_level(l07_military)} mil_smart_terrain_4_7_home_attackers, {=actor_on_level(l09_deadcity)} cit_killers_2_home_attackers, agr_smart_terrain_4_6_home_attackers
