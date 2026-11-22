@@ -78,6 +78,6 @@ window.addEventListener("unhandledrejection", function(e){
  if(box){box.style.display="block";box.textContent="PROMISE ОШИБКА: "+(e.reason?.message||String(e.reason));}
 });
 </script>
-<script src="./app.js" defer onerror="document.getElementById('load-error').style.display='block';document.getElementById('load-error').textContent='Не загрузился app.js (ошибка чтения скрипта)' ></script>
-<div id="mobile-overlay" class="mobile-overlay"></div><script src="./mobile.js" defer onerror="document.getElementById('load-error').style.display='block';document.getElementById('load-error').textContent='Не загрузился mobile.js (ошибка чтения скрипта)' ></script></body>
+<script src="./app.js" defer onerror="document.getElementById('load-error').style.display='block';document.getElementById('load-error').textContent='Не загрузился app.js (ошибка чтения скрипта)'"></script>
+<div id="mobile-overlay" class="mobile-overlay"></div><script src="./mobile.js" defer onerror="document.getElementById('load-error').style.display='block';document.getElementById('load-error').textContent='Не загрузился mobile.js (ошибка чтения скрипта)'"></script></body>
 </html>
