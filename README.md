@@ -66,3 +66,12 @@ python -m http.server 8000
 - Проверить визуальное совпадение объектов с игровыми картами.
 
 См. [статус проекта](STATUS.md) и [инструкцию веб-карты](web/README.md).
+
+
+## Android APK (первый прототип)
+
+В репозитории добавлен Android-проект `android/` с APK-оболочкой карты и сборкой через GitHub Actions. Веб-интерфейс и справочные данные упаковываются внутрь APK — для запуска на телефоне сервер не нужен.
+
+- Инструкция: [android/README.md](android/README.md)
+- Workflow: `.github/workflows/android-apk.yml` (вкладка Actions → Android APK)
+- Первая версия 0.1.0 debug; визуальная проверка на реальном Android ещё предстоит.
