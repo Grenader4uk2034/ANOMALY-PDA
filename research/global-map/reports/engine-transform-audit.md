@@ -107,3 +107,44 @@ This ranking is a prioritization aid, not an automatic correction list. The engi
 
 Highest-priority candidates for source/config comparison are l02_garbage and y04_pole, followed by l11_pripyat and l10_limansk. Do not change their coordinates yet.
 
+## 8. Android-oriented OpenXRay source cross-check
+
+A second public source was inspected:
+
+- [Eternal-Entropia/openxray-android — UIMap.cpp](https://github.com/Eternal-Entropia/openxray-android/blob/1b84cfbc5efa3e9af942164e5a3c2dde43b77f51/src/xrGame/ui/UIMap.cpp)
+- [Eternal-Entropia/openxray-android — math_constants.h](https://github.com/Eternal-Entropia/openxray-android/blob/1b84cfbc5efa3e9af942164e5a3c2dde43b77f51/src/xrCore/math_constants.h)
+- [TmLev/xray-16 — UIMap.cpp](https://github.com/TmLev/xray-16/blob/tmlev/shadow-of-chernobyl/src/xrGame/ui/UIMap.cpp)
+
+The Android-oriented public source has the same relevant implementation:
+- global map X and Y are both translated from BoundRect().lt and multiplied by the global zoom; no Y flip;
+- CUILevelMap::Update() converts GlobalRect().lt and .rb through that global transform;
+- world-to-local-map conversion separately inverts the second world coordinate (Z) using bound_rect.height().
+
+The public Android-oriented source defines EPS_L as 0.0010000f. Its aspect check is inside #ifdef DEBUG and compares kw and kh using fsimilar. Therefore this diagnostic is a DEBUG-build check; absence of the warning in a release log does not prove that all ratios are exact.
+
+### Exact absolute-tolerance result
+
+The engine comparison is absolute, not relative. For the 24 surface entries, compare abs(kw - kh) against 0.001:
+
+| Level | abs(kw - kh) | Exceeds EPS_L? |
+|---|---:|---|
+| l02_garbage | 0.00362738 | Yes |
+| y04_pole | 0.00179953 | Yes |
+| l10_limansk | 0.00119048 | Yes |
+| l11_pripyat | 0.00059662 | No |
+| l13_generators | 0.00066733 | No |
+| k02_trucks_cemetery | 0.00066011 | No |
+| l12_stancia_2 | 0.00065563 | No |
+| l12_stancia | 0.00046479 | No |
+| l09_deadcity | 0.00051487 | No |
+
+All remaining 15 levels are at or below 0.00000881 in absolute difference.
+
+Thus only three of the 24 entries exceed the public Android-oriented source's EPS_L threshold: l02_garbage, y04_pole, and l10_limansk. This identifies config entries worth checking; it does not prove they are visually wrong or authorize coordinate edits.
+
+### Exact-build provenance limitation
+
+The build log supplied earlier identifies commit cced8b0b48c28e11006cdf686be407f92763a006. GitHub does not resolve that SHA in Eternal-Entropia/openxray-android, and global GitHub commit search did not locate it. Therefore the public Android-oriented source is a close corroborating implementation, but cannot be claimed as the exact source tree for that binary. Exact parity with the logged Android build remains unverified.
+
+No source game files or map coordinates were changed.
+
