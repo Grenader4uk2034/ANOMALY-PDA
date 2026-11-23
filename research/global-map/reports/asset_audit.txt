@@ -1,0 +1,18 @@
+# Anomaly map asset audit
+
+- Surface entries audited: 24
+- Global map DDS: 1024 x 2048 px (ok)
+- Global logical bounds: 1024 x 2634
+- Logical-to-pixel scale: X=1.00000000, Y=0.77752468
+
+## DDS files not read successfully
+- none
+
+## Potential aspect mismatches
+
+- l09_deadcity: global=0.9732, texture=1.0000
+- l11_pripyat: global=0.9048, texture=1.0000
+- l12_stancia: global=2.0609, texture=2.0000
+- l12_stancia_2: global=2.0609, texture=2.0000
+
+CSV contains all raw rectangles, scale ratios, and DDS dimensions.
