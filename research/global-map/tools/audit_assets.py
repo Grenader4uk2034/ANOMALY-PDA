@@ -43,8 +43,11 @@ global_w = global_bounds[2] - global_bounds[0]
 global_h = global_bounds[3] - global_bounds[1]
 
 rows = []
+excluded = {"fake_start", "jupiter_underground", "labx8", "l03u_agr_underground", "l04u_labx18", "l08u_brainlab", "l10u_bunker", "l12u_control_monolith", "l12u_sarcofag", "l13u_warlab"}
 for level_file in sorted(LEVELS.glob("*/level.ltx")):
     level = level_file.parent.name
+    if level in excluded:
+        continue
     gsec = section(cfg, level)
     if not gsec:
         continue
