@@ -79,3 +79,31 @@ Not yet established:
 ## 6. Recommended next validation
 
 Compare the Android port source at commit cced8b0b48c28e11006cdf686be407f92763a006 (or its exact source fork) against the functions above. Then run a numeric aspect audit using the engine's own kw / kh criterion for all 24 surface levels and rank any deviations. Keep all generated reports and scripts under research/global-map/; do not alter game assets.
+
+## 7. Numeric aspect-ratio ranking from the 24-level audit
+
+Using the existing asset audit CSV, the engine's two scale ratios were recomputed as:
+
+- kw = global_rect.width / local bound_rect.width
+- kh = global_rect.height / local bound_rect.height
+
+Ranked by relative difference between kw and kh:
+
+| Level | kw | kh | Relative difference |
+|---|---:|---:|---:|
+| l02_garbage | 0.27567568 | 0.27204830 | 1.3245% |
+| y04_pole | 0.21998131 | 0.21818177 | 0.8214% |
+| l11_pripyat | 0.12044341 | 0.11984679 | 0.4966% |
+| l10_limansk | 0.27619048 | 0.27500000 | 0.4320% |
+| l13_generators | 0.20541538 | 0.20608271 | 0.3243% |
+| l12_stancia_2 | 0.24543349 | 0.24608912 | 0.2668% |
+| k02_trucks_cemetery | 0.34262509 | 0.34196499 | 0.1928% |
+| l12_stancia | 0.24558194 | 0.24604673 | 0.1891% |
+| l09_deadcity | 0.29484362 | 0.29432874 | 0.1748% |
+
+The other 15 levels are equal or differ by no more than 0.0031% in this calculation.
+
+This ranking is a prioritization aid, not an automatic correction list. The engine uses its own fsimilar(kw, kh, EPS_L) comparison (an absolute tolerance), so relative percentages alone do not establish which levels actually emit the runtime warning. The exact EPS_L value and the Android fork's implementation still need to be confirmed before claiming engine-warning parity.
+
+Highest-priority candidates for source/config comparison are l02_garbage and y04_pole, followed by l11_pripyat and l10_limansk. Do not change their coordinates yet.
+
