@@ -1,9 +1,9 @@
 (() => {
 "use strict";
 const $=id=>document.getElementById(id),canvas=$("map"),ctx=canvas.getContext("2d");
-const W=1024,H=2634,colors={stash:"#d5b36d",anomaly:"#d96d55",population:"#7ea9c8",mutant:"#bd7bc4",npc:"#91bd83",camp:"#e0a45f",transition:"#71c6b4",poi:"#aab4a7"};
+const W=1024,H=2634,colors={stash:"#d5b36d",anomaly:"#d96d55",population:"#7ea9c8",mutant:"#bd7bc4",npc:"#91bd83",camp:"#e0a45f",transition:"#71c6b4",vehicle:"#c1b17d",poi:"#aab4a7"};
 const state={manifest:null,tiles:[],base:null,features:[],visible:[],categories:new Set(),level:"",selected:null,zoom:1,panX:0,panY:0,drag:null,pointers:new Map(),pinch:null,scale:1,ox:0,oy:0};
-const labels={stash:"Тайники и контейнеры",anomaly:"Аномалии",population:"Точки симуляции",mutant:"Мутанты",npc:"Персонажи",camp:"Лагеря и костры",transition:"Переходы между локациями",poi:"Другие объекты"};
+const labels={stash:"Тайники и контейнеры",anomaly:"Аномалии",population:"Точки симуляции",mutant:"Мутанты",npc:"Персонажи",camp:"Лагеря и костры",transition:"Переходы между локациями",vehicle:"Транспорт",poi:"Другие объекты"};
 const fmt=n=>Number(n).toLocaleString("ru-RU",{maximumFractionDigits:2});
 function json(path){return new Promise((resolve,reject)=>{const x=new XMLHttpRequest();x.open("GET",path,true);x.responseType="text";x.onload=()=>{if(x.status!==200&&x.status!==0){reject(Error("HTTP "+x.status+" · "+path));return}try{resolve(JSON.parse(x.responseText))}catch(e){reject(Error("Повреждён JSON "+path+" · "+e.message))}};x.onerror=()=>reject(Error("Не удалось прочитать встроенный файл "+path));x.send()})}
 function img(path){return new Promise((resolve,reject)=>{const i=new Image();i.onload=()=>resolve(i);i.onerror=()=>reject(Error("Не удалось загрузить изображение "+path));i.src=path})}
