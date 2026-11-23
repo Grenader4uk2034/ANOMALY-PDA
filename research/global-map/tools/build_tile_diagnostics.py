@@ -70,7 +70,7 @@ def main():
         cx2, cy2 = min(GLOBAL_W, x2), min(GLOBAL_H, y2)
         if cx2 <= cx1 or cy2 <= cy1:
             summary.append((level, "outside_global_canvas", tile.width, tile.height,
-                            x1, y1, x2, y2))
+                            x1, y1, x2, y2, "", "", "", "outside"))
             continue
 
         # Resize to the exact configured global rectangle. This reproduces
@@ -90,7 +90,7 @@ def main():
         labels = ["SOURCE TILE", "GLOBAL MAP CROP", "50% OVERLAY"]
         views = [tile_view, crop_view, over_view]
         for i, (label, view) in enumerate(zip(labels, views)):
-            yy = 30 + i * 132
+            yy = 30 + i * 164
             d.text((MARGIN, yy), label, font=font, fill=(255, 220, 90))
             panel.paste(view.convert("RGB"), (MARGIN, yy+14))
         out = REPORTS / f"tile_check_{level}.jpg"
