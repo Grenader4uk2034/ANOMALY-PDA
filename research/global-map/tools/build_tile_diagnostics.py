@@ -22,7 +22,7 @@ EXCLUDED = {
     "l04u_labx18", "l08u_brainlab", "l10u_bunker",
     "l12u_control_monolith", "l12u_sarcofag", "l13u_warlab",
 }
-PANEL_W, PANEL_H = 900, 430
+PANEL_W, PANEL_H = 900, 540
 MARGIN = 18
 
 
@@ -61,7 +61,7 @@ def main():
         level = row["level"]
         tile_path = SRC / "textures/map" / (row["texture"] + ".dds")
         if not tile_path.is_file():
-            summary.append((level, "missing_texture", "", "", "", "", "", ""))
+            summary.append((level, "missing_texture", "", "", "", "", "", "", "", "", "", ""))
             continue
         tile = Image.open(tile_path).convert("RGBA")
         x1, y1, x2, y2 = rect_for(row)
