@@ -148,3 +148,34 @@ The build log supplied earlier identifies commit cced8b0b48c28e11006cdf686be407f
 
 No source game files or map coordinates were changed.
 
+## 9. Additional cross-check against the Stalker Mobile source repository
+
+The project repository linked by the Stalker Mobile OpenXRay Android port documentation was located:
+
+- [stalkermobile/openxray-mobile — UIMap.cpp](https://github.com/stalkermobile/openxray-mobile/blob/master/src/xrGame/ui/UIMap.cpp)
+- [stalkermobile/openxray-mobile — math_constants.h](https://github.com/stalkermobile/openxray-mobile/blob/master/src/xrCore/math_constants.h)
+- [stalkermobile/openxray-mobile — repository](https://github.com/stalkermobile/openxray-mobile)
+
+The checked-in `UIMap.cpp` independently contains the same relevant formulas:
+- `CUIGlobalMap::ConvertRealToLocal()` maps both X and Y by subtracting the global `BoundRect().lt` and multiplying by zoom; it does not invert Y.
+- `CUILevelMap::Update()` converts `GlobalRect().lt/rb` through that global transform.
+- `CUICustomMap::ConvertRealToLocalNoTransform()` separately inverts world Z for local level-map coordinates.
+- `CUILevelMap::Init_internal()` computes `kw` and `kh` and, under `#ifdef DEBUG`, compares them with `fsimilar(..., EPS_L)`.
+- The checked-in `math_constants.h` defines `EPS_L = 0.0010000f`.
+
+This is a third matching implementation (alongside upstream xray-16 and Eternal-Entropia/openxray-android). It strengthens confidence in the transform and tolerance interpretation for this family of ports.
+
+### Exact binary/source match still not proven
+
+The build-log SHA `cced8b0b48c28e11006cdf686be407f92763a006` was queried directly in:
+- `Eternal-Entropia/openxray-android`
+- `stalkermobile/openxray-mobile`
+- several publicly indexed Android OpenXRay repositories/forks
+
+GitHub returned no matching commit in those repositories, and global commit search returned no result. The Stalker Mobile repository's visible history is old relative to the Android build log. Therefore these source trees corroborate the map-transform implementation, but none can be identified as the exact source snapshot used to build the logged APK.
+
+### Updated conclusion
+
+The no-flip global-map Y transform is corroborated by three separate source trees, including the repository published under the Stalker Mobile account. The separate world-Z inversion is also present in all inspected implementations.
+
+For the 24 Anomaly surface levels, the public engine tolerance test flags exactly three entries: `l02_garbage`, `y04_pole`, and `l10_limansk`. These remain config-review candidates only. No `global_rect`, `bound_rect`, game asset, or runtime source was changed.
