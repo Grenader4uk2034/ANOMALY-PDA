@@ -1,0 +1,773 @@
+{
+  "schemaVersion": 1,
+  "game": "STALKER Anomaly 1.5.3",
+  "coordinateSystem": {
+    "globalLogicalBounds": [
+      0.0,
+      0.0,
+      1024.0,
+      2634.0
+    ],
+    "globalTextureSize": [
+      1024,
+      2048
+    ],
+    "logicalToPixel": {
+      "x": 1.0,
+      "y": 0.7775246772968869,
+      "yInverted": false
+    },
+    "worldToLocalTexture": {
+      "x": "(worldX - worldMinX) / worldWidth",
+      "y": "1 - (worldZ - worldMinZ) / worldHeight",
+      "zInverted": true
+    }
+  },
+  "globalMap": "global_map.png",
+  "levels": [
+    {
+      "id": "jupiter",
+      "texture": "levels/jupiter.png",
+      "textureSize": [
+        2048,
+        2048
+      ],
+      "globalRectLogical": [
+        277.0,
+        783.0,
+        459.0,
+        965.0
+      ],
+      "globalRectPixels": [
+        277.0,
+        608.8018223234625,
+        459.0,
+        750.3113135914958
+      ],
+      "worldBounds": [
+        -600.0,
+        -600.0,
+        600.0,
+        600.0
+      ],
+      "worldToGlobalScale": [
+        0.15166666666666667,
+        0.15166666666666667
+      ],
+      "boundsStatus": "inside_global_canvas"
+    },
+    {
+      "id": "k00_marsh",
+      "texture": "levels/k00_marsh.png",
+      "textureSize": [
+        2048,
+        2048
+      ],
+      "globalRectLogical": [
+        22.0,
+        2113.0,
+        352.0,
+        2443.0
+      ],
+      "globalRectPixels": [
+        22.0,
+        1642.909643128322,
+        352.0,
+        1899.4927866362948
+      ],
+      "worldBounds": [
+        -445.0,
+        -445.0,
+        755.0,
+        755.0
+      ],
+      "worldToGlobalScale": [
+        0.275,
+        0.275
+      ],
+      "boundsStatus": "inside_global_canvas"
+    },
+    {
+      "id": "k01_darkscape",
+      "texture": "levels/k01_darkscape.png",
+      "textureSize": [
+        1024,
+        1024
+      ],
+      "globalRectLogical": [
+        701.0,
+        2071.0,
+        1020.0,
+        2392.344727
+      ],
+      "globalRectPixels": [
+        701.0,
+        1610.2536066818527,
+        1020.0,
+        1860.107061843584
+      ],
+      "worldBounds": [
+        -702.0,
+        -704.09,
+        708.5,
+        716.778
+      ],
+      "worldToGlobalScale": [
+        0.2261609358383552,
+        0.22616085871453237
+      ],
+      "boundsStatus": "inside_global_canvas"
+    },
+    {
+      "id": "k02_trucks_cemetery",
+      "texture": "levels/k02_trucks_cemetery.png",
+      "textureSize": [
+        2048,
+        2048
+      ],
+      "globalRectLogical": [
+        706.0,
+        1382.0,
+        1025.0,
+        1703.3447270000001
+      ],
+      "globalRectPixels": [
+        706.0,
+        1074.5391040242978,
+        1025.0,
+        1324.392559186029
+      ],
+      "worldBounds": [
+        -543.947936,
+        -472.688896,
+        387.09888,
+        467.011776
+      ],
+      "worldToGlobalScale": [
+        0.342625090938499,
+        0.3419649858460463
+      ],
+      "boundsStatus": "partially_outside_global_canvas"
+    },
+    {
+      "id": "l01_escape",
+      "texture": "levels/l01_escape.png",
+      "textureSize": [
+        1024,
+        2048
+      ],
+      "globalRectLogical": [
+        358.0,
+        2022.0,
+        564.0,
+        2434.0
+      ],
+      "globalRectPixels": [
+        358.0,
+        1572.1548974943053,
+        564.0,
+        1892.4950645406227
+      ],
+      "worldBounds": [
+        -335.0,
+        -630.0,
+        415.0,
+        870.0
+      ],
+      "worldToGlobalScale": [
+        0.27466666666666667,
+        0.27466666666666667
+      ],
+      "boundsStatus": "inside_global_canvas"
+    },
+    {
+      "id": "l02_garbage",
+      "texture": "levels/l02_garbage.png",
+      "textureSize": [
+        1024,
+        1024
+      ],
+      "globalRectLogical": [
+        369.0,
+        1776.0,
+        573.0,
+        1980.0
+      ],
+      "globalRectPixels": [
+        369.0,
+        1380.883826879271,
+        573.0,
+        1539.498861047836
+      ],
+      "worldBounds": [
+        -370.0,
+        -422.0,
+        370.0,
+        327.866848
+      ],
+      "worldToGlobalScale": [
+        0.2756756756756757,
+        0.2720482983666988
+      ],
+      "boundsStatus": "inside_global_canvas"
+    },
+    {
+      "id": "l03_agroprom",
+      "texture": "levels/l03_agroprom.png",
+      "textureSize": [
+        1024,
+        1024
+      ],
+      "globalRectLogical": [
+        164.0,
+        1848.0,
+        332.0,
+        2016.0
+      ],
+      "globalRectPixels": [
+        164.0,
+        1436.865603644647,
+        332.0,
+        1567.489749430524
+      ],
+      "worldBounds": [
+        -275.0,
+        -370.0,
+        335.0,
+        240.0
+      ],
+      "worldToGlobalScale": [
+        0.2754098360655738,
+        0.2754098360655738
+      ],
+      "boundsStatus": "inside_global_canvas"
+    },
+    {
+      "id": "l04_darkvalley",
+      "texture": "levels/l04_darkvalley.png",
+      "textureSize": [
+        512,
+        1024
+      ],
+      "globalRectLogical": [
+        728.0,
+        1705.0,
+        852.0,
+        1953.0
+      ],
+      "globalRectPixels": [
+        728.0,
+        1325.6795747911922,
+        852.0,
+        1518.50569476082
+      ],
+      "worldBounds": [
+        -215.0,
+        -665.0,
+        235.0,
+        235.0
+      ],
+      "worldToGlobalScale": [
+        0.27555555555555555,
+        0.27555555555555555
+      ],
+      "boundsStatus": "inside_global_canvas"
+    },
+    {
+      "id": "l05_bar",
+      "texture": "levels/l05_bar.png",
+      "textureSize": [
+        512,
+        1024
+      ],
+      "globalRectLogical": [
+        407.0,
+        1414.0,
+        556.0,
+        1712.0
+      ],
+      "globalRectPixels": [
+        407.0,
+        1099.419893697798,
+        556.0,
+        1331.1222475322704
+      ],
+      "worldBounds": [
+        0.0,
+        -512.03,
+        512.0,
+        512.001
+      ],
+      "worldToGlobalScale": [
+        0.291015625,
+        0.2910068152233673
+      ],
+      "boundsStatus": "inside_global_canvas"
+    },
+    {
+      "id": "l06_rostok",
+      "texture": "levels/l06_rostok.png",
+      "textureSize": [
+        512,
+        1024
+      ],
+      "globalRectLogical": [
+        258.0,
+        1414.0,
+        407.0,
+        1712.0
+      ],
+      "globalRectPixels": [
+        258.0,
+        1099.419893697798,
+        407.0,
+        1331.1222475322704
+      ],
+      "worldBounds": [
+        -512.0,
+        -512.03,
+        0.0,
+        512.001
+      ],
+      "worldToGlobalScale": [
+        0.291015625,
+        0.2910068152233673
+      ],
+      "boundsStatus": "inside_global_canvas"
+    },
+    {
+      "id": "l07_military",
+      "texture": "levels/l07_military.png",
+      "textureSize": [
+        1024,
+        1024
+      ],
+      "globalRectLogical": [
+        425.0,
+        1231.0,
+        590.0,
+        1396.0
+      ],
+      "globalRectPixels": [
+        425.0,
+        957.1328777524677,
+        590.0,
+        1085.424449506454
+      ],
+      "worldBounds": [
+        -420.0,
+        -105.0,
+        180.0,
+        495.0
+      ],
+      "worldToGlobalScale": [
+        0.275,
+        0.275
+      ],
+      "boundsStatus": "inside_global_canvas"
+    },
+    {
+      "id": "l08_yantar",
+      "texture": "levels/l08_yantar.png",
+      "textureSize": [
+        1024,
+        1024
+      ],
+      "globalRectLogical": [
+        101.0,
+        1572.0,
+        249.0,
+        1720.0
+      ],
+      "globalRectPixels": [
+        101.0,
+        1222.2687927107063,
+        249.0,
+        1337.3424449506454
+      ],
+      "worldBounds": [
+        -270.0,
+        -405.0,
+        270.0,
+        135.0
+      ],
+      "worldToGlobalScale": [
+        0.2740740740740741,
+        0.2740740740740741
+      ],
+      "boundsStatus": "inside_global_canvas"
+    },
+    {
+      "id": "l09_deadcity",
+      "texture": "levels/l09_deadcity.png",
+      "textureSize": [
+        1024,
+        1024
+      ],
+      "globalRectLogical": [
+        -6.0,
+        1220.0,
+        248.0,
+        1481.0
+      ],
+      "globalRectPixels": [
+        -6.0,
+        948.580106302202,
+        248.0,
+        1151.5140470766894
+      ],
+      "worldBounds": [
+        -481.497344,
+        -412.284256,
+        379.976288,
+        474.479296
+      ],
+      "worldToGlobalScale": [
+        0.29484361513226215,
+        0.29432874119751823
+      ],
+      "boundsStatus": "partially_outside_global_canvas"
+    },
+    {
+      "id": "l10_limansk",
+      "texture": "levels/l10_limansk.png",
+      "textureSize": [
+        512,
+        1024
+      ],
+      "globalRectLogical": [
+        66.0,
+        874.0,
+        182.0,
+        1105.0
+      ],
+      "globalRectPixels": [
+        66.0,
+        679.5565679574792,
+        182.0,
+        859.1647684130601
+      ],
+      "worldBounds": [
+        -210.0,
+        -415.0,
+        210.0,
+        425.0
+      ],
+      "worldToGlobalScale": [
+        0.2761904761904762,
+        0.275
+      ],
+      "boundsStatus": "inside_global_canvas"
+    },
+    {
+      "id": "l10_radar",
+      "texture": "levels/l10_radar.png",
+      "textureSize": [
+        1024,
+        1024
+      ],
+      "globalRectLogical": [
+        527.0,
+        975.0,
+        769.0,
+        1218.704712
+      ],
+      "globalRectPixels": [
+        527.0,
+        758.0865603644647,
+        769.0,
+        947.5729879179954
+      ],
+      "worldBounds": [
+        -136.256,
+        -503.108,
+        714.384,
+        353.524
+      ],
+      "worldToGlobalScale": [
+        0.2844916768550738,
+        0.28449172106575515
+      ],
+      "boundsStatus": "inside_global_canvas"
+    },
+    {
+      "id": "l10_red_forest",
+      "texture": "levels/l10_red_forest.png",
+      "textureSize": [
+        1024,
+        1024
+      ],
+      "globalRectLogical": [
+        198.0,
+        1028.0,
+        380.0,
+        1210.0
+      ],
+      "globalRectPixels": [
+        198.0,
+        799.2953682611998,
+        380.0,
+        940.8048595292331
+      ],
+      "worldBounds": [
+        -285.0,
+        -485.0,
+        375.0,
+        175.0
+      ],
+      "worldToGlobalScale": [
+        0.27575757575757576,
+        0.27575757575757576
+      ],
+      "boundsStatus": "inside_global_canvas"
+    },
+    {
+      "id": "l11_hospital",
+      "texture": "levels/l11_hospital.png",
+      "textureSize": [
+        256,
+        512
+      ],
+      "globalRectLogical": [
+        194.0,
+        694.0,
+        246.0,
+        798.0
+      ],
+      "globalRectPixels": [
+        194.0,
+        539.6021260440396,
+        246.0,
+        620.4646924829158
+      ],
+      "worldBounds": [
+        -180.0,
+        537.0,
+        10.0,
+        917.0
+      ],
+      "worldToGlobalScale": [
+        0.2736842105263158,
+        0.2736842105263158
+      ],
+      "boundsStatus": "inside_global_canvas"
+    },
+    {
+      "id": "l11_pripyat",
+      "texture": "levels/l11_pripyat.png",
+      "textureSize": [
+        1024,
+        1024
+      ],
+      "globalRectLogical": [
+        607.0,
+        762.0,
+        740.0,
+        909.0
+      ],
+      "globalRectPixels": [
+        607.0,
+        592.4738041002278,
+        740.0,
+        706.7699316628702
+      ],
+      "worldBounds": [
+        -529.399,
+        -457.516,
+        574.854,
+        769.05
+      ],
+      "worldToGlobalScale": [
+        0.12044341287730256,
+        0.11984679177475978
+      ],
+      "boundsStatus": "inside_global_canvas"
+    },
+    {
+      "id": "l12_stancia",
+      "texture": "levels/l12_stancia.png",
+      "textureSize": [
+        1024,
+        512
+      ],
+      "globalRectLogical": [
+        322.0,
+        298.0,
+        728.0,
+        495.0
+      ],
+      "globalRectPixels": [
+        322.0,
+        231.7023538344723,
+        728.0,
+        384.874715261959
+      ],
+      "worldBounds": [
+        -254.776,
+        -747.782,
+        1398.44,
+        52.878906276
+      ],
+      "worldToGlobalScale": [
+        0.24558194452509532,
+        0.2460467327127011
+      ],
+      "boundsStatus": "inside_global_canvas"
+    },
+    {
+      "id": "l12_stancia_2",
+      "texture": "levels/l12_stancia_2.png",
+      "textureSize": [
+        1024,
+        512
+      ],
+      "globalRectLogical": [
+        322.0,
+        101.0,
+        728.0,
+        298.0
+      ],
+      "globalRectPixels": [
+        322.0,
+        78.52999240698557,
+        728.0,
+        231.7023538344723
+      ],
+      "worldBounds": [
+        -255.776,
+        51.0,
+        1398.44,
+        851.523
+      ],
+      "worldToGlobalScale": [
+        0.24543348631617634,
+        0.24608911923829796
+      ],
+      "boundsStatus": "inside_global_canvas"
+    },
+    {
+      "id": "l13_generators",
+      "texture": "levels/l13_generators.png",
+      "textureSize": [
+        1024,
+        1024
+      ],
+      "globalRectLogical": [
+        195.0,
+        -40.0,
+        414.0,
+        179.0
+      ],
+      "globalRectPixels": [
+        195.0,
+        -31.100987091875474,
+        414.0,
+        139.17691723614274
+      ],
+      "worldBounds": [
+        -525.205024,
+        -853.156224,
+        540.927424,
+        209.52392
+      ],
+      "worldToGlobalScale": [
+        0.20541537818385586,
+        0.20608270629360703
+      ],
+      "boundsStatus": "partially_outside_global_canvas"
+    },
+    {
+      "id": "pripyat",
+      "texture": "levels/pripyat.png",
+      "textureSize": [
+        2048,
+        2048
+      ],
+      "globalRectLogical": [
+        679.0,
+        718.0,
+        888.0,
+        927.0
+      ],
+      "globalRectPixels": [
+        679.0,
+        558.2627182991648,
+        888.0,
+        720.7653758542142
+      ],
+      "worldBounds": [
+        -550.0,
+        -550.0,
+        550.0,
+        550.0
+      ],
+      "worldToGlobalScale": [
+        0.19,
+        0.19
+      ],
+      "boundsStatus": "inside_global_canvas"
+    },
+    {
+      "id": "y04_pole",
+      "texture": "levels/y04_pole.png",
+      "textureSize": [
+        1024,
+        1024
+      ],
+      "globalRectLogical": [
+        457.0,
+        1965.0,
+        698.98,
+        2205.0
+      ],
+      "globalRectPixels": [
+        457.0,
+        1527.8359908883829,
+        698.98,
+        1714.4419134396355
+      ],
+      "worldBounds": [
+        -544.54112,
+        -615.296064,
+        555.46144,
+        484.70416
+      ],
+      "worldToGlobalScale": [
+        0.21998130622532372,
+        0.21818177375207518
+      ],
+      "boundsStatus": "inside_global_canvas"
+    },
+    {
+      "id": "zaton",
+      "texture": "levels/zaton.png",
+      "textureSize": [
+        2048,
+        2048
+      ],
+      "globalRectLogical": [
+        291.0,
+        574.0,
+        473.0,
+        756.0
+      ],
+      "globalRectPixels": [
+        291.0,
+        446.2991647684131,
+        473.0,
+        587.8086560364465
+      ],
+      "worldBounds": [
+        -600.0,
+        -615.0,
+        600.0,
+        585.0
+      ],
+      "worldToGlobalScale": [
+        0.15166666666666667,
+        0.15166666666666667
+      ],
+      "boundsStatus": "inside_global_canvas"
+    }
+  ]
+}
