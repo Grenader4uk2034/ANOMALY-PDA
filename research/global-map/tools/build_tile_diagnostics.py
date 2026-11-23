@@ -80,7 +80,13 @@ def main():
         global_crop = base.crop((cx1, cy1, cx2, cy2)).convert("RGBA")
 
         # Three views: source tile, configured global-map crop, and 50% overlay.
-        overlay = Image.blend(global_crop, local, 0.5)
+        # Preserve the DDS alpha channel: blend() mixes alpha as a color channel
+        # and produces misleading results for transparent map tiles.
+        half_opacity = local.copy()
+        half_opacity.putalpha(
+            half_opacity.getchannel("A").point(lambda alpha: alpha // 2)
+        )
+        overlay = Image.alpha_composite(global_crop, half_opacity)
         tile_view = contain(tile, (PANEL_W-2*MARGIN, 150))
         crop_view = contain(global_crop, (PANEL_W-2*MARGIN, 150))
         over_view = contain(overlay, (PANEL_W-2*MARGIN, 150))
