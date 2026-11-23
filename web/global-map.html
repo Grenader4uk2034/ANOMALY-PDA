@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101710">
+<title>ANOMALY PDA — Глобальная карта</title>
+<style>
+:root{color-scheme:dark;--bg:#0b100d;--panel:#121a15;--line:#304334;--text:#d8e2d5;--muted:#91a18f;--green:#9bc47c;--amber:#d2ad65}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--text);font:14px/1.4 "Segoe UI",Arial,sans-serif}
+header{height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;border-bottom:1px solid var(--line);background:#0c120e}
+.brand{font-weight:700;letter-spacing:.12em}.brand small{color:var(--muted);font-weight:400;letter-spacing:.06em;margin-left:8px}
+a,button{color:var(--text);background:#1c2b20;border:1px solid #49634b;border-radius:4px;padding:8px 11px;text-decoration:none;font:inherit;cursor:pointer}
+main{height:calc(100% - 52px);display:grid;grid-template-columns:240px minmax(0,1fr) 260px;gap:10px;padding:10px}
+.panel{min-height:0;background:linear-gradient(160deg,#17221a,#101712);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.heading{padding:11px 12px;border-bottom:1px solid var(--line);color:var(--green);font-size:11px;letter-spacing:.13em;text-transform:uppercase}
+.controls{padding:12px;overflow:auto}.field{margin-bottom:13px}label{display:block;color:var(--muted);font-size:11px;margin-bottom:5px}input,select{width:100%;padding:9px;background:#0b120d;border:1px solid #3a503e;border-radius:4px;color:var(--text);font:inherit}
+.filters label{display:flex;align-items:center;gap:8px;padding:5px 0;color:var(--text)}.filters input{width:15px;height:15px;accent-color:var(--green)}
+.map-panel{position:relative}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px;border-bottom:1px solid var(--line);flex-wrap:wrap}.toolbar strong{font-size:11px;letter-spacing:.1em;color:var(--green)}.toolbar button{padding:5px 10px}
+.map-wrap{position:relative;flex:1;min-height:0;overflow:hidden;background:#080e0a}canvas{width:100%;height:100%;display:block;touch-action:none;cursor:grab}canvas.drag{cursor:grabbing}
+.hint{position:absolute;bottom:8px;left:8px;padding:5px 7px;background:#0a100ddd;border:1px solid #304334;color:var(--muted);font-size:10px;pointer-events:none}
+.status{padding:6px 10px;border-top:1px solid var(--line);color:var(--muted);font-size:11px;display:flex;justify-content:space-between;gap:8px}
+.list{overflow:auto;flex:1}.item{padding:9px 11px;border-bottom:1px solid #26352a;cursor:pointer}.item.active,.item:hover{background:#203024}.name{font-weight:600;overflow-wrap:anywhere}.meta{font-size:10px;color:var(--muted);margin-top:2px}
+.detail{padding:12px;overflow:auto}.detail h2{font-size:16px;margin:0 0 8px;overflow-wrap:anywhere}.tag{display:inline-block;color:var(--green);border:1px solid #48634b;padding:2px 7px;font-size:10px;margin-bottom:10px}.kv{display:grid;grid-template-columns:1fr 1fr;gap:7px}.kv div{padding:7px;background:#0c130e;border:1px solid #293b2d}.kv small{display:block;color:var(--muted);font-size:9px}.kv b{font-size:11px;font-weight:500;overflow-wrap:anywhere}
+#error{display:none;position:fixed;z-index:10;bottom:10px;left:10px;right:10px;padding:10px;background:#261b12;border:1px solid #725b35;color:#e4c98d}
+@media(max-width:800px){main{grid-template-columns:190px minmax(0,1fr);grid-template-rows:minmax(0,1fr) 170px}.filters{grid-column:1;grid-row:1/3}.map-panel{grid-column:2;grid-row:1}.right{grid-column:2;grid-row:2;display:grid;grid-template-columns:1fr 1fr}.right .panel{min-width:0}.right .heading{padding:7px}.right .detail{padding:8px}.kv{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){header{height:46px;padding:0 8px}.brand{font-size:12px}.brand small{display:none}main{height:calc(100% - 46px);display:flex;flex-direction:column;padding:0;gap:0}.filters{display:none;position:fixed;z-index:5;left:8px;right:8px;top:54px;bottom:60px}.filters.open{display:flex}.filters .controls{overflow:auto}.map-panel{flex:1;border:0;border-radius:0;min-height:0}.right{display:none;position:fixed;z-index:5;left:8px;right:8px;top:54px;bottom:60px;grid-template-columns:1fr 1fr;background:#101712}.right.open{display:grid}.right .panel{display:flex}.toolbar{padding:6px 8px}.toolbar strong{font-size:10px}.hint{font-size:9px}.mobilebar{display:flex!important;gap:6px;position:fixed;z-index:6;bottom:7px;left:7px;right:7px;padding:5px;background:#101812f5;border:1px solid #344937;border-radius:7px}.mobilebar button{flex:1;min-height:40px;padding:5px;font-size:11px}}
+.mobilebar{display:none}
+</style>
+</head>
+<body>
+<header><div class="brand">PDA · ANOMALY <small>ГЛОБАЛЬНАЯ КАРТА ЗОНЫ</small></div><a href="./index.html">← КАРТА ЛОКАЦИЙ</a></header>
+<main>
+<section class="panel filters"><div class="heading">Фильтры глобальной карты</div><div class="controls">
+<div class="field"><label for="search">ПОИСК ОБЪЕКТА</label><input id="search" type="search" placeholder="Название или секция…"></div>
+<div class="field"><label for="level">ЛОКАЦИЯ</label><select id="level"><option value="">Все локации</option></select></div>
+<div class="field"><label>КАТЕГОРИИ</label><div id="filters" class="filters"><div>Загрузка…</div></div></div>
+<button id="reset" type="button">Сбросить обзор</button>
+</div></section>
+<section class="panel map-panel"><div class="toolbar"><strong>ГЛОБАЛЬНАЯ КАРТА · ПОВЕРХНОСТЬ ЗОНЫ</strong><span><button id="out" aria-label="Уменьшить">−</button> <button id="in" aria-label="Увеличить">+</button></span></div>
+<div class="map-wrap"><canvas id="map" aria-label="Глобальная справочная карта STALKER Anomaly"></canvas><div class="hint">Перетаскивание — обзор · щипок/колесо — масштаб · нажмите объект для досье</div></div>
+<div class="status"><span id="count">Подготовка карты…</span><span id="coords">X / Z</span></div></section>
+<div class="right">
+<section class="panel"><div class="heading">Найденные объекты</div><div id="list" class="list"><div class="item">Загрузка базы…</div></div></section>
+<section class="panel"><div class="heading">Досье объекта</div><div id="detail" class="detail">Выберите объект на карте или в списке.</div></section>
+</div>
+</main>
+<div class="mobilebar"><button id="mobile-filters">ФИЛЬТРЫ</button><button id="mobile-list">ОБЪЕКТЫ</button><button id="mobile-detail">ДОСЬЕ</button></div>
+<div id="error"></div>
+<script src="./global-map.js" defer></script>
+</body></html>
